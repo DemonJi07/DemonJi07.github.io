@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/yaoren.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/yaoren.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/yaoren.jpg">
+  <link rel="mask-icon" href="/images/yaoren.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"demonji07.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第二个部分，输入安全审计。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="渗透测试之二——输入安全审计">
+<meta property="og:url" content="https://demonji07.github.io/2022/05/31/%E8%BE%93%E5%85%A5%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/index.html">
+<meta property="og:site_name" content="纪大聪明的博客">
+<meta property="og:description" content="第二个部分，输入安全审计。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-31T09:16:32.000Z">
+<meta property="article:modified_time" content="2022-05-31T10:18:47.672Z">
+<meta property="article:author" content="DemonJi">
+<meta property="article:tag" content="网络安全">
+<meta property="article:tag" content="信息收集">
+<meta property="article:tag" content="渗透测试">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://demonji07.github.io/2022/05/31/%E8%BE%93%E5%85%A5%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>渗透测试之二——输入安全审计 | 纪大聪明的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">纪大聪明的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">欲速则不达，实践出真知。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://demonji07.github.io/2022/05/31/%E8%BE%93%E5%85%A5%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yaoren.jpg">
+      <meta itemprop="name" content="DemonJi">
+      <meta itemprop="description" content="生于忧患，死于安乐。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="纪大聪明的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          渗透测试之二——输入安全审计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-05-31 17:16:32 / 修改时间：18:18:47" itemprop="dateCreated datePublished" datetime="2022-05-31T17:16:32+08:00">2022-05-31</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>第二个部分，输入安全审计。</p>
+<span id="more"></span>
+
+<p>以本清单所列，信息收集可以注意以下几个方面：</p>
+<ul>
+<li>跨站脚本（XSS）测试</li>
+<li>模板注入测试</li>
+<li>第三方组件漏洞测试</li>
+<li>HTTP头注入测试</li>
+<li>HTTP 参数污染测试</li>
+<li>不安全的HTTP方法测试</li>
+<li>服务端请求伪造（SSRF）测试</li>
+<li>任意文件上传</li>
+<li>SQL 注入测试</li>
+<li>XXE 实体注入测试</li>
+<li>反序列化漏洞测试</li>
+<li>HTTP请求夹带(smuggling)攻击测试</li>
+<li>代码注入测试</li>
+<li>本地文件包含测试</li>
+<li>远程文件包含测试</li>
+<li>命令执行注入测试</li>
+<li>缓冲区溢出测试</li>
+<li>格式化字符串测试</li>
+</ul>
+<h1 id="一、跨站脚本（XSS）测试"><a href="#一、跨站脚本（XSS）测试" class="headerlink" title="一、跨站脚本（XSS）测试"></a>一、跨站脚本（XSS）测试</h1><h1 id="九、SQL-注入测试"><a href="#九、SQL-注入测试" class="headerlink" title="九、SQL 注入测试"></a>九、SQL 注入测试</h1><p>SQLi的检测主要还是测试是否能使自身输入被当做可执行的命令或字段执行，靠Web的一些反映来推断数据。</p>
+<h2 id="注入点的判断"><a href="#注入点的判断" class="headerlink" title="注入点的判断"></a>注入点的判断</h2><p>首先要确定参数通过数据库对前端页面产生了影响。这个输入包括但不止于url中、数据包中、前端能够传入的数据等，数据包中还包括比如http头等可以注入的点。<strong>总结一下，注入可能存在于一切用户可控输入且数据会和后端产生交互的点，</strong>不要局限在SQL上，像http头注入什么的，不也是因为这个字段传入的数据有可能和后端产生了交互（比如被参数取参用什么的），才产生的嘛。</p>
+<p>最常见的检测方式：单双引号看是否出错，然后使用一些比如sleep函数，比如and 1&#x3D;1之类的命令看看SQL是否按预期执行了，执行则确实存在SQL注入。但要推断开发人员的代码是怎么写的，不同的语句设定会导致不同的测试方式。</p>
+<p>形如<code>SELECT * FROM news WHERE name=&#39;$name&#39;</code>，输入需要闭合引号；形如<code>SELECT * FROM news WHERE id=$id</code>就没有必要闭合引号了，当然这么简单的规律通过现场测试就可以发现。</p>
+<p>不常见的检测方式：奶奶滴我也不道啊，暂时我也没找着除了这个之外的。</p>
+<h2 id="过滤绕过"><a href="#过滤绕过" class="headerlink" title="过滤绕过"></a>过滤绕过</h2><p>单双引号这种常见的检测方式非常有可能被过滤掉，这时候就要考虑怎么绕过过滤机制来测试注入点是否存在。如果在这一步费尽心血都没有成就的话就拉倒吧，天知道到底能不能注入，反正咱是没办法让它执行咱的命令呢。</p>
+<p>过滤也有不同的情况，最好注意辨别。比如他是给你用转移符转义了？还是直接干掉了？（啊转义是不是不算过滤啊）</p>
+<h3 id="编码绕过"><a href="#编码绕过" class="headerlink" title="编码绕过"></a>编码绕过</h3><ul>
+<li>大小写</li>
+<li>url编码</li>
+<li>html编码</li>
+<li>十六进制编码</li>
+<li>unicode编码</li>
+</ul>
+<p>这都很好理解的，没啥花花样，就是把相应的字符转换成对应编码的形式代替即可。</p>
+<h3 id="只过滤了一次"><a href="#只过滤了一次" class="headerlink" title="只过滤了一次"></a>只过滤了一次</h3><p>就拼接呗，比如<code>union =&gt; ununionion</code>。这得看人家的这个过滤过程走在哪一步了，前端后端，在什么之前做过滤，啥时候都结束了把参数送到数据库里之类的，多重要。</p>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><p>这块抄的，参考见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ayoung/p/14353314.html">https://www.cnblogs.com/ayoung/p/14353314.html</a></p>
+<h4 id="函数替换"><a href="#函数替换" class="headerlink" title="函数替换"></a>函数替换</h4><p>substring &#x2F; mid &#x2F; sub<br>ascii &#x2F; hex &#x2F; bin<br>benchmark &#x2F; sleep</p>
+<h4 id="变量替换"><a href="#变量替换" class="headerlink" title="变量替换"></a>变量替换</h4><p>user() &#x2F; @@user</p>
+<h4 id="符号和关键字"><a href="#符号和关键字" class="headerlink" title="符号和关键字"></a>符号和关键字</h4><p>and &#x2F; &amp;<br>or &#x2F; |</p>
+<h3 id="HTTP参数污染"><a href="#HTTP参数污染" class="headerlink" title="HTTP参数污染"></a>HTTP参数污染</h3><p>这玩意是个万金油啊，到现在没看见有啥用，反正是哪tm都有可能用上啊</p>
+<p>同时递交几个参数的时候，可能会产生不一样的效果，比如有的后台编码只取第一个参数，有的只取最后一个，有的会把它们拼接在一起作为参数，都是有可能利用的点。</p>
+<p>比如拼接参数，就可以尝试把payload拆开，看看能不能因为分开的原因绕过过滤；如果是只取一个的话，就得看他代码是咋写的了，要是人家把另一个参数扔了你能咋整。当然也有可能对一个参数有限制，另一个没限制这样的情况。</p>
+<p>所以说搞安全会写代码多tm重要啊朋友们，你都tm不知道人家代码咋写的，咋利用参数的，咋做安全措施，咋防护过滤的，你咋搞安全呢，只能是黑盒瞎搞，瞎猜。你知道代码写作习惯，知道这玩意都咋实现，才好做攻击呢。</p>
+<h2 id="关于攻击"><a href="#关于攻击" class="headerlink" title="关于攻击"></a>关于攻击</h2><p>攻击其实暂不考虑了，因为只要能够找到注入点现在就是大胜利。查表之类的payload暂时没琢磨，先以业务为主。</p>
+<h3 id="缓冲区溢出"><a href="#缓冲区溢出" class="headerlink" title="缓冲区溢出"></a>缓冲区溢出</h3><p>关注一下，就像上传文件来tm十几万行，服务器要解析的话八成要寄，看它dos不dos。此处同理，但好像不是很同理……中心思想是有的C语言的WAF处理的字符串长度有限，超出某长度限制之后人家就不处理了，payload有可能会成功。</p>
+
+    </div>
+
+    
+    
+    
+
+	
+	  <div>
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	  </div>
+	
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"># 网络安全</a>
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag"># 信息收集</a>
+              <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag"># 渗透测试</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/24/%E6%97%A5%E8%AE%B0/" rel="prev" title="日记，或者说说心里话">
+      <i class="fa fa-chevron-left"></i> 日记，或者说说心里话
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%EF%BC%88XSS%EF%BC%89%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">一、跨站脚本（XSS）测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B9%9D%E3%80%81SQL-%E6%B3%A8%E5%85%A5%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">九、SQL 注入测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%85%A5%E7%82%B9%E7%9A%84%E5%88%A4%E6%96%AD"><span class="nav-number">2.1.</span> <span class="nav-text">注入点的判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E7%BB%95%E8%BF%87"><span class="nav-number">2.2.</span> <span class="nav-text">过滤绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="nav-number">2.2.1.</span> <span class="nav-text">编码绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AA%E8%BF%87%E6%BB%A4%E4%BA%86%E4%B8%80%E6%AC%A1"><span class="nav-number">2.2.2.</span> <span class="nav-text">只过滤了一次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2"><span class="nav-number">2.2.3.</span> <span class="nav-text">替换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9B%BF%E6%8D%A2"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">函数替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">变量替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E5%92%8C%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">符号和关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93"><span class="nav-number">2.2.4.</span> <span class="nav-text">HTTP参数污染</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%94%BB%E5%87%BB"><span class="nav-number">2.3.</span> <span class="nav-text">关于攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA"><span class="nav-number">2.3.1.</span> <span class="nav-text">缓冲区溢出</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="DemonJi"
+      src="/images/yaoren.jpg">
+  <p class="site-author-name" itemprop="name">DemonJi</p>
+  <div class="site-description" itemprop="description">生于忧患，死于安乐。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DemonJi</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">6k</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
