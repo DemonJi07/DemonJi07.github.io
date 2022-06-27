@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"demonji07.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="第四个部分，关于安全配置的部分。">
+  <meta name="description" content="LDAP，我理解的话感觉不像是一个认证协议（虽然boss让我研究的list里面有这么个东西），人家名字叫轻量目录访问协议，就是一个浏览用的一个东西吧。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="渗透测试之四——服务端安全配置审计">
-<meta property="og:url" content="https://demonji07.github.io/2022/06/08/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E5%AE%A1%E8%AE%A1/index.html">
+<meta property="og:title" content="认证协议之LDAP">
+<meta property="og:url" content="https://demonji07.github.io/2022/06/27/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8BLDAP/index.html">
 <meta property="og:site_name" content="纪大聪明的博客">
-<meta property="og:description" content="第四个部分，关于安全配置的部分。">
+<meta property="og:description" content="LDAP，我理解的话感觉不像是一个认证协议（虽然boss让我研究的list里面有这么个东西），人家名字叫轻量目录访问协议，就是一个浏览用的一个东西吧。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-08T02:21:34.000Z">
-<meta property="article:modified_time" content="2022-06-09T06:20:48.209Z">
+<meta property="article:published_time" content="2022-06-27T01:22:06.000Z">
+<meta property="article:modified_time" content="2022-06-27T01:27:59.581Z">
 <meta property="article:author" content="DemonJi">
 <meta property="article:tag" content="网络安全">
-<meta property="article:tag" content="渗透测试">
-<meta property="article:tag" content="安全配置">
+<meta property="article:tag" content="认证协议">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://demonji07.github.io/2022/06/08/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E5%AE%A1%E8%AE%A1/">
+<link rel="canonical" href="https://demonji07.github.io/2022/06/27/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8BLDAP/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>渗透测试之四——服务端安全配置审计 | 纪大聪明的博客</title>
+  <title>认证协议之LDAP | 纪大聪明的博客</title>
   
 
 
@@ -159,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://demonji07.github.io/2022/06/08/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E5%AE%A1%E8%AE%A1/">
+    <link itemprop="mainEntityOfPage" href="https://demonji07.github.io/2022/06/27/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8BLDAP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/yaoren.jpg">
@@ -172,7 +171,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          渗透测试之四——服务端安全配置审计
+          认证协议之LDAP
         </h1>
 
         <div class="post-meta">
@@ -181,16 +180,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-06-08 10:21:34" itemprop="dateCreated datePublished" datetime="2022-06-08T10:21:34+08:00">2022-06-08</time>
+              <time title="创建时间：2022-06-27 09:22:06 / 修改时间：09:27:59" itemprop="dateCreated datePublished" datetime="2022-06-27T09:22:06+08:00">2022-06-27</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-09 14:20:48" itemprop="dateModified" datetime="2022-06-09T14:20:48+08:00">2022-06-09</time>
-              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -205,7 +198,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
+              <span>1.5k</span>
             </span>
 
         </div>
@@ -217,38 +210,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>第四个部分，关于安全配置的部分。</p>
+        <p>LDAP，我理解的话感觉不像是一个认证协议（虽然boss让我研究的list里面有这么个东西），人家名字叫轻量目录访问协议，就是一个浏览用的一个东西吧。</p>
 <span id="more"></span>
 
-<p>以本清单所列，服务端安全配置审计可以注意以下几个方面：</p>
-<ul>
-<li>CDN 服务探测</li>
-<li>后端服务组件配置测试</li>
-<li>服务器登录安全测试</li>
-<li>文件扩展名解析测试</li>
-<li>备份文件测试</li>
-<li>测试文件测试</li>
-<li>测试接口暴露</li>
-<li>HTTP 方法测试</li>
-<li>Web 前端跨域策略测试</li>
-<li>Web 安全响应头部测试</li>
-<li>弱 SSL&#x2F;TLS 加密，不安全数据传输测试</li>
-<li>非加密信道传输敏感数据测试</li>
-<li>弱口令及默认口令探测</li>
-<li>管理后台发现</li>
-<li>DOS压力测试</li>
+<h2 id="LDAP"><a href="#LDAP" class="headerlink" title="LDAP"></a>LDAP</h2><h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
+<li>WSS 3.0：WSS 2.0的升级版，WSS是一个用来创建能够实现信息共享和文档协作的Web站点的引擎。</li>
 </ul>
-<h1 id="十五、DOS压力测试"><a href="#十五、DOS压力测试" class="headerlink" title="十五、DOS压力测试"></a>十五、DOS压力测试</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>HTTP慢速攻击是利用HTTP合法机制，以极低的速度往服务器发送HTTP请求，尽量长时间保持连接，不释放，若是达到了Web Server对于<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%B9%B6%E5%8F%91&spm=1001.2101.3001.7020">并发</a>连接数的上限，同时恶意占用的连接没有被释放，那么服务器端将无法接受新的请求，导致拒绝服务。</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>比较常用的工具之一是slowhttp，kali上<code>apt-get install slowhttptest</code>就可以安装使用了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">测试模式：</span><br><span class="line">-H slow headers 攻击，缓慢发送\r\n，让服务器一直等待</span><br><span class="line">-B slow Body 攻击</span><br><span class="line">-R 范围攻击Apache killer</span><br><span class="line">-X slow read 攻击，读的慢，让服务器发送缓存堵塞</span><br><span class="line"></span><br><span class="line">报告生成选项：</span><br><span class="line">-g 生成socket状态变化统计</span><br><span class="line">-o file_prefix将输出保存到file.html和file.csv中</span><br><span class="line">-v level日志等级，0-4：Fatal，Info，Error，Warning，Debug</span><br><span class="line"></span><br><span class="line">普通选项：</span><br><span class="line">-c connections目标连接数（50）</span><br><span class="line">-i seconds数据发送间隔（10）</span><br><span class="line">-l seconds测试一个目标的时间长度（240）</span><br><span class="line">-r rate每秒多少个连接（50）</span><br><span class="line">-s bytesContent-Length的值（4096）</span><br><span class="line">-t verb请求中使用的动词，如果是slow header攻击，默认是GET；如果是slow body攻击，默认是POST</span><br><span class="line">-u URL目标URL（http://localhost/）</span><br><span class="line">-x bytes每一个tick随机生成的键值对最大长度，例如，-x 2 生成x-xx：xx是头字段，或是类似&amp;xx=xx的消息体，x是随机字符（32）</span><br><span class="line"></span><br><span class="line">探针/代理选项：</span><br><span class="line">-d host:port所有数据走指定代理host:port</span><br><span class="line">-e host:port 探针流量走指定代理host:port</span><br><span class="line">-p seconds探针超时时长，服务器被认为是网络不可达（5）</span><br><span class="line"></span><br><span class="line">范围攻击具体选项：</span><br><span class="line">-a start左边界值（5）</span><br><span class="line">-b bytes右边界值（2000）</span><br><span class="line"></span><br><span class="line">slow read攻击具体选项：</span><br><span class="line">-k num同一请求重复次数，当服务器支持持久化连接时用于放大响应长度（1）</span><br><span class="line">-n seconds每次从接收缓冲区中读取消息的时间间隔（1）</span><br><span class="line">-w bytes从通知窗中获取数据的起始位置（1）</span><br><span class="line">-y bytes 从通知窗中获取数据的结束位置（512）</span><br><span class="line">-z bytes每次从接收缓冲区中读取的长度（5）</span><br></pre></td></tr></table></figure>
-<p>案例说明<br><code>slowhttptest -c 1000 -B -g -o my_body_stats -i 110 -r 200 -s 8192 -t FAKEVERB -u http://mysite -x 10 -p 3</code><br>测试结论：<br>1、如果在用该攻击攻击服务器，服务器正常使用并且cpu、内存、网络实用率正常，则无slowhttp漏洞<br>如：pgrep http | wc -l 进程数量<br>netstat -antp | grep 443 |wc -l 网络连接数量<br>2、若攻击的时间段，服务无法正常访问则存在次漏洞。</p>
-<h2 id="修复和防范"><a href="#修复和防范" class="headerlink" title="修复和防范"></a>修复和防范</h2><p>a.设定URL白名单和黑名单，识别坏的IP；<br>b.设置一个绝对连接超时，<br>c.定义最小的输入数据速率；对web服务器的http头部传输的最大许可时间进行限制，修改成最大许可时间为20秒。<br>统计每个TCP连接的时长并计算单位时间内通过的报文数量即可做精确识别。一个TCP连接中，HTTP报文太少和报文太多都是不正常的，过少可能是慢速连接攻击，过多可能是使用HTTP 1.1协议进行deHTTP Flood攻击，在一个TCP连接中发送多个HTTP请求。<br>限制HTTP头部传输的最大许可时间。超过指定时间HTTP Header还没有传输完成，直接判定源IP地址为慢速连接攻击，中断连接并加入黑名单。</p>
-<p>参考：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013908944/article/details/76576089">https://blog.csdn.net/u013908944/article/details/76576089</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57567655/article/details/122847049">https://blog.csdn.net/weixin_57567655/article/details/122847049</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.pianshen.com/article/1267387706/">https://www.pianshen.com/article/1267387706/</a></li>
-</ul>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>LDAP认证是通过WSS 3.0加上轻量目录LDAP协议搭建的一种认证方式，使用https加密传输，主要用于做文档管理。LDAP认证把用户数据放在LDAP服务器上，通过LDAP服务器上的数据对用户进行认证处理。</p>
+<p>比如日常的多个办公系统，每一套系统都有独立的账号密码，维护和使用都比较麻烦的时候，就可以使用LDAP统一认证服务解决问题，一人一个账号，全系统通用。</p>
+<h3 id="LDAP协议与目录"><a href="#LDAP协议与目录" class="headerlink" title="LDAP协议与目录"></a>LDAP协议与目录</h3><p>LDAP，轻量目录访问协议，(Lightweight Directory Access Protocol)，它是用于访问目录服务的轻量级协议，特别是基于X.500协议的目录服务。LDAP运行于TCP&#x2F;IP连接上或其他面向传输服务的连接上。</p>
+<p>目录是一个为查询，搜索和浏览优化的数据库，成树状结构组织数据，类似文件目录。目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据，天生是用来查询的。</p>
+<p>LDAP目录服务是由目录数据库和一套访问协议组成的系统。</p>
+<p>统一身份认证主要是改变原有的认证策略，使需要认证的软件都通过LDAP进行认证，在统一身份认证之后，用户的所有信息都存储在AD Server中。终端用户在需要使用公司内部服务的时候，都需要通过AD服务器的认证。</p>
+<h4 id="AD"><a href="#AD" class="headerlink" title="AD"></a>AD</h4><p>AD 是 Windows 服务器上最强大的功能，AD 是基于 LDAP 协议的一套解决方案（LDAP 服务器 + 应用），解决了细粒度的权限控制。核心：<strong>「谁 以什么权限 访问什么」</strong>。</p>
+<h4 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h4><p>1、目录树：在一个目录服务系统中，整个目录信息集可以表示为一个目录信息树，树中的每个节点是一个条目。</p>
+<p>2、条目：每个条目就是一条记录，每个条目有自己的唯一可区别的名称（DN）。通过DN的层次型语法结构，可以方便地表示出条目在LDAP树中的位置，通常用于检索。</p>
+<p>3、对象类：属性的集合，与某个实体类型对应的一组属性，定义在架构里。对象类是可以继承的，这样父类的必须属性也会被继承下来。</p>
+<p>4、属性：描述条目的某个方面的信息，一个属性由一个属性类型和一个或多个属性值组成，属性有必须属性和非必须属性。</p>
+<p>5、架构：一个集合，所有属性和对象类都定义在架构里。必须能被LDAP服务器识别。定义在一个架构里的属性可以被另一个架构里的对象类使用。</p>
+<p>当创建一个条目，条目是属性的集合，会包含很多属性，其每一个属性都有一个类型和一个或多个值，就好像一个人可以有好几个邮箱。属性又构成了对象类，最后对象类组成了架构。</p>
+<h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><p>LDAP 注入是利用用户引入的参数生成恶意 LDAP 查询，通过构造 LDAP 过滤器来绕过访问控制、用户权限提升。在维持正常过滤器的情况下构造出 AND、OR 操作注入来获得敏感信息。</p>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p>1、<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/74512921">https://zhuanlan.zhihu.com/p/74512921</a></p>
+<p>2、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wilburxu/p/9174353.html">https://www.cnblogs.com/wilburxu/p/9174353.html</a></p>
+<p>3、<a target="_blank" rel="noopener" href="https://blog.csdn.net/suo082407128/article/details/115294490">https://blog.csdn.net/suo082407128/article/details/115294490</a></p>
+<p>4、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3716b84c4c1d">https://www.jianshu.com/p/3716b84c4c1d</a></p>
+<p>5、<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/74512921">https://zhuanlan.zhihu.com/p/74512921</a></p>
+<p>6、<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147768058">https://zhuanlan.zhihu.com/p/147768058</a></p>
 
     </div>
 
@@ -270,8 +257,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"># 网络安全</a>
-              <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag"># 渗透测试</a>
-              <a href="/tags/%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/" rel="tag"># 安全配置</a>
+              <a href="/tags/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/" rel="tag"># 认证协议</a>
           </div>
 
         
@@ -280,13 +266,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/06/01/%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%E5%AE%A1%E8%AE%A1/" rel="prev" title="渗透测试之七——会话管理审计">
-      <i class="fa fa-chevron-left"></i> 渗透测试之七——会话管理审计
+    <a href="/2022/06/23/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8Bkerberos/" rel="prev" title="认证协议之Kerberos">
+      <i class="fa fa-chevron-left"></i> 认证协议之Kerberos
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/06/09/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AF%86%E8%A1%A5%E8%B6%B3%E6%9D%82%E9%A1%B9/" rel="next" title="工作知识补足杂项">
-      工作知识补足杂项 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -345,7 +328,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%BA%94%E3%80%81DOS%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">十五、DOS压力测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">1.2.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E5%A4%8D%E5%92%8C%E9%98%B2%E8%8C%83"><span class="nav-number">1.3.</span> <span class="nav-text">修复和防范</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LDAP"><span class="nav-number">1.</span> <span class="nav-text">LDAP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="nav-number">1.1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LDAP%E5%8D%8F%E8%AE%AE%E4%B8%8E%E7%9B%AE%E5%BD%95"><span class="nav-number">1.3.</span> <span class="nav-text">LDAP协议与目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AD"><span class="nav-number">1.3.1.</span> <span class="nav-text">AD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E6%A0%91"><span class="nav-number">1.3.2.</span> <span class="nav-text">目录树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E9%99%B7"><span class="nav-number">1.4.</span> <span class="nav-text">缺陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">1.5.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
