@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/06/24/sVlgtCBLRnwGE85.png">
 <meta property="article:published_time" content="2022-06-01T08:36:24.000Z">
-<meta property="article:modified_time" content="2022-06-27T01:44:26.762Z">
+<meta property="article:modified_time" content="2022-06-28T02:57:34.955Z">
 <meta property="article:author" content="DemonJi">
 <meta property="article:tag" content="网络安全">
 <meta property="article:tag" content="渗透测试">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-27 09:44:26" itemprop="dateModified" datetime="2022-06-27T09:44:26+08:00">2022-06-27</time>
+                <time title="修改时间：2022-06-28 10:57:34" itemprop="dateModified" datetime="2022-06-28T10:57:34+08:00">2022-06-28</time>
               </span>
 
           
@@ -207,7 +207,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
+              <span>5.2k</span>
             </span>
 
         </div>
@@ -265,12 +265,23 @@
 </ol>
 <p><img src="https://s2.loli.net/2022/06/24/sVlgtCBLRnwGE85.png" alt="CSRF攻击流程"></p>
 <h3 id="传送json数据类型的"><a href="#传送json数据类型的" class="headerlink" title="传送json数据类型的"></a>传送json数据类型的</h3><p>最近测试的时候发现一个网站，没有token，referer没用，就想一想CSRF，但是遇见了一点问题，解决一下。</p>
-<p>一开始用burp生成一个CSRF POC，但是对方响应415（刚才看报405了），想了很多办法，最后确认是因为请求头中的Content-Type值是application&#x2F;json，而我生成的POC并不是这个类型，所以提交不上去。</p>
-<p>后来我使用了burp生成poc的一个选项：Cross-domain XHR，结果开始报401身份验证问题了。看了一下，因为（找到两种说法，我也不知道具体是为什么）：</p>
-<p>(1)XHR通过application &#x2F; json将其发布到目标网站，由于application &#x2F; json不是一个“simple request”，因此将发送一个OPTIONS，并且CORS将阻止该请求(假设配置正确)；</p>
-<p>(2)当跨域影响用户数据HTTP请求(如用XMLHttpRequest发送get&#x2F;post)时，浏览器会发送预检请求(OPTIONS请求)给服务端征求支持的请求方法，然后根据服务端响应允许才发送真正的请求。</p>
-<p>正是这个OPTIONS，触发了身份验证，导致401卡死。但我对OPTIONS接触比较少，不知道平常其他的项目里请求一个OPTIONS是否也需要对身份验证。试了两个，提示的是405，测试目标带cookie发OPTIONS的话是正常响应。</p>
-<p>总而言之，现在要考虑别的办法。目前考虑flash脚本加php307跳转的办法，因为307重定向可以确保请求方法和消息主体不会发生变化，这样的话content type就依然是json。</p>
+<p>一开始用burp生成一个CSRF POC，但是对方响应415，中间费了很多劲（奇怪了，415不是明晃晃写着content-type不对应吗，当时为什么费这么大劲的），最后确认是因为请求头中的Content-Type值是application&#x2F;json，而我生成的POC并不是这个类型(text&#x2F;plain)，所以提交不上去。</p>
+<p>后来我使用了burp生成poc的一个选项：Cross-domain XHR，结果开始报401身份验证问题了。看了一下，因为在跨域的情况下，浏览器发起“复杂请求”时会主动发起这种请求。跨域共享标准规范要求，对那些可能对服务器数据产生副作用的 HTTP 请求方法（特别是 GET 以外的 HTTP 请求，或者搭配某些 MIME 类型的 POST 请求），浏览器必须首先使用 OPTIONS 方法发起一个预检请求（preflight request），从而获知服务端是否允许该跨域请求。服务器确认允许之后，才发起实际的 HTTP 请求。关于简单请求和复杂请求的界定如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">简单请求需满足以下条件：</span><br><span class="line">	1.请求方法是以下三种方法之一：head、get、post</span><br><span class="line">	2.HTTP的头信息不超出以下几种字段：Accept 、Accept-Language、Content-Language、Width、Viewport-Width；Content-Type的值只有以下三种：text/plain、multipart/form-data、application</span><br><span class="line">此外都是复杂请求。</span><br></pre></td></tr></table></figure>
+
+<p>此处使用XHR发送的这个请求也属于复杂请求一类，因此一定要先发送一个预检请求，而这个预检请求不带cookie会被这个系统认定不能进行身份识别。后来我又手动添加了cookie，这次回显是403 Invalid CORS request，违法的跨域请求。这个预检请求是带了origin的，而且也没法作为攻击方改变origin。</p>
+<p>然后又考虑网上比较盛传的关于解决content-type问题的方法——flash脚本加307重定向解决问题，但是因为女朋友说我再晚下班今天就没有饭吃哈哈哈哈，就没有实际操作了。回家路上重新思考了一下相关的问题理了一下思路，这次的攻击重点有二：content-type不变，仍为json、最好别发预检请求，发了还得带cookie，还得不带origin。如果flash不能满足这两点，那也没有必要再做尝试了。</p>
+<p>实际上flash请求外部资源时，会先访问外域是否存在crossdomain.xml，判断Flash当前域是否在allow-access-from标签配置的domain内。当domain的值为通配符*时，表明该站资源对所有外域开放，等同于舍弃了Flash层面的同源策略的限制。实际上本系统并没有这个文件，断绝了flash跨域的可能。但我估计，即使可以进行flash跨域操作，flash作为跨域请求，而且发送的也不是简单请求，还是会预检的，也难以带上cookie，还是有很大概率仍然没法攻击成功。</p>
+<h4 id="不验证content-type"><a href="#不验证content-type" class="headerlink" title="不验证content-type"></a>不验证content-type</h4><p>如果服务端没有校验Content-Type，或者没有严格校验Content-Type是否为application&#x2F;json，我们可以使用XHR来实现csrf。burp就有这个功能，生成csrf的poc右上角option就能改，改完了重新生成一下poc就哦了。虽然但是，其实我没试过不验证的那一类用burp poc怎么样，啊嘿嘿嘿。</p>
+<h4 id="验证content-type"><a href="#验证content-type" class="headerlink" title="验证content-type"></a>验证content-type</h4><p>Flash加307重定向，感觉写的比较好的是知道创宇的公众号文章<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMDc5NzYwNQ==&mid=2652408623&idx=1&sn=aca55fc32ab4c69a8f64e2597bfa1b77">【创宇小课堂】一次XSS和CSRF的组合拳进攻 (CSRF+JSON)</a>和<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ">【创宇小课堂】渗透测试-CSRF漏洞详解</a>。</p>
+<h4 id="此处json部分参考文档"><a href="#此处json部分参考文档" class="headerlink" title="此处json部分参考文档"></a>此处json部分参考文档</h4><p>1、<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57567655/article/details/124542182">https://blog.csdn.net/weixin_57567655/article/details/124542182</a></p>
+<p>2、<a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000021545199/a-1020000021545569">https://segmentfault.com/q/1010000021545199/a-1020000021545569</a></p>
+<p>3、<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012206617/article/details/123477638">https://blog.csdn.net/u012206617/article/details/123477638</a></p>
+<p>4、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/af83190326d7">https://www.jianshu.com/p/af83190326d7</a></p>
+<p>5、<a target="_blank" rel="noopener" href="https://www.mi1k7ea.com/2019/07/28/Flash%E5%9E%8BCSRF%E6%80%BB%E7%BB%93/">https://www.mi1k7ea.com/2019/07/28/Flash%E5%9E%8BCSRF%E6%80%BB%E7%BB%93/</a></p>
+<p>6、<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37974755/article/details/124898085">https://blog.csdn.net/qq_37974755/article/details/124898085</a></p>
+<p>7、<a target="_blank" rel="noopener" href="https://blog.csdn.net/qqyang_/article/details/120548784">https://blog.csdn.net/qqyang_/article/details/120548784</a></p>
+<p>8、<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45943355/article/details/125223919">https://blog.csdn.net/weixin_45943355/article/details/125223919</a></p>
 <h2 id="防护"><a href="#防护" class="headerlink" title="防护"></a>防护</h2><h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>这是技术层面的。具体机制尚不明确，但可以理解的是，它是一个令牌，包含着用户的和一些其他的信息，用户与服务端交互时，要带上token以作验证。而csrf攻击是无法窃取和使用token的，所以token是一种防护的手段。<strong>虽然我也不知道为啥这样发起的请求没法调用token，再研究，现在没空。</strong></p>
 <p>token的构造方式可以被人知道，但是一定要有不能轻易获得的东西，比如私钥或者（要用来加密生成token的）cookie之类，要不然token随意伪造，还有什么用。</p>
 <p><strong>(⊙o⊙)…有一个小问题，假如token可以被伪造，csrf就能成功吗？这种情况下如果cookie和token相互联系，攻击者没有cookie，就只能靠用户的cookie了吧？（也许，<code>xxx/resetname.php?token=qgas </code>？这样就能把token带进参数里了）假如token被伪造了，攻击者可以把token预先放到请求里嘛？</strong>csrf的poc里，发起请求的意思应该就是访问一个链接这样吧？这样应该带不了token吧？</p>
@@ -285,12 +296,12 @@
 <p>出处同上，太长不看，累了，有空再说。</p>
 <h2 id="攻击与检测"><a href="#攻击与检测" class="headerlink" title="攻击与检测"></a>攻击与检测</h2><p>攻击好像没啥好说的了，也没有太多什么能绕过的地方吧。</p>
 <p>主要就是一个会话管理或者说，身份认证的问题，主要看一下有没有token，token怎么生成的，如果能伪造的话是否能利用的上。如果cookie都能获得的话，那就不要扯啥csrf了，直接照着数据包往上呼不就完事了，费这个鸟劲。</p>
-<p>参考：</p>
-<p>1、<a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000040501451/a-1020000040502212">https://segmentfault.com/q/1010000040501451/a-1020000040502212</a></p>
-<p>2、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/rinack/p/11295508.html">https://www.cnblogs.com/rinack/p/11295508.html</a></p>
-<p>3、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/188a3d13d80d">https://www.jianshu.com/p/188a3d13d80d</a></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p>1、<a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000040501451">Csrf Token防止csrf攻击的原理？</a></p>
+<p>2、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/rinack/p/11295508.html">TOKEN验证防止CSRF攻击的原理</a></p>
+<p>3、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/188a3d13d80d">CSRF原理随笔</a></p>
 <p>4、<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ">https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ</a></p>
 <p>5、<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMDc5NzYwNQ==&amp;mid=2652408623&amp;idx=1&amp;sn=aca55fc32ab4c69a8f64e2597bfa1b77">https://mp.weixin.qq.com/s?__biz=MzAxMDc5NzYwNQ==&amp;mid=2652408623&amp;idx=1&amp;sn=aca55fc32ab4c69a8f64e2597bfa1b77</a></p>
+<p>6、<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ">https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ</a></p>
 
     </div>
 
@@ -387,7 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%EF%BC%88CSRF%EF%BC%89%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">五、跨站点请求伪造（CSRF）测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF%E7%9A%84%E6%88%90%E5%9B%A0"><span class="nav-number">1.1.</span> <span class="nav-text">CSRF的成因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%8C%96%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">简单化攻击流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">具体的攻击流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%81json%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84"><span class="nav-number">1.3.1.</span> <span class="nav-text">传送json数据类型的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E6%8A%A4"><span class="nav-number">1.4.</span> <span class="nav-text">防护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#token"><span class="nav-number">1.4.1.</span> <span class="nav-text">token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E9%AA%8C%E8%AF%81"><span class="nav-number">1.4.2.</span> <span class="nav-text">二次验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ereferer"><span class="nav-number">1.4.3.</span> <span class="nav-text">关于referer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="nav-number">1.4.4.</span> <span class="nav-text">自定义属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">1.4.5.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E4%B8%8E%E6%A3%80%E6%B5%8B"><span class="nav-number">1.5.</span> <span class="nav-text">攻击与检测</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%EF%BC%88CSRF%EF%BC%89%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">五、跨站点请求伪造（CSRF）测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF%E7%9A%84%E6%88%90%E5%9B%A0"><span class="nav-number">1.1.</span> <span class="nav-text">CSRF的成因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%8C%96%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">简单化攻击流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">具体的攻击流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%81json%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84"><span class="nav-number">1.3.1.</span> <span class="nav-text">传送json数据类型的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E9%AA%8C%E8%AF%81content-type"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">不验证content-type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81content-type"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">验证content-type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A4%E5%A4%84json%E9%83%A8%E5%88%86%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">此处json部分参考文档</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E6%8A%A4"><span class="nav-number">1.4.</span> <span class="nav-text">防护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#token"><span class="nav-number">1.4.1.</span> <span class="nav-text">token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E9%AA%8C%E8%AF%81"><span class="nav-number">1.4.2.</span> <span class="nav-text">二次验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ereferer"><span class="nav-number">1.4.3.</span> <span class="nav-text">关于referer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="nav-number">1.4.4.</span> <span class="nav-text">自定义属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">1.4.5.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E4%B8%8E%E6%A3%80%E6%B5%8B"><span class="nav-number">1.5.</span> <span class="nav-text">攻击与检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">1.6.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -447,7 +458,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">21k</span>
+    <span title="站点总字数">22k</span>
 </div>
 
 
