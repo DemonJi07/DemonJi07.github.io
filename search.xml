@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Checklist</title>
+    <url>/2022/01/09/Checklist/</url>
+    <content><![CDATA[<p>测试小清单，因为上家公司是做数字货币交易所渗透测试的，所以测试项里可能还包含一些交易所相关的的专项测试项目~</p>
+<span id="more"></span>
+
+<h1 id="一、开源情报采集"><a href="#一、开源情报采集" class="headerlink" title="一、开源情报采集"></a>一、开源情报采集</h1><ul>
+<li>域名 Whois及备案信息采集</li>
+<li>服务器真实 IP 发现</li>
+<li>服务器指纹识别</li>
+<li>子域探测</li>
+<li>邮件服务探测</li>
+<li>证书信息采集</li>
+<li>Web 服务组件指纹采集</li>
+<li>Web前端敏感信息泄露</li>
+<li>Web网站目录探测</li>
+<li>API接口信息泄露</li>
+<li>端口服务组件指纹采集</li>
+<li>旁服信息采集</li>
+<li>C 段服务采集</li>
+<li>人员组织结构采集</li>
+<li>GitHub 源码泄露发现</li>
+<li>漏洞平台相关漏洞信息</li>
+<li>Google Hack 探测</li>
+<li>人员隐私泄露发现</li>
+</ul>
+<h1 id="二、输入安全审计"><a href="#二、输入安全审计" class="headerlink" title="二、输入安全审计"></a>二、输入安全审计</h1><ul>
+<li>跨站脚本（XSS）测试</li>
+<li>模板注入测试</li>
+<li>第三方组件漏洞测试</li>
+<li>HTTP头注入测试</li>
+<li>HTTP参数污染测试</li>
+<li>不安全的HTTP方法测试</li>
+<li>服务端请求伪造（SSRF）测试</li>
+<li>任意文件上传</li>
+<li>SQL 注入测试</li>
+<li>XXE 实体注入测试</li>
+<li>反序列化漏洞测试</li>
+<li>HTTP请求夹带(smuggling)攻击测试</li>
+<li>代码注入测试</li>
+<li>本地文件包含测试</li>
+<li>远程文件包含测试</li>
+<li>命令执行注入测试</li>
+<li>缓冲区溢出测试</li>
+<li>格式化字符串测试</li>
+</ul>
+<h1 id="三、业务逻辑审计"><a href="#三、业务逻辑审计" class="headerlink" title="三、业务逻辑审计"></a>三、业务逻辑审计</h1><ul>
+<li>接口安全测试</li>
+<li>请求伪造测试</li>
+<li>越权操作测试</li>
+<li>数值精度测试</li>
+<li>接口频率限制测试</li>
+<li>工作流程绕过测试</li>
+<li>KYC认证缺陷测试</li>
+<li>OTC逻辑缺陷测试</li>
+<li>盘口价格设置缺陷测试</li>
+<li>敏感信息泄露</li>
+<li>短地址攻击测试</li>
+<li>假充值测试</li>
+<li>非预期文件类型上传测试</li>
+<li>批量刷单测试</li>
+<li>非预期参数设置测试</li>
+</ul>
+<h1 id="四、服务端安全配置审计"><a href="#四、服务端安全配置审计" class="headerlink" title="四、服务端安全配置审计"></a>四、服务端安全配置审计</h1><ul>
+<li>CDN 服务探测</li>
+<li>后端服务组件配置测试</li>
+<li>服务器登录安全测试</li>
+<li>文件扩展名解析测试</li>
+<li>备份文件测试</li>
+<li>测试文件测试</li>
+<li>测试接口暴露</li>
+<li>HTTP 方法测试</li>
+<li>Web 前端跨域策略测试</li>
+<li>Web 安全响应头部测试</li>
+<li>弱 SSL&#x2F;TLS 加密，不安全数据传输测试</li>
+<li>非加密信道传输敏感数据测试</li>
+<li>弱口令及默认口令探测</li>
+<li>管理后台发现</li>
+<li>DOS压力测试</li>
+</ul>
+<h1 id="五、用户认证安全审计"><a href="#五、用户认证安全审计" class="headerlink" title="五、用户认证安全审计"></a>五、用户认证安全审计</h1><ul>
+<li>用户注册过程测试</li>
+<li>撞库攻击测试</li>
+<li>用户登录过程测试</li>
+<li>找回密码过程测试</li>
+<li>帐户权限变化测试</li>
+<li>帐户枚举测试</li>
+<li>弱密码策略测试</li>
+<li>弱用户名策略测试</li>
+<li>口令信息加密传输测试</li>
+<li>默认口令测试</li>
+<li>帐户锁定机制测试</li>
+<li>认证绕过测试</li>
+<li>浏览器缓存测试</li>
+<li>密码策略测试</li>
+<li>安全问答测试</li>
+<li>OAuth 等认证模型测试</li>
+<li>权限提升测试</li>
+<li>授权绕过测试</li>
+<li>双因素认证绕过测试</li>
+<li>Hash 健壮性测试</li>
+</ul>
+<h1 id="六、App-安全审计"><a href="#六、App-安全审计" class="headerlink" title="六、App 安全审计"></a>六、App 安全审计</h1><ul>
+<li>App 运行时虚拟机监测</li>
+<li>App 运行时root监测</li>
+<li>App数据备份检测</li>
+<li>代码反编译检测</li>
+<li>敏感信息泄露</li>
+<li>文件存储安全检测</li>
+<li>数据传输安全检测</li>
+<li>App组件导出检测</li>
+<li>App组件权限检测</li>
+<li>接口安全测试</li>
+<li>弱加密安全测试</li>
+<li>webview 多项漏洞安全测试</li>
+<li>拒绝服务测试</li>
+<li>目录穿越安全测试</li>
+<li>App 缓存安全检测</li>
+<li>App Webview DOM 安全测试</li>
+<li>本地SQL注入安全测试</li>
+<li>SQLite 存储安全审计</li>
+</ul>
+<h1 id="七、会话管理审计"><a href="#七、会话管理审计" class="headerlink" title="七、会话管理审计"></a>七、会话管理审计</h1><ul>
+<li>会话验证绕过测试</li>
+<li>Cookies 安全属性测试</li>
+<li>会话固定测试</li>
+<li>会话令牌泄露测试</li>
+<li>跨站点请求伪造（CSRF）测试</li>
+<li>登出功能测试</li>
+<li>会话超时测试</li>
+</ul>
+<p>文章博客难免有纰漏之处，欢迎沟通交流！（放三个二维码是因为图床生成了三个链接，这仨我都挺喜欢的就都放上了，实际上是一个东西）</p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+<p><img src="https://s2.loli.net/2022/06/27/tAaSLxomc7jCVki.jpg" alt="微信图片_20220624142820.jpg"></p>
+<p><img src="https://s2.loli.net/2022/06/27/h3FkA45uJgIKBOc.jpg" alt="微信图片_20220624142825.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sqlmap使用</title>
+    <url>/2022/06/13/sqlmap%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>sqlmap小教程</p>
+<span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">一、注入access数据库常用的参数</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span>  //判断参数是否存在注入</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> --tables //猜解表名</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> --columns -T <span class="string">&quot;要猜解的表名&quot;</span>  //猜解列名</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> --dump -C <span class="string">&quot;列名&quot;</span> -T “表名”  //爆出字段数据</span><br><span class="line"></span><br><span class="line">二、注入MySQL数据库常用参数</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span>  //判断参数是否存在注入</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> --current-db  //查看网站当前数据库</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> --is-dba  //查看当前用户权限</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> --tables //猜解表名</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> --columns -T <span class="string">&quot;要猜解的表名&quot;</span>  //猜解列名</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> --dump -C <span class="string">&quot;列名&quot;</span> -T <span class="string">&quot;表名&quot;</span>  //爆出字段数据</span><br><span class="line">sqlmap.py -u <span class="string">&quot;url&quot;</span> -v 3 --dbs  --batch --tamper //绕过waf防火墙</span><br><span class="line"></span><br><span class="line">三、一些常用参数集合</span><br><span class="line"></span><br><span class="line">-h //查看帮助选项</span><br><span class="line">--dbs //查看网站所有数据库</span><br><span class="line">--<span class="built_in">users</span> //查看所有数据库的用户</span><br><span class="line">--count  //统计条数 （该条命令可用在爆表名的时候，便于查看哪个是管理员的表）</span><br><span class="line">--level //测试等级（1-5）默认是1，cookie注入是2，http头注入是3</span><br><span class="line">--dbms=mysql/oracle/mssql 指定数据库（这样既可以节省时间，在某些时候也可以绕过waf）</span><br><span class="line">sqlmap -u “url”--batch --exclude-sysdbs //batch是使用sqlmap默认选项，不用按回车；exclude-sysdbs是排除系统自带的数据库</span><br><span class="line"></span><br><span class="line">显示调式信息</span><br><span class="line">-v 显示调用信息有7个级别</span><br><span class="line">0， 只显示python错误以及严重的信息</span><br><span class="line">1，同时显示基本信息和警告信息。</span><br><span class="line">2，同时显示debug信息</span><br><span class="line">3，同时显示注入的payload</span><br><span class="line">4，同时显示http请求</span><br><span class="line">5，同时显示http响应头</span><br><span class="line">6，同时显示http响应页面</span><br><span class="line">--risk    //风险等级，共有四个等级，1会测试大部分的测试语句，2会增加基于事件的测试语句，3会增加OR语句的sql注入测试</span><br><span class="line">-m       //从文本中获取多个目标，文件中保存url格式，sqlmap会一个一个测试  sqlmap.py -m 1.txt</span><br><span class="line">-r        //获取http请求注入,sqlmap可以从一个文本文件中获取http请求，这样就可以跳过设置一些其他参数,在存在注入的http请求头加*。</span><br><span class="line">利用的场景：post，搜索注入，http头注入，登陆后的注入（在登录后存在注入点，因为只有在登录后才有cookie)</span><br><span class="line">-g       //处理google搜索结果, sqlmap可以测试注入google的搜索结果中的get参数(前100个请求)       sqlmap.py -g <span class="string">&quot;inurl:php?id=&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参考：</p>
+<p>1、<a href="https://blog.csdn.net/weixin_51339377/article/details/124005718">https://blog.csdn.net/weixin_51339377/article/details/124005718</a></p>
+<p>2、<a href="https://blog.csdn.net/qq_45533800/article/details/108261537">https://blog.csdn.net/qq_45533800/article/details/108261537</a></p>
+<p>3、<a href="https://www.freebuf.com/sectool/164608.html%EF%BC%88%E5%A4%AA%E5%85%A8%E4%BA%86%EF%BC%8C%E8%BF%98%E6%B2%A1%E6%9D%A5%E5%BE%97%E5%8F%8A%E5%8F%82%E8%80%83%EF%BC%8C%E5%85%88%E6%94%BE%E5%9C%A8%E8%BF%99%E9%87%8C%EF%BC%89">https://www.freebuf.com/sectool/164608.html（太全了，还没来得及参考，先放在这里）</a></p>
+<p>4、<a href="https://www.oschina.net/search?scope=all&amp;q=sqlmap%E6%A3%80%E6%B5%8B%E6%B3%A8%E5%85%A5%E7%82%B9">https://www.oschina.net/search?scope=all&amp;q=sqlmap%E6%A3%80%E6%B5%8B%E6%B3%A8%E5%85%A5%E7%82%B9</a></p>
+<p>5、<a href="https://www.cnhackhy.com/104552.htm">https://www.cnhackhy.com/104552.htm</a></p>
+<p>6、<a href="https://blog.csdn.net/freeking101/article/details/72472141">https://blog.csdn.net/freeking101/article/details/72472141</a></p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工作知识补足杂项</title>
+    <url>/2022/06/09/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AF%86%E8%A1%A5%E8%B6%B3%E6%9D%82%E9%A1%B9/</url>
+    <content><![CDATA[<p>关于工作中需要的一些知识，随手记录，以后要用的时候也好找。</p>
+<span id="more"></span>
+
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>交换网络：一般使用路由器、交换机，转发分组（数据包）。</p>
+<p>路由器的核心功能就是路由和转发。路由确定分组从源到目的传输路径，转发把分组从路由器的输入端口交换到正确的输出端口。</p>
+<h1 id="linux使用"><a href="#linux使用" class="headerlink" title="linux使用"></a>linux使用</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find [目录] -<span class="built_in">type</span> [指定类型] -name [要找的]</span><br><span class="line">目录：比如要全目录下找，就用<span class="string">&quot;/&quot;</span>，其他的就用路径就可以了</span><br><span class="line">指定类型：d dictionary代表文件夹；f file代表要找文件</span><br><span class="line">模糊查询：要模啥用*代替就行</span><br><span class="line">举例：find / -<span class="built_in">type</span> d -name etc</span><br></pre></td></tr></table></figure>
+
+<h1 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h1><h2 id="AES加密算法"><a href="#AES加密算法" class="headerlink" title="AES加密算法"></a>AES加密算法</h2><p>对称加密，分组加密，</p>
+<h2 id="DES加密算法"><a href="#DES加密算法" class="headerlink" title="DES加密算法"></a>DES加密算法</h2><p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>linux系统</tag>
+        <tag>系统安全</tag>
+        <tag>密码学</tag>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>应急响应</title>
+    <url>/2022/06/30/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/</url>
+    <content><![CDATA[<p>撰写一篇关于应急响应的文档，是一次新的学习呢，记录一下。</p>
+<span id="more"></span>
+
+<h1 id="网络安全事件分类"><a href="#网络安全事件分类" class="headerlink" title="网络安全事件分类"></a>网络安全事件分类</h1><h2 id="有害程序事件"><a href="#有害程序事件" class="headerlink" title="有害程序事件"></a>有害程序事件</h2><p><strong>1、计算机病毒事件</strong></p>
+<p>蓄意制造、传播计算机病毒，或是因受到计算机病毒影响而导致的信息安全事件。计算机病毒是指编制或者在计算机程序中插入的一组计算机指令或者程序代码，它可以破坏计算机功能或者毁坏数据，影响计算机使用，并能自我复制；</p>
+<p><strong>2、蠕虫事件</strong></p>
+<p>蓄意制造、传播蠕虫，或是因受到蠕虫影响而导致的信息安全事件。蠕虫是指除计算机病毒以外，利用信息系统缺陷，通过网络自动复制并传播的有害程序；</p>
+<p><strong>3、特洛伊木马事件</strong></p>
+<p>蓄意制造、传播特洛伊木马程序，或是因受到特洛伊木马程序影响而导致的信息安全事件。特洛伊木马程序是指伪装在信息系统中的一种有害程序，具有控制该信息系统或进行信息窃取等对该信息系统有害的功能；</p>
+<p><strong>4、僵尸网络事件</strong></p>
+<p>利用僵尸工具软件，形成僵尸网络而导致的信息安全事件。僵尸网络是指网络上受到黑客集中控制的一群计算机，它可以被用于伺机发起网络攻击，进行信息窃取或传播木马、蠕虫等其他有害程序；</p>
+<p><strong>5、混合攻击程序事件</strong></p>
+<p>蓄意制造、传播混合攻击程序，或是因受到混合攻击程序影响而导致的信息安全事件。混合攻击程序是指利用多种方法传播和感染其它系统的有害程序，可能兼有计算机病毒、蠕虫、木马或僵尸网络等多种特征。混合攻击程序事件也可以是一系列有害程序综合作用的结果，例如一个计算机病毒或蠕虫在侵入系统后安装木马程序等；</p>
+<p><strong>6、网页内嵌恶意代码事件</strong></p>
+<p>蓄意制造、传播网页内嵌恶意代码，或是因受到网页内嵌恶意代码影响而导致的信息安全事件。网页内嵌恶意代码是指内嵌在网页中，未经允许由浏览器执行，影响信息系统正常运行的有害程序；</p>
+<p><strong>7、其它有害程序事件</strong></p>
+<p>不能包含在以上 6 个子类之中的有害程序事件。</p>
+<h2 id="网络攻击事件"><a href="#网络攻击事件" class="headerlink" title="网络攻击事件"></a>网络攻击事件</h2><p><strong>1、后门攻击事件</strong></p>
+<p>利用软件系统、硬件系统设计过程中留下的后门或有害程序所设置的后门而对信息系统实施的攻击的信息安全事件；</p>
+<p><strong>2、漏洞攻击事件</strong></p>
+<p>除拒绝服务攻击事件和后门攻击事件之外，利用信息系统配置缺陷、协议缺陷、程序缺陷等漏洞，对信息系统实施攻击的信息安全事件；</p>
+<p><strong>3、网络扫描窃听事件</strong></p>
+<p>利用网络扫描或窃听软件，获取信息系统网络配置、端口、服务、存在的脆弱性等特征而导致的信息安全事件；</p>
+<p><strong>4、网络钓鱼事件</strong></p>
+<p>利用欺骗性的计算机网络技术，使用户泄漏重要信息而导致的信息安全事件。例如，利用欺骗性电子邮件获取用户银行帐号密码等；</p>
+<p><strong>5、干扰事件</strong></p>
+<p>通过技术手段对网络进行干扰，或对广播电视有线或无线传输网络进行插播，对卫星广播电视信号非法攻击等导致的信息安全事件；</p>
+<p><strong>6、拒绝服务攻击事件</strong></p>
+<p>利用信息系统缺陷、或通过暴力攻击的手段，以大量消耗信息系统的 CPU、内存、磁盘空间或网络带宽等资源，从而影响信息系统正常运行为目的的信息安全事件；</p>
+<p><strong>7、其他网络攻击事件</strong></p>
+<p>不能被包含在以上 6 个子类之中的网络攻击事件</p>
+<h2 id="信息破坏事件"><a href="#信息破坏事件" class="headerlink" title="信息破坏事件"></a>信息破坏事件</h2><p><strong>1、信息篡改事件</strong></p>
+<p>未经授权将信息系统中的信息更换为攻击者所提供的信息而导致的信息安全事件，例如网页篡改等导致的信息安全事件；</p>
+<p><strong>2、信息假冒事件</strong></p>
+<p>通过假冒他人信息系统收发信息而导致的信息安全事件，例如网页假冒等导致的信息安全事件；</p>
+<p><strong>3、信息泄漏事件</strong></p>
+<p>因误操作、软硬件缺陷或电磁泄漏等因素导致信息系统中的保密、敏感、个人隐私等信息暴露于未经授权者而导致的信息安全事件；</p>
+<p><strong>4、信息窃取事件</strong></p>
+<p>未经授权用户利用可能的技术手段恶意主动获取信息系统中信息而导致的信息安全事件；</p>
+<p><strong>5、信息丢失事件</strong></p>
+<p>因误操作、人为蓄意或软硬件缺陷等因素导致信息系统中的信息丢失而导致的信息安全事件；</p>
+<p><strong>6、其它信息破坏事件</strong></p>
+<p>不能被包含在以上 5 个子类之中的信息破坏事件。</p>
+<h2 id="信息内容安全事件"><a href="#信息内容安全事件" class="headerlink" title="信息内容安全事件"></a>信息内容安全事件</h2><p>1、违反宪法和法律、行政法规的信息安全事件；<br>2、针对社会事项进行讨论、评论形成网上敏感的舆论热点，出现一定规模炒作的信息安全事件；<br>3、组织串连、煽动集会游行的信息安全事件；<br>4、其他信息内容安全事件等 4 个子类。</p>
+<h2 id="设备设施故障"><a href="#设备设施故障" class="headerlink" title="设备设施故障"></a>设备设施故障</h2><p><strong>1、软硬件自身故障</strong></p>
+<p>因信息系统中硬件设备的自然故障、软硬件设计缺陷或者软硬件运行环境发生变化等而导致的信息安全事件；</p>
+<p><strong>2、外围保障设施故障</strong></p>
+<p>由于保障信息系统正常运行所必须的外部设施出现故障而导致的信息安全事件，例如电力故障、外围网络故障等导致的信息安全事件；</p>
+<p><strong>3、人为破坏事故</strong></p>
+<p>人为蓄意的对保障信息系统正常运行的硬件、软件等实施窃取、破坏造成的信息安全事件；或由于人为的遗失、误操作以及其他无意行为造成信息系统硬件、软件等遭到破坏，影响信息系统正常运行的信息安全事件；</p>
+<p><strong>4、其它设备设施故障</strong></p>
+<p>不能被包含在以上 3 个子类之中的设备设施故障而导致的信息安全事件。</p>
+<h2 id="灾害性事件"><a href="#灾害性事件" class="headerlink" title="灾害性事件"></a>灾害性事件</h2><p>灾害性事件是指由于不可抗力对信息系统造成物理破坏而导致的信息安全事件。<br>灾害性事件包括水灾、台风、地震、雷击、坍塌、火灾、恐怖袭击、战争等导致的信息安全事件。</p>
+<h2 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h2><p>其他事件类别是指不能归为以上 6 个基本分类的信息安全事件。</p>
+<h1 id="日常预防，检测与应急处理"><a href="#日常预防，检测与应急处理" class="headerlink" title="日常预防，检测与应急处理"></a>日常预防，检测与应急处理</h1><h2 id="日常预防与检测"><a href="#日常预防与检测" class="headerlink" title="日常预防与检测"></a>日常预防与检测</h2><ul>
+<li>及时更新安全软件版本及病毒库，日常要有固定频率的对主机病毒扫描，发现异常情况及时向相关人员报告解决。</li>
+<li>关注主机内存占用情况，如果有不正常的高内存占用及时报告相关人员解决。</li>
+<li>网络管理员定时监控网络流量情况，关注是否有异常流量，包括内网和向外网的流量，发现异常情况及时向相关人员报告解决。</li>
+<li>相关使用部门的具体负责人员日常关注公司官网等相关页面，注意监控是否有异常数据和其他危险内容，发现异常情况及时向相关人员报告解决。</li>
+<li>网络安全部门应定期向其他员工普及安全知识，有重大安全漏洞涉及到公司产品、服务等相关方面时，应及时与相关人员沟通确认，提示告警，其他员工在预计有网络安全事件发生的可能时，也应与相关安全人员沟通咨询。</li>
+<li>运维或其他的系统相关人员应使用自动化或人工的方式，对日志进行定期的审计排查，检测是否存在异常情况，发现异常情况及时向相关人员报告解决。</li>
+<li>各个数据库系统应当有至少两份的备份，一份放在本地，一份放在云上。及时更新维护，确保任一时间都至少有一份备份是可用的。</li>
+<li>每次事件之后记录留证保存。重要的软件系统都应存有备份并定时更新维护，并且保存尽可能长时间的日志记录。</li>
+</ul>
+<h2 id="应急处理"><a href="#应急处理" class="headerlink" title="应急处理"></a>应急处理</h2><h3 id="启动条件"><a href="#启动条件" class="headerlink" title="启动条件"></a>启动条件</h3><ul>
+<li><p>网站网页出现异常数据或非法言论；</p>
+</li>
+<li><p>网络遭受黑客攻击；</p>
+</li>
+<li><p>计算机网络被病毒等有害程序感染，传播；</p>
+</li>
+<li><p>软件系统遭受破坏性攻击；</p>
+</li>
+<li><p>数据库系统出现故障；</p>
+</li>
+<li><p>用户报告相关网页和系统的异常情况；</p>
+</li>
+<li><p>服务器等关键网络设备故障。</p>
+</li>
+</ul>
+<h3 id="主要处理思路"><a href="#主要处理思路" class="headerlink" title="主要处理思路"></a>主要处理思路</h3><p>1、准备阶段：以预防为主，例如扫描、风险分析、打补丁等。意在能够建立起健康的应急体系，也减少潜在危险发生的可能性。</p>
+<p>2、检测阶段：检测事件是已经发生的还是正在进行中的，以及事件产生的原因。通报相关人员，由安全人员确定事件性质和影响的严重程度，以及预计处理过程中需要什么样的资源。</p>
+<p>3、抑制阶段：限制危险情况影响的范围，降低潜在损失。实施例如隔离系统、断开连接、配置新的防火墙过滤规则、关闭受攻击的系统等应急抑制策略。</p>
+<p>4、根除阶段：分析事件找到起因源头并彻底根除，加强安全防护措施，确保不会再有攻击者通过同样或类似的手段攻击系统。</p>
+<p>5、恢复阶段：确保安全后将受影响的设备、系统等及时重新上线，恢复服务；受影响的数据等恢复到受攻击以前的状态。</p>
+<p>6、总结阶段：记录本次响应整体过程，进行事后的分析总结，按需制定安全计划，应对策略。有需要的情况下做更多必要后续处理，如遭受攻击后报与公安机关等。</p>
+<h3 id="有害程序事件-1"><a href="#有害程序事件-1" class="headerlink" title="有害程序事件"></a>有害程序事件</h3><p>1、当发现网络或主机上出现：感染或传播病毒或蠕虫、感染木马、网络堵塞、异常流量情况，导致影响网络正常运行，影响主机正常工作，危害网络安全时，应当第一时间找到出现问题的主机或程序，随后通报网络安全相关人员。</p>
+<p>2、安全人员应按需隔离问题主机，断绝包括但不限于有线网络、无线网卡、外接存储介质的连接。</p>
+<p>3、追溯起因，收集证据， 确定影响范围，做好过程留证。在清除病毒或异常程序，并确定无问题之后允许主机再次接入网络。</p>
+<p>4、安全部门后续应对此次事件作以总结留档，对问题根源的有害程序进行研究，记录相关特征及其他重要信息，准备好应对方案。</p>
+<h3 id="网络攻击事件-1"><a href="#网络攻击事件-1" class="headerlink" title="网络攻击事件"></a>网络攻击事件</h3><p>1、当有关负责人员发现网页内容被篡改或出现异常数据、系统日志或防火墙之类的安全系统显露正在遭受黑客攻击时，应及时向通报安全人员帮助处理。</p>
+<p>2、安全人员应及时隔离被攻击的主机或其他网络设备，保护现场。</p>
+<p>3、安全人员负责被破坏的系统、主机或其他网络设备的破坏后修复工作。首先确定问题所在，修补漏洞，做好强化安全措施，确定没有问题之后再允许被攻击的设备重新接入网络。</p>
+<p>4、安全部门追踪恶意攻击来源。</p>
+<p>5、做好记录归档工作，包括但不限于后门程序、攻击利用漏洞等。做好后续的应对措施，确保能够抵挡同样的或类似的网络攻击。</p>
+<p>6、由公司相关领导商议后，如果认为情况严重，应立即与公安部门汇报。</p>
+<h3 id="信息破坏事件-1"><a href="#信息破坏事件-1" class="headerlink" title="信息破坏事件"></a>信息破坏事件</h3><p>1、当有关负责人员发现出现信息泄露、数据损坏、信息被非法篡改或假冒的情况时，应及时通报网络安全相关人员协助处理。</p>
+<p>2、确认问题的影响范围，如泄露、损坏、被篡改了多少信息等。确认后采取应急措施，如及时修改关键信息（密码，口令等）、封闭部分网络连接、及时通知被影响的客户等。</p>
+<p>3、及时依照数据备份恢复数据，确认损失，在解决问题来源及做好安全强化措施的前提下尽快恢复服务。</p>
+<p>4、对此次事件记录，总结，归档，制定后续的防护措施。经商议，如果认为有必要的话立即与公安部门汇报。</p>
+<h3 id="信息内容安全事件-1"><a href="#信息内容安全事件-1" class="headerlink" title="信息内容安全事件"></a>信息内容安全事件</h3><p>1、当相关负责人员发现不合法或其他危险言论或内容时，应及时向安全相关人员通报情况。如果情节严重，应及时对内容进行删除或暂停服务等必要处理手段，与此同时尽量做好留证记录。</p>
+<p>2、安全人员对内容进行处理，做好留证记录和安全强化措施，确保安全之后重新启用服务。</p>
+<p>3、对信息来源进行追溯追责。如果来源于内部，应由相关人员及时处理，通报相关负责人，报告公安部门备案；如果消息来源于外部，应及时上报公安部门备案，并对来源的IP、账户信息、发布内容等作以记录。</p>
+<p>4、做好后续的强化或其他工作，制定相关情况的紧急预案。</p>
+<h3 id="设备设施故障-1"><a href="#设备设施故障-1" class="headerlink" title="设备设施故障"></a>设备设施故障</h3><p>1、当相关人员发现有关键设备设施出现问题时，运维人员应立即查明起因。</p>
+<p>2、如果能自行修复，则应立即做好修复工作，保证设备及时恢复服务，有必要的情况下做好记录。</p>
+<p>3、如果不能自行修复，应及时通知相关人员请求帮助解决问题。</p>
+<p>4、如影响时间较长，应向安全部门和其他相关人员通知汇报。</p>
+<p>5、最后做好记录工作，追溯起因，对设备进行维修、维护、更换或对蓄意造成破坏的人员追责或教育，制定应对方案。</p>
+<h3 id="灾害性事件-1"><a href="#灾害性事件-1" class="headerlink" title="灾害性事件"></a>灾害性事件</h3><p>1、对重要的系统和数据保留多个备份分别保存。</p>
+<p>2、发生灾害性事件时，在可能的情况下尽量保证能持续提供服务，安全和运维人员联合负责后续的灾后重建，恢复工作。</p>
+<h3 id="其他事件-1"><a href="#其他事件-1" class="headerlink" title="其他事件"></a>其他事件</h3><p>这咋写，就按上面几种处理呗</p>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p>1、<a href="https://zhidao.baidu.com/question/1691059197706908188.html">https://zhidao.baidu.com/question/1691059197706908188.html</a></p>
+<p>2、<a href="https://blog.csdn.net/qq_45697116/article/details/125194266">https://blog.csdn.net/qq_45697116/article/details/125194266</a></p>
+<p>3、<a href="https://zhuanlan.zhihu.com/p/392088325">https://zhuanlan.zhihu.com/p/392088325</a></p>
+<p>4、<a href="http://www.sx.gov.cn/art/2021/11/24/art_1229328000_3893952.html">http://www.sx.gov.cn/art/2021/11/24/art_1229328000_3893952.html</a></p>
+<p>5、<a href="https://wenku.baidu.com/view/71bb6c6a814d2b160b4e767f5acfa1c7aa008298?aggId=088f2ab0bad528ea81c758f5f61fb7360b4c2ba8">https://wenku.baidu.com/view/71bb6c6a814d2b160b4e767f5acfa1c7aa008298?aggId=088f2ab0bad528ea81c758f5f61fb7360b4c2ba8</a></p>
+<p>6、<a href="https://wenku.baidu.com/view/ab7aaf2d7fd184254b35eefdc8d376eeaeaa17c0.html">https://wenku.baidu.com/view/ab7aaf2d7fd184254b35eefdc8d376eeaeaa17c0.html</a></p>
+<h2 id="PDCERF-6阶段"><a href="#PDCERF-6阶段" class="headerlink" title="PDCERF 6阶段"></a>PDCERF 6阶段</h2><p><strong>1、准备阶段：</strong>预防为主，例如扫描、风险分析、打补丁等。简历监控措施、简历数据汇总分析体系、制定能够实现应急响应目标的策略和规程，建立信息沟通渠道，建立能够集合起来处理突发事件的体系。<br><strong>2、检测阶段：</strong>检测事件是已经发生的还是正在进行中的，以及事件产生的原因。确定事件性质和影响的严重程度，以及预计采用什么样的专用资源来修复。<br><strong>3、抑制阶段：</strong>限制攻击&#x2F;破坏波及的范围，同时也是降低潜在的损失。抑制策略：完全关闭所有系统；从网络上断开主机或断开网络部分；修改所有防火墙和路由器过滤规则；封锁或删除被攻击的登录账号；加强对系统和网络行为的监控；设置诱饵服务器进一步获取事件信息；关闭受攻击的系统或其它相关系统的部分服务。<br>**4、根除阶段:**通过事件分析找出根源并彻底根除，以避免攻击者再次使用相同的手段攻击系统。<br><strong>5、恢复阶段：</strong>把被破坏的信息彻底换原到正常运作状态。<br><strong>6、总结阶段：</strong>回顾并整合应急响应过程的相关信息，进行事后分析总结和修订安全计划、政策、程序，并进行训练，以防止入侵的再次发生。</p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>应急响应</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>渗透测试之一——开源情报采集</title>
+    <url>/2022/01/10/%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E9%87%87%E9%9B%86/</url>
+    <content><![CDATA[<p>渗透测试最初的阶段就是信息收集，信息收集做的好的话事半功倍是肯定的。</p>
+<span id="more"></span>
+
+<p>以本清单所列，信息收集可以注意以下几个方面：</p>
+<ul>
+<li>域名 Whois及备案信息采集</li>
+<li>服务器真实 IP 发现</li>
+<li>服务器指纹识别</li>
+<li>子域探测</li>
+<li>邮件服务探测</li>
+<li>证书信息采集</li>
+<li>Web 服务组件指纹采集</li>
+<li>Web前端敏感信息泄露</li>
+<li>Web网站目录探测</li>
+<li>API接口信息泄露</li>
+<li>端口服务组件指纹采集</li>
+<li>旁服信息采集</li>
+<li>C 段服务采集</li>
+<li>人员组织结构采集</li>
+<li>GitHub 源码泄露发现</li>
+<li>漏洞平台相关漏洞信息</li>
+<li>Google Hack 探测</li>
+<li>人员隐私泄露发现</li>
+</ul>
+<h1 id="一、域名-Whois及备案信息采集"><a href="#一、域名-Whois及备案信息采集" class="headerlink" title="一、域名 Whois及备案信息采集"></a>一、域名 Whois及备案信息采集</h1><p>whois信息可以用来查看网站的相关人员和信息，包括联系电话，姓名等。但目前多用注册商注册，这类信息可能难以挖掘。</p>
+<p>以下是github的whois信息以及各项信息的详细解释。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Domain Name: GITHUB.COM  //域名</span><br><span class="line">Registry Domain ID: 1264983250_DOMAIN_COM-VRSN  //注册域名的id</span><br><span class="line">Registrar WHOIS Server: whois.markmonitor.com  //注册商</span><br><span class="line">Registrar URL: http://www.markmonitor.com  //服务提供商（注册商）域名</span><br><span class="line">Updated Date: 2020-09-08T09:18:27Z</span><br><span class="line">Creation Date: 2007-10-09T18:20:50Z  //注册时间</span><br><span class="line">Registry Expiry Date: 2022-10-09T18:20:50Z  //注册有效期</span><br><span class="line">Registrar: MarkMonitor Inc.  //注册公司/注册人</span><br><span class="line">Registrar IANA ID: 292</span><br><span class="line">Registrar Abuse Contact Email: abusecomplaints@markmonitor.com  //注册商投诉邮箱</span><br><span class="line">Registrar Abuse Contact Phone:********95740  //注册商联系电话</span><br><span class="line">Domain Status: clientDeleteProhibited  https://icann.org/epp#clientDeleteProhibited</span><br><span class="line">Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited</span><br><span class="line">Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited</span><br><span class="line">Name Server: DNS1.P08.NSONE.NET</span><br><span class="line">Name Server: DNS2.P08.NSONE.NET</span><br><span class="line">Name Server: DNS3.P08.NSONE.NET</span><br><span class="line">Name Server: DNS4.P08.NSONE.NET</span><br><span class="line">Name Server: NS-1283.AWSDNS-32.ORG</span><br><span class="line">Name Server: NS-1707.AWSDNS-21.CO.UK</span><br><span class="line">Name Server: NS-421.AWSDNS-52.COM</span><br><span class="line">Name Server: NS-520.AWSDNS-01.NET  //域名解析服务器</span><br><span class="line">DNSSEC: unsigned</span><br><span class="line">URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/</span><br><span class="line">\&gt;&gt;&gt; Last update of whois database: 2021-12-29T08:32:35Z &lt;&lt;&lt;</span><br><span class="line"></span><br><span class="line">注1：像站长工具(http://whois.chinaz.com/)这样的中文网站，相对应的信息会有中文版本，看起来更好理解。</span><br><span class="line">注2：除了whois，针对企业公司，也可以观察一下天眼查企查查之类的搜索引擎，也许有意外收获（社工的时候兴许能用得上呢）。</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、服务器真实-IP-发现"><a href="#二、服务器真实-IP-发现" class="headerlink" title="二、服务器真实 IP 发现"></a>二、服务器真实 IP 发现</h1><p>比较”傻“的办法之一是直接在命令行ping，如果没有CDN，这个地址即是真实的IP地址。</p>
+<p><img src="https://s2.loli.net/2022/01/15/vntEms3JdcYCz5V.png" alt="ping"></p>
+<h2 id="可以使用两种方法确认是否使用了CDN："><a href="#可以使用两种方法确认是否使用了CDN：" class="headerlink" title="可以使用两种方法确认是否使用了CDN："></a>可以使用两种方法确认是否使用了CDN：</h2><p>第一种：多地ping，如果多地ping的地址不同，即是使用CDN。（一般用网页工具，如<a href="http://ping.chinaz.com/">http://ping.chinaz.com</a> ，<a href="https://ping.aizhan.com/">https://ping.aizhan.com</a> ，<a href="http://tool.chinaz.com/speedtest">http://tool.chinaz.com/speedtest</a> 等）</p>
+<p>第二种：使用nslookup指令，若返回多个IP，即大概率使用了CDN。</p>
+<p><img src="https://s2.loli.net/2022/01/16/rtvQ7qwkBglHKOu.png" alt="nslookup"></p>
+<p>很多网站都使用CDN服务，一方面加快访问速度；另一方面，不暴露真实IP有利于网站安全。这时候就需要找到服务器的真实IP，才能继续后面的操作了。</p>
+<h2 id="有4种方法可以确认真实ip"><a href="#有4种方法可以确认真实ip" class="headerlink" title="有4种方法可以确认真实ip"></a>有4种方法可以确认真实ip</h2><h3 id="1、子域名入手"><a href="#1、子域名入手" class="headerlink" title="1、子域名入手"></a>1、子域名入手</h3><p>有些企业业务众多，很有可能只有某些重要的页面或者官网主页使用了CDN，其他的子域名并不使用。这时候可以查询其子域名，来观察其IP。实际上子域名也不一定都挂在一个IP或者和官网主页挂在一个服务器上，但尽管如此，收集子域名仍然是非常重要的信息收集步骤之一。</p>
+<ul>
+<li><p>使用搜索引擎语法查询，比如：<strong>site:qq.com</strong></p>
+</li>
+<li><p>一些具有此种功能的网站：<a href="https://chaziyu.com/">https://chaziyu.com</a> ，<a href="https://www.webscan.cc/">https://www.webscan.cc</a></p>
+</li>
+<li><p>一些用来挖掘子域名的工具：<a href="https://github.com/lijiejie/subDomainsBrute">lijiejie</a>等（此类工具有可能造成网络拥堵，发送的请求太多了）</p>
+</li>
+</ul>
+<h3 id="2、DNS解析记录"><a href="#2、DNS解析记录" class="headerlink" title="2、DNS解析记录"></a>2、DNS解析记录</h3><p>查询IP与域名绑定的历史记录，有可能会发现其使用CDN之前的真实IP。</p>
+<ul>
+<li>有此类功能的网站：<a href="https://www.ip138.com/">https://www.ip138.com/</a> ，<a href="http://www.17ce.com/">http://www.17ce.com/</a> ，<a href="https://phpinfo.me/domain/">https://phpinfo.me/domain/</a></li>
+</ul>
+<h3 id="3、内部邮箱源"><a href="#3、内部邮箱源" class="headerlink" title="3、内部邮箱源"></a>3、内部邮箱源</h3><p>想办法让目标服务器向你发送一个邮件，因为一般邮件系统都在内部，没有经过CDN的解析，源码内可能会包含服务器的真实IP。</p>
+<p><em>注1：源自<a href="https://www.cnblogs.com/-qing-/p/10743874.html">链接一</a>和<a href="https://www.cnblogs.com/cwkiller/p/11900539.html">链接二</a>，尚未实操，实操后会摆出实际记录。</em></p>
+<p><em>注2：zoomeye、fofa、shodan、钟馗之眼是很有用的网络资产搜索引擎。</em></p>
+<h3 id="4、查询https证书"><a href="#4、查询https证书" class="headerlink" title="4、查询https证书"></a>4、查询https证书</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://censys.io/</span><br></pre></td></tr></table></figure>
+
+<p>这个网址会将互联网所有的ip进行扫面和连接，以及证书探测。若目标站点有https证书，并且默认虚拟主机配了https证书，我们就可以找所有目标站点是该https证书的站点。（来源于上链接一）</p>
+<h3 id="5、扫描探针文件"><a href="#5、扫描探针文件" class="headerlink" title="5、扫描探针文件"></a>5、扫描探针文件</h3><p>获取phpinfo探针文件，可在SERVER_NAME,SERVER_ADDR项中找到真实IP。</p>
+<p>参考：</p>
+<p>1、<a href="https://zhuanlan.zhihu.com/p/339516487">https://zhuanlan.zhihu.com/p/339516487</a></p>
+<p>2、<a href="https://www.cnblogs.com/-qing-/p/10743874.html">https://www.cnblogs.com/-qing-/p/10743874.html</a></p>
+<p>3、<a href="https://www.cnblogs.com/cwkiller/p/11900539.html">https://www.cnblogs.com/cwkiller/p/11900539.html</a></p>
+<p>4、<a href="https://blog.csdn.net/qq_38265674/article/details/111034838">https://blog.csdn.net/qq_38265674/article/details/111034838</a></p>
+<h1 id="三、服务器指纹识别"><a href="#三、服务器指纹识别" class="headerlink" title="三、服务器指纹识别"></a>三、服务器指纹识别</h1><p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+        <tag>信息收集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日记，或者说说心里话</title>
+    <url>/2022/02/24/%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<p>一个小日记，偶尔说说心里话。</p>
+<span id="more"></span>
+
+<h1 id="2022年"><a href="#2022年" class="headerlink" title="2022年"></a>2022年</h1><h2 id="6月"><a href="#6月" class="headerlink" title="6月"></a>6月</h2><h3 id="1日-周三"><a href="#1日-周三" class="headerlink" title="1日 周三"></a>1日 周三</h3><p>今天说己亥天克地冲，注意身体安全，早上上班特意算了一卦，也没发现有什么。</p>
+<p>火地晋，互水山蹇(jian 三声)，变卦山地剥。</p>
+<p>总的来说生我的火的力量很微弱，被消耗被克制，但我是没啥事。可能是我解卦能力不行，明明是看事（或者说损伤）的，不应该这么看？希望今日无事。</p>
+<h3 id="28日-周二"><a href="#28日-周二" class="headerlink" title="28日 周二"></a>28日 周二</h3><p>以工号起卦，上为离，下为巽，动四。</p>
+<p>火风鼎，互泽天夬，变山风蛊。下巽为体，上离艮是用。</p>
+<h3 id="30日-周四"><a href="#30日-周四" class="headerlink" title="30日 周四"></a>30日 周四</h3><p>今天的风很清凉，任务不那么繁重，恍惚之间回想起了我的大学，教室里学习时有风吹过的日子。</p>
+]]></content>
+      <tags>
+        <tag>Mind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>渗透测试之七——会话管理审计</title>
+    <url>/2022/06/01/%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%E5%AE%A1%E8%AE%A1/</url>
+    <content><![CDATA[<p>第七个部分，会话管理审计。</p>
+<p>注：暂时没空写博客，先以工作业务需要的部分为主，逐渐向尽量全面这个目标前进。</p>
+<span id="more"></span>
+
+<p>以本清单所列，会话管理审计可以注意以下几个方面：</p>
+<ul>
+<li>会话验证绕过测试</li>
+<li>Cookies 安全属性测试</li>
+<li>会话固定测试</li>
+<li>会话令牌泄露测试</li>
+<li>跨站点请求伪造（CSRF）测试</li>
+<li>登出功能测试</li>
+<li>会话超时测试</li>
+</ul>
+<h1 id="五、跨站点请求伪造（CSRF）测试"><a href="#五、跨站点请求伪造（CSRF）测试" class="headerlink" title="五、跨站点请求伪造（CSRF）测试"></a>五、跨站点请求伪造（CSRF）测试</h1><p>经典CSRF，上过OWASP top10的。</p>
+<p>我觉得，学习一个漏洞应该注意这么几点：</p>
+<ul>
+<li>首先是漏洞的成因，要知道为什么会这样</li>
+<li>其次是漏洞的防护，现在对这种漏洞有什么样的补救方法</li>
+<li>最后是漏洞的攻击，（其实漏洞的攻击是个病句，但是前面好整齐我不愿意破坏它）了解了现在怎么防护，才能找到针对性的破解方式。我以前是瞎试瞎猜，很不好。应该去了解猜测一下，作为一个开发人员，会怎么写代码来堵上这个漏洞，或者应该去猜解它的代码逻辑，再作出有针对性的活动。这也是一直说做安全之前应该先做开发的原因。</li>
+</ul>
+<p>那么首先，这玩意是怎么来的呢？</p>
+<h2 id="CSRF的成因"><a href="#CSRF的成因" class="headerlink" title="CSRF的成因"></a>CSRF的成因</h2><ul>
+<li>站点具有持久化不过期的cookie或者受害者当前正在使用cookie没掉线</li>
+<li>网站没有对敏感操作进行二次验证或授权（逻辑上的，不是重点，真要严格执行的话用户体验太差，也就改密码之类频率低且重要的操作会经常有这么个玩法。）。关于二次验证：<strong>简单的身份验证只能保证请求是发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的</strong>。</li>
+</ul>
+<h2 id="简单化攻击流程"><a href="#简单化攻击流程" class="headerlink" title="简单化攻击流程"></a>简单化攻击流程</h2><p>有一个有漏洞的网站<code>甲</code>，一个受害者用户<code>A</code>，一个恶意用户<code>B</code>和他自己搭的要用到的恶意网站<code>乙</code>。</p>
+<p>1、首先，用户<code>A</code>与网站<code>甲</code>交互，拥有了自己（对应这个域名）的cookie</p>
+<p>2、然后<code>B</code>诱导用户<code>A</code>去点击设定好的恶意的网站，当然这只是一种方式，只要能让用户<code>A</code>去发起一个定好的请求，无论是诱导他点击什么，还是说在什么地方设定一个可以自动执行的js什么的，都可以（比如下面那个例子里提到的前端代码里嵌入跨域资源请求）。</p>
+<p>3、此时受害人<code>A</code>已经在不知情的情况下，被攻击者<code>B</code>冒用了自己的身份，发起了一个不知道是啥的操作。而且因为是用的自己的浏览器，也就带上了自己的cookie，如果网站<code>甲</code>只验证cookie为身份认证的话，这个请求所带的操作大概率会成功的。要注意的是，攻击者<code>B</code>只是引诱<code>A</code>去发起一个请求，实际上他并不知道人家的cookie是什么。</p>
+<p>我又get一个例子：</p>
+<p>1、假如X银行用以执行转账操作的URL地址如下：<a href="https://bank.example.com/withdraw?amount=1000&amp;to=PayeeName">https://bank.example.com/withdraw?amount=1000&amp;to=PayeeName</a></p>
+<p>2、一个恶意攻击者在另一个网站<a href="https://evil.com/%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%E6%8F%92%E4%BA%86%E8%BF%99%E4%B9%88%E4%B8%80%E6%AE%B5%EF%BC%9A">https://evil.com/前端代码插了这么一段：</a></p>
+<p><code>&lt;img src=&quot;https://bank.example.com/withdraw?amount=1000&amp;to=Bob&quot; /&gt;</code></p>
+<p>3、如果有登陆了X银行的用户访问恶意站点<a href="https://evil.com/%EF%BC%8C%E9%82%A3%E4%B9%88%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%BA%E4%BA%86%E8%AF%B7%E6%B1%82%E8%BF%99%E4%B8%AA%E8%B5%84%E6%BA%90%EF%BC%8C%E5%B0%B1%E4%BC%9A%E6%90%BA%E5%B8%A6cookie%E5%8E%BB%E8%AF%B7%E6%B1%82%E5%AF%B9%E5%BA%94%E7%9A%84%E8%BD%AC%E8%B4%A6URL%EF%BC%8C%E5%90%91Bob%E8%BD%AC%E8%B4%A61000%E5%85%83">https://evil.com/，那么浏览器为了请求这个资源，就会携带cookie去请求对应的转账URL，向Bob转账1000元</a></p>
+<h2 id="具体的攻击流程"><a href="#具体的攻击流程" class="headerlink" title="具体的攻击流程"></a>具体的攻击流程</h2><ol>
+<li>用户正常登录web服务，并一直保持在线</li>
+<li>服务器返回用户凭证Session ，并将其保存在Cookie中</li>
+<li>攻击者生成payload，并放置在用户可访问的地方</li>
+<li>攻击者诱导用户点击在第3步放置的链接，此时用户一直在线，且是用同一浏览器打开（保证Cookie未失效）</li>
+<li>用户点击恶意链接</li>
+<li>恶意链接向服务器请求，由于用户Cookie未失效，就携带用户Cookie访问服务器</li>
+<li>服务器收到请求，此时用户Cookie 未失效，并判定为“<strong>用户</strong>”发起的正常请求，并做出响应</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/06/24/sVlgtCBLRnwGE85.png" alt="CSRF攻击流程"></p>
+<h3 id="传送json数据类型的"><a href="#传送json数据类型的" class="headerlink" title="传送json数据类型的"></a>传送json数据类型的</h3><p>最近测试的时候发现一个网站，没有token，referer没用，就想一想CSRF，但是遇见了一点问题，解决一下。</p>
+<p>一开始用burp生成一个CSRF POC，但是对方响应415，中间费了很多劲（奇怪了，415不是明晃晃写着content-type不对应吗，当时为什么费这么大劲的），最后确认是因为请求头中的Content-Type值是application&#x2F;json，而我生成的POC并不是这个类型(text&#x2F;plain)，所以提交不上去。</p>
+<p>后来我使用了burp生成poc的一个选项：Cross-domain XHR，结果开始报401身份验证问题了。看了一下，因为在跨域的情况下，浏览器发起“复杂请求”时会主动发起这种请求。跨域共享标准规范要求，对那些可能对服务器数据产生副作用的 HTTP 请求方法（特别是 GET 以外的 HTTP 请求，或者搭配某些 MIME 类型的 POST 请求），浏览器必须首先使用 OPTIONS 方法发起一个预检请求（preflight request），从而获知服务端是否允许该跨域请求。服务器确认允许之后，才发起实际的 HTTP 请求。关于简单请求和复杂请求的界定如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">简单请求需满足以下条件：</span><br><span class="line">	1.请求方法是以下三种方法之一：head、get、post</span><br><span class="line">	2.HTTP的头信息不超出以下几种字段：Accept 、Accept-Language、Content-Language、Width、Viewport-Width；Content-Type的值只有以下三种：text/plain、multipart/form-data、application</span><br><span class="line">此外都是复杂请求。</span><br></pre></td></tr></table></figure>
+
+<p>此处使用XHR发送的这个请求也属于复杂请求一类，因此一定要先发送一个预检请求，而这个预检请求不带cookie会被这个系统认定不能进行身份识别。后来我又手动添加了cookie，这次回显是403 Invalid CORS request，违法的跨域请求。这个预检请求是带了origin的，而且也没法作为攻击方改变origin。</p>
+<p>然后又考虑网上比较盛传的关于解决content-type问题的方法——flash脚本加307重定向解决问题，但是因为女朋友说我再晚下班今天就没有饭吃哈哈哈哈，就没有实际操作了。回家路上重新思考了一下相关的问题理了一下思路，这次的攻击重点有二：content-type不变，仍为json、最好别发预检请求，发了还得带cookie，还得不带origin。如果flash不能满足这两点，那也没有必要再做尝试了。</p>
+<p>实际上flash请求外部资源时，会先访问外域是否存在crossdomain.xml，判断Flash当前域是否在allow-access-from标签配置的domain内。当domain的值为通配符*时，表明该站资源对所有外域开放，等同于舍弃了Flash层面的同源策略的限制。实际上本系统并没有这个文件，断绝了flash跨域的可能。但我估计，即使可以进行flash跨域操作，flash作为跨域请求，而且发送的也不是简单请求，还是会预检的，也难以带上cookie，还是有很大概率仍然没法攻击成功。</p>
+<h4 id="不验证content-type"><a href="#不验证content-type" class="headerlink" title="不验证content-type"></a>不验证content-type</h4><p>如果服务端没有校验Content-Type，或者没有严格校验Content-Type是否为application&#x2F;json，我们可以使用XHR来实现csrf。burp就有这个功能，生成csrf的poc右上角option就能改，改完了重新生成一下poc就哦了。虽然但是，其实我没试过不验证的那一类用burp poc怎么样，啊嘿嘿嘿。</p>
+<h4 id="验证content-type"><a href="#验证content-type" class="headerlink" title="验证content-type"></a>验证content-type</h4><p>Flash加307重定向，感觉写的比较好的是知道创宇的公众号文章<a href="https://mp.weixin.qq.com/s?__biz=MzAxMDc5NzYwNQ==&mid=2652408623&idx=1&sn=aca55fc32ab4c69a8f64e2597bfa1b77">【创宇小课堂】一次XSS和CSRF的组合拳进攻 (CSRF+JSON)</a>和<a href="https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ">【创宇小课堂】渗透测试-CSRF漏洞详解</a>。</p>
+<h4 id="此处json部分参考文档"><a href="#此处json部分参考文档" class="headerlink" title="此处json部分参考文档"></a>此处json部分参考文档</h4><p>1、<a href="https://blog.csdn.net/weixin_57567655/article/details/124542182">https://blog.csdn.net/weixin_57567655/article/details/124542182</a></p>
+<p>2、<a href="https://segmentfault.com/q/1010000021545199/a-1020000021545569">https://segmentfault.com/q/1010000021545199/a-1020000021545569</a></p>
+<p>3、<a href="https://blog.csdn.net/u012206617/article/details/123477638">https://blog.csdn.net/u012206617/article/details/123477638</a></p>
+<p>4、<a href="https://www.jianshu.com/p/af83190326d7">https://www.jianshu.com/p/af83190326d7</a></p>
+<p>5、<a href="https://www.mi1k7ea.com/2019/07/28/Flash%E5%9E%8BCSRF%E6%80%BB%E7%BB%93/">https://www.mi1k7ea.com/2019/07/28/Flash%E5%9E%8BCSRF%E6%80%BB%E7%BB%93/</a></p>
+<p>6、<a href="https://blog.csdn.net/qq_37974755/article/details/124898085">https://blog.csdn.net/qq_37974755/article/details/124898085</a></p>
+<p>7、<a href="https://blog.csdn.net/qqyang_/article/details/120548784">https://blog.csdn.net/qqyang_/article/details/120548784</a></p>
+<p>8、<a href="https://blog.csdn.net/weixin_45943355/article/details/125223919">https://blog.csdn.net/weixin_45943355/article/details/125223919</a></p>
+<h2 id="防护"><a href="#防护" class="headerlink" title="防护"></a>防护</h2><h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>这是技术层面的。具体机制尚不明确，但可以理解的是，它是一个令牌，包含着用户的和一些其他的信息，用户与服务端交互时，要带上token以作验证。而csrf攻击是无法窃取和使用token的，所以token是一种防护的手段。<strong>虽然我也不知道为啥这样发起的请求没法调用token，再研究，现在没空。</strong></p>
+<p>token的构造方式可以被人知道，但是一定要有不能轻易获得的东西，比如私钥或者（要用来加密生成token的）cookie之类，要不然token随意伪造，还有什么用。</p>
+<p><strong>(⊙o⊙)…有一个小问题，假如token可以被伪造，csrf就能成功吗？这种情况下如果cookie和token相互联系，攻击者没有cookie，就只能靠用户的cookie了吧？（也许，<code>xxx/resetname.php?token=qgas </code>？这样就能把token带进参数里了）假如token被伪造了，攻击者可以把token预先放到请求里嘛？</strong>csrf的poc里，发起请求的意思应该就是访问一个链接这样吧？这样应该带不了token吧？</p>
+<h3 id="二次验证"><a href="#二次验证" class="headerlink" title="二次验证"></a>二次验证</h3><p>逻辑上的防护手段，比如加个验证码之类，不要那种无需用户操作就能搞定的验证。</p>
+<p>逻辑上的手段应该还是很多的，只不过我这会懒得想嘛，相信聪明的你一定可以设计出来的，<strong>逻辑漏洞大有可为啊！</strong></p>
+<h3 id="关于referer"><a href="#关于referer" class="headerlink" title="关于referer"></a>关于referer</h3><p>有一种说法是如果这个字段能随便改，就有可能有这个漏洞。一开始不理解，今天有点明白了，csrf中，发起请求这个操作是很无力的，很多东西都没法控制，就好像referer，自己本地抓包当然能改，发起请求这个操作应该是不能改动数据包的，所以referer可以作为一个自然生成的参数，是可以起到一定的作用的。</p>
+<p>那如果这个网站还存在XSS呢？本站跳转是不是referer就没用了？</p>
+<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><p>自定义属性的方法也是使用token并进行验证，和前一种方法不同的是，这里并不是把token以参数的形式置于HTTP请求之中，而是把它放到HTTP头中自定义的属性里。通过XMLHttpRequest这个类，可以一次性给所有该类请求加上csrftoken这个HTTP头属性，并把token值放入其中。这样解决了前一种方法在请求中加入token的不便，同时，通过这个类请求的地址不会被记录到浏览器的地址栏，也不用担心token会通过Referer泄露到其他网站。</p>
+<p>参考于此：<a href="https://www.jianshu.com/p/188a3d13d80d%EF%BC%8C%E6%88%91%E7%8E%B0%E5%9C%A8%E6%B2%A1%E5%B7%A5%E5%A4%AB%E7%BB%86%E7%90%A2%E7%A3%A8%EF%BC%8C%E5%BF%AB%E4%B8%8B%E7%8F%AD%E4%BA%86%EF%BC%8C%E7%B4%AF%E4%BA%86%E3%80%82">https://www.jianshu.com/p/188a3d13d80d，我现在没工夫细琢磨，快下班了，累了。</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>1、CSRF攻击是有条件的，当用户访问恶意链接时，认证的cookie仍然有效，所以当用户关闭页面时要及时清除认证cookie，对支持TAB模式（新标签打开网页）的浏览器尤为重要。</p>
+<p>2、尽量少用或不要用request()类变量，获取参数指定request.form()还是request. querystring ()，这样有利于阻止CSRF漏洞攻击，此方法只不能完全防御CSRF攻击，只是一定程度上增加了攻击的难度。</p>
+<p>出处同上，太长不看，累了，有空再说。</p>
+<h2 id="攻击与检测"><a href="#攻击与检测" class="headerlink" title="攻击与检测"></a>攻击与检测</h2><p>攻击好像没啥好说的了，也没有太多什么能绕过的地方吧。</p>
+<p>主要就是一个会话管理或者说，身份认证的问题，主要看一下有没有token，token怎么生成的，如果能伪造的话是否能利用的上。如果cookie都能获得的话，那就不要扯啥csrf了，直接照着数据包往上呼不就完事了，费这个鸟劲。</p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p>1、<a href="https://segmentfault.com/q/1010000040501451">Csrf Token防止csrf攻击的原理？</a></p>
+<p>2、<a href="https://www.cnblogs.com/rinack/p/11295508.html">TOKEN验证防止CSRF攻击的原理</a></p>
+<p>3、<a href="https://www.jianshu.com/p/188a3d13d80d">CSRF原理随笔</a></p>
+<p>4、<a href="https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ">https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ</a></p>
+<p>5、<a href="https://mp.weixin.qq.com/s?__biz=MzAxMDc5NzYwNQ==&amp;mid=2652408623&amp;idx=1&amp;sn=aca55fc32ab4c69a8f64e2597bfa1b77">https://mp.weixin.qq.com/s?__biz=MzAxMDc5NzYwNQ==&amp;mid=2652408623&amp;idx=1&amp;sn=aca55fc32ab4c69a8f64e2597bfa1b77</a></p>
+<p>6、<a href="https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ">https://mp.weixin.qq.com/s/85GTBKmHJU5SwtlBJTuObQ</a></p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+        <tag>会话管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>渗透测试之四——服务端安全配置审计</title>
+    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E5%AE%A1%E8%AE%A1/</url>
+    <content><![CDATA[<p>第四个部分，关于安全配置的部分。</p>
+<span id="more"></span>
+
+<p>以本清单所列，服务端安全配置审计可以注意以下几个方面：</p>
+<ul>
+<li>CDN 服务探测</li>
+<li>后端服务组件配置测试</li>
+<li>服务器登录安全测试</li>
+<li>文件扩展名解析测试</li>
+<li>备份文件测试</li>
+<li>测试文件测试</li>
+<li>测试接口暴露</li>
+<li>HTTP 方法测试</li>
+<li>Web 前端跨域策略测试</li>
+<li>Web 安全响应头部测试</li>
+<li>弱 SSL&#x2F;TLS 加密，不安全数据传输测试</li>
+<li>非加密信道传输敏感数据测试</li>
+<li>弱口令及默认口令探测</li>
+<li>管理后台发现</li>
+<li>DOS压力测试</li>
+</ul>
+<h1 id="十五、DOS压力测试"><a href="#十五、DOS压力测试" class="headerlink" title="十五、DOS压力测试"></a>十五、DOS压力测试</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>HTTP慢速攻击是利用HTTP合法机制，以极低的速度往服务器发送HTTP请求，尽量长时间保持连接，不释放，若是达到了Web Server对于<a href="https://so.csdn.net/so/search?q=%E5%B9%B6%E5%8F%91&spm=1001.2101.3001.7020">并发</a>连接数的上限，同时恶意占用的连接没有被释放，那么服务器端将无法接受新的请求，导致拒绝服务。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>比较常用的工具之一是slowhttp，kali上<code>apt-get install slowhttptest</code>就可以安装使用了。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测试模式：</span><br><span class="line">-H slow headers 攻击，缓慢发送\r\n，让服务器一直等待</span><br><span class="line">-B slow Body 攻击</span><br><span class="line">-R 范围攻击Apache killer</span><br><span class="line">-X slow read 攻击，读的慢，让服务器发送缓存堵塞</span><br><span class="line"></span><br><span class="line">报告生成选项：</span><br><span class="line">-g 生成socket状态变化统计</span><br><span class="line">-o file_prefix将输出保存到file.html和file.csv中</span><br><span class="line">-v level日志等级，0-4：Fatal，Info，Error，Warning，Debug</span><br><span class="line"></span><br><span class="line">普通选项：</span><br><span class="line">-c connections目标连接数（50）</span><br><span class="line">-i seconds数据发送间隔（10）</span><br><span class="line">-l seconds测试一个目标的时间长度（240）</span><br><span class="line">-r rate每秒多少个连接（50）</span><br><span class="line">-s bytesContent-Length的值（4096）</span><br><span class="line">-t verb请求中使用的动词，如果是slow header攻击，默认是GET；如果是slow body攻击，默认是POST</span><br><span class="line">-u URL目标URL（http://localhost/）</span><br><span class="line">-x bytes每一个tick随机生成的键值对最大长度，例如，-x 2 生成x-xx：xx是头字段，或是类似&amp;xx=xx的消息体，x是随机字符（32）</span><br><span class="line"></span><br><span class="line">探针/代理选项：</span><br><span class="line">-d host:port所有数据走指定代理host:port</span><br><span class="line">-e host:port 探针流量走指定代理host:port</span><br><span class="line">-p seconds探针超时时长，服务器被认为是网络不可达（5）</span><br><span class="line"></span><br><span class="line">范围攻击具体选项：</span><br><span class="line">-a start左边界值（5）</span><br><span class="line">-b bytes右边界值（2000）</span><br><span class="line"></span><br><span class="line">slow read攻击具体选项：</span><br><span class="line">-k num同一请求重复次数，当服务器支持持久化连接时用于放大响应长度（1）</span><br><span class="line">-n seconds每次从接收缓冲区中读取消息的时间间隔（1）</span><br><span class="line">-w bytes从通知窗中获取数据的起始位置（1）</span><br><span class="line">-y bytes 从通知窗中获取数据的结束位置（512）</span><br><span class="line">-z bytes每次从接收缓冲区中读取的长度（5）</span><br></pre></td></tr></table></figure>
+<p>案例说明<br><code>slowhttptest -c 1000 -B -g -o my_body_stats -i 110 -r 200 -s 8192 -t FAKEVERB -u http://mysite -x 10 -p 3</code><br>测试结论：<br>1、如果在用该攻击攻击服务器，服务器正常使用并且cpu、内存、网络实用率正常，则无slowhttp漏洞<br>如：pgrep http | wc -l 进程数量<br>netstat -antp | grep 443 |wc -l 网络连接数量<br>2、若攻击的时间段，服务无法正常访问则存在次漏洞。</p>
+<h2 id="修复和防范"><a href="#修复和防范" class="headerlink" title="修复和防范"></a>修复和防范</h2><p>a.设定URL白名单和黑名单，识别坏的IP；<br>b.设置一个绝对连接超时，<br>c.定义最小的输入数据速率；对web服务器的http头部传输的最大许可时间进行限制，修改成最大许可时间为20秒。<br>统计每个TCP连接的时长并计算单位时间内通过的报文数量即可做精确识别。一个TCP连接中，HTTP报文太少和报文太多都是不正常的，过少可能是慢速连接攻击，过多可能是使用HTTP 1.1协议进行deHTTP Flood攻击，在一个TCP连接中发送多个HTTP请求。<br>限制HTTP头部传输的最大许可时间。超过指定时间HTTP Header还没有传输完成，直接判定源IP地址为慢速连接攻击，中断连接并加入黑名单。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/u013908944/article/details/76576089">https://blog.csdn.net/u013908944/article/details/76576089</a></li>
+<li><a href="https://blog.csdn.net/weixin_57567655/article/details/122847049">https://blog.csdn.net/weixin_57567655/article/details/122847049</a></li>
+<li><a href="https://www.pianshen.com/article/1267387706/">https://www.pianshen.com/article/1267387706/</a></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+        <tag>安全配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>认证协议之LDAP</title>
+    <url>/2022/06/27/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8BLDAP/</url>
+    <content><![CDATA[<p>LDAP，我理解的话感觉不像是一个认证协议（虽然boss让我研究的list里面有这么个东西），人家名字叫轻量目录访问协议，就是一个浏览用的一个东西吧。</p>
+<span id="more"></span>
+
+<h2 id="LDAP"><a href="#LDAP" class="headerlink" title="LDAP"></a>LDAP</h2><h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
+<li>WSS 3.0：WSS 2.0的升级版，WSS是一个用来创建能够实现信息共享和文档协作的Web站点的引擎。</li>
+</ul>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>LDAP认证是通过WSS 3.0加上轻量目录LDAP协议搭建的一种认证方式，使用https加密传输，主要用于做文档管理。LDAP认证把用户数据放在LDAP服务器上，通过LDAP服务器上的数据对用户进行认证处理。</p>
+<p>比如日常的多个办公系统，每一套系统都有独立的账号密码，维护和使用都比较麻烦的时候，就可以使用LDAP统一认证服务解决问题，一人一个账号，全系统通用。</p>
+<h3 id="LDAP协议与目录"><a href="#LDAP协议与目录" class="headerlink" title="LDAP协议与目录"></a>LDAP协议与目录</h3><p>LDAP，轻量目录访问协议，(Lightweight Directory Access Protocol)，它是用于访问目录服务的轻量级协议，特别是基于X.500协议的目录服务。LDAP运行于TCP&#x2F;IP连接上或其他面向传输服务的连接上。</p>
+<p>目录是一个为查询，搜索和浏览优化的数据库，成树状结构组织数据，类似文件目录。目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据，天生是用来查询的。</p>
+<p>LDAP目录服务是由目录数据库和一套访问协议组成的系统。</p>
+<p>统一身份认证主要是改变原有的认证策略，使需要认证的软件都通过LDAP进行认证，在统一身份认证之后，用户的所有信息都存储在AD Server中。终端用户在需要使用公司内部服务的时候，都需要通过AD服务器的认证。</p>
+<h4 id="AD"><a href="#AD" class="headerlink" title="AD"></a>AD</h4><p>AD 是 Windows 服务器上最强大的功能，AD 是基于 LDAP 协议的一套解决方案（LDAP 服务器 + 应用），解决了细粒度的权限控制。核心：<strong>「谁 以什么权限 访问什么」</strong>。</p>
+<h4 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h4><p>1、目录树：在一个目录服务系统中，整个目录信息集可以表示为一个目录信息树，树中的每个节点是一个条目。</p>
+<p>2、条目：每个条目就是一条记录，每个条目有自己的唯一可区别的名称（DN）。通过DN的层次型语法结构，可以方便地表示出条目在LDAP树中的位置，通常用于检索。</p>
+<p>3、对象类：属性的集合，与某个实体类型对应的一组属性，定义在架构里。对象类是可以继承的，这样父类的必须属性也会被继承下来。</p>
+<p>4、属性：描述条目的某个方面的信息，一个属性由一个属性类型和一个或多个属性值组成，属性有必须属性和非必须属性。</p>
+<p>5、架构：一个集合，所有属性和对象类都定义在架构里。必须能被LDAP服务器识别。定义在一个架构里的属性可以被另一个架构里的对象类使用。</p>
+<p>当创建一个条目，条目是属性的集合，会包含很多属性，其每一个属性都有一个类型和一个或多个值，就好像一个人可以有好几个邮箱。属性又构成了对象类，最后对象类组成了架构。</p>
+<h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><p>LDAP 注入是利用用户引入的参数生成恶意 LDAP 查询，通过构造 LDAP 过滤器来绕过访问控制、用户权限提升。在维持正常过滤器的情况下构造出 AND、OR 操作注入来获得敏感信息。</p>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p>1、<a href="https://zhuanlan.zhihu.com/p/74512921">https://zhuanlan.zhihu.com/p/74512921</a></p>
+<p>2、<a href="https://www.cnblogs.com/wilburxu/p/9174353.html">https://www.cnblogs.com/wilburxu/p/9174353.html</a></p>
+<p>3、<a href="https://blog.csdn.net/suo082407128/article/details/115294490">https://blog.csdn.net/suo082407128/article/details/115294490</a></p>
+<p>4、<a href="https://www.jianshu.com/p/3716b84c4c1d">https://www.jianshu.com/p/3716b84c4c1d</a></p>
+<p>5、<a href="https://zhuanlan.zhihu.com/p/74512921">https://zhuanlan.zhihu.com/p/74512921</a></p>
+<p>6、<a href="https://zhuanlan.zhihu.com/p/147768058">https://zhuanlan.zhihu.com/p/147768058</a></p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>认证协议</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>认证协议之Kerberos</title>
+    <url>/2022/06/23/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8Bkerberos/</url>
+    <content><![CDATA[<p>Kerberos，希腊神话中一只守卫冥界之门的狗，据说这只狗有着三个头颅，面目峥嵘，负责替冥王哈迪斯守卫地狱底下暗无天日的深渊，这就是<em><strong>地狱三头犬</strong></em>。</p>
+<span id="more"></span>
+
+<h2 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h2><p>基于密码学，使用对称加密。</p>
+<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><h4 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h4><ul>
+<li>TGS：票据授权服务器</li>
+<li>TGT：票据授权票据</li>
+<li>session_key_1：客户端与TGS通信使用的密钥</li>
+<li>session_key_2：客户端与将要访问的服务器通信的密钥</li>
+<li>keytab：相当于“密码本”，包含了多个 principal 与密码的文件，用户可以利用该文件进行身份认证。</li>
+<li>Ticket Cache：客户端与 KDC 交互完成后，包含身份认证信息的文件，短期有效，需要不断renew。</li>
+<li>Realm：Kerberos 中的一个 namespace，不同 Kerberos 环境，可以通过 realm 进行区分。</li>
+<li>Kerberos Database：包含了一个 Realm 中所有的 principal、密码与其他信息；默认是 Berkeley DB。</li>
+</ul>
+<h4 id="工作准备"><a href="#工作准备" class="headerlink" title="工作准备"></a>工作准备</h4><p>kerberos在工作之前先准备好一个数据库，由运维人员先行创建。数据库保存能够使用kerberos认证的用户和网络服务（通信时需要互相认证的每一个“双方”）的基本信息（比如用户名，IP，Server name等），还有其对应的密钥。密钥分发机构KDC要先保证认识所有用户和网络服务，才能为任意两者之间提供认证服务。</p>
+<h4 id="总览-x2F-过程简述"><a href="#总览-x2F-过程简述" class="headerlink" title="总览&#x2F;过程简述"></a>总览&#x2F;过程简述</h4><p>客户端A要访问服务器B，服务器B如果要接收请求，允许A访问，需要A提供一个凭证。</p>
+<ul>
+<li>第一部分：客户端A需要先向认证服务器AS请求验证，AS验证通过后返回两个内容：一个TGT，使用TGS密钥加密；一个用客户端密钥加密的内容，客户端解密后获取与TGS通信所需的Session_key_1。</li>
+<li>第二部分：客户端判断时间戳无误，发给TGS三个东西：Session_key_1加密的客户端信息；想访问的服务器信息，用明文方式；AS响应里用TGS密钥加密的TGT。TGS接收请求后判断服务器信息是否合理；然后用密钥解密TGT，判断通信是否可信；最后用TGT里解密出的Session_key_1 解密客户端发来的第一个东西，判断客户端信息合法。返回客户端一个用将访问服务器密钥加密的ticket；一段用Session_key_1加密而成的内容。</li>
+<li>第三部分：客户端收到TGS响应，用Session_key_1解密了TGS响应中的第二部分，确认无误后向服务器发起请求。请求包括用Session_key_2加密的客户端信息，和ticket。服务端用自己密钥解密ticket，取出客户端信息；又用刚获得的Session_key_2解密客户端请求中的第一部分，取得两个客户端信息后相互比对，确认客户端身份。最后使用数字证书，和用Session_key_1加密的表示接收请求的响应，向客户端证明自己的身份。</li>
+</ul>
+<h4 id="第一部分，客户端与AS之间"><a href="#第一部分，客户端与AS之间" class="headerlink" title="第一部分，客户端与AS之间"></a>第一部分，客户端与AS之间</h4><p>此时KDC需要验证客户端身份，确认客户端是一个可靠且拥有访问KDC权限的客户端：</p>
+<ul>
+<li>客户端A向认证服务器AS以明文形式发送请求验证，请求中携带自己用户名，主机IP和时间戳验证。</li>
+<li>AS服务器接收请求后使用用户名向数据库查询是否存在该用户。如果存在该用户名，AS认为用户存在，返回一个响应给客户端，其中包括两个内容：<ul>
+<li>第一部分是“票据授予票据”TGT。客户端要使用TGT去“票据授予中心”TGS获取访问服务器需要的“服务授予票据”Ticket。TGT包含有kerberos数据库中存在的该客户端的name、IP、时间戳、该客户端将要访问的TGS的name、TGT有效时间、一个用于客户端与TGS之间通信的Session_key_1。TGT使用TGS的密钥加密，客户端无法解密。</li>
+<li>第二部分是使用客户端密钥加密的内容，其中包括客户端和TGS间通信使用的Session_key_1，客户端即将访问的TGS的Name、TGT的有效时间、一个当前时间戳。该部分内容使用客户端密钥加密，客户端可以使用自己的密钥解密。如果是一个假的客户端，那么他是不会拥有真正客户端的密钥的，该密钥也从没在网络中进行传输过。这也同时认证了客户端的身份，如果是假客户端会由于解密失败从而终端认证流程。</li>
+</ul>
+</li>
+</ul>
+<h4 id="第二部分，客户端与TGS之间"><a href="#第二部分，客户端与TGS之间" class="headerlink" title="第二部分，客户端与TGS之间"></a>第二部分，客户端与TGS之间</h4><p>此时客户端收到AS响应，用自己的密钥解密第二部分内容，获取了时间戳、将访问的TGS信息和将用于与TGS通信的密钥。此次与TGS连接的目的是获得能够访问目标网络服务的Ticket：</p>
+<ul>
+<li><p>首先客户端根据时间戳判断，与自己发送请求时的时间差是否大于5分钟，如果是，则判断AS是伪造的；如果不是，客户端向TGS发送请求。</p>
+</li>
+<li><p>客户端的请求包括三个部分：</p>
+<ul>
+<li>使用与TGS通信使用的密钥Session_key_1，加密自己的客户端信息（客户端名，IP，时间戳）发给TGS</li>
+<li>客户端自己将要访问的网络服务，以明文方式发给TGS</li>
+<li>AS响应中的第一部分内容，使用TGS密钥加密的TGT发给TGS</li>
+</ul>
+</li>
+<li><p>TGS收到客户端请求后，先看明文传输来的，客户端想要访问的网络服务信息，判断kerberos系统中是否存在可以被用户访问的该服务，确定存在再继续往下进行。</p>
+</li>
+<li><p>TGS使用自己的密钥解密TGT，收到了经AS认证后并记录的用户信息、TGS与客户端通信要使用的密钥Session_key_1、时间戳，再以时间戳判断此次通信是否可靠可信。</p>
+</li>
+<li><p>TGS使用刚刚解密获得的Session_key_1，解密上述客户端请求中的第一部分，解密出客户端信息后与TGT中AS发来的客户端信息相比对，确认客户端身份。</p>
+</li>
+<li><p>如果上述过程顺利，此时TGS返回响应给客户端，其中包括：</p>
+<ul>
+<li>使用客户端将要访问的Server的密钥加密出来的Server Ticket。客户端有了ticket即可以和目标网络服务通信。Ticket包括客户端IP、name、要访问的网络服务的地址IP、ticket有效时间、时间戳、一个用于客户端与服务端通信使用的session_key_2。</li>
+<li>一段使用session_key_1加密而成的内容，其中包括session_key_2、时间戳、Ticket有效时间。在AS返回给客户端的响应中，第二部分已经被客户端自己的密钥解密，其中包含了Session_key_1，所以客户端接收到该部分内容后可以用Session_key_1解密。</li>
+</ul>
+</li>
+</ul>
+<h4 id="第三部分，客户端与服务端之间"><a href="#第三部分，客户端与服务端之间" class="headerlink" title="第三部分，客户端与服务端之间"></a>第三部分，客户端与服务端之间</h4><p>此时客户端已经收到了来自TGS的响应，也用Session_key_1解密了TGS响应中的第二部分内容。检查时间戳无误之后向服务端发送最后的请求，申请访问。</p>
+<ul>
+<li>客户端使用Session_key_2加密自己的主机信息和时间戳，作为提交给服务端的第一部分内容，然后将Ticket作为第二部分，一起发送给服务端。</li>
+<li>服务端收到客户端请求后使用自己的密钥解密Ticket，核对时间戳之后取出Session_key_2，再使用Session_key_1对客户端发来的第一部分解密，获取经过TGS认证后的客户端信息。将此信息与ticket解密出的信息比对，确定身份。</li>
+<li>服务端返回一段使用Session_key_1加密的，表示接受客户端请求的响应给客户端。客户端收到响应后，解密确认服务端身份。服务端在通信过程中也会使用数字证书证明自己身份。（最后服务器向客户端证明自己身份的部分暂不非常明晰）</li>
+</ul>
+<h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><p>中心化，KDC服务器需要持续响应，如果该服务器宕机，大部分验证过程就不能进行。而且因为kerberos服务器存储了所有用户与网络服务的密钥，如果该服务器失陷，所有它能提供服务的客户端与服务端都很危险。</p>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p>1、<a href="https://blog.csdn.net/zzg19950824/article/details/119337269?spm=1001.2014.3001.5502">https://blog.csdn.net/zzg19950824/article/details/119337269?spm=1001.2014.3001.5502</a></p>
+<p>2、<a href="https://blog.csdn.net/weixin_38233104/article/details/122963237">https://blog.csdn.net/weixin_38233104/article/details/122963237</a></p>
+<p>3、<a href="https://baike.baidu.com/item/Kerberos/5561682?fr=aladdin">https://baike.baidu.com/item/Kerberos/5561682?fr=aladdin</a></p>
+<p>4、<a href="https://www.zhihu.com/question/22177404">https://www.zhihu.com/question/22177404</a></p>
+<p>5、<a href="https://www.bilibili.com/read/cv15702405">https://www.bilibili.com/read/cv15702405</a></p>
+<p>6、<a href="https://www.cnblogs.com/wuyongyin/p/15624452.html">https://www.cnblogs.com/wuyongyin/p/15624452.html</a></p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>密码学</tag>
+        <tag>认证协议</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>渗透测试之二——输入安全审计</title>
+    <url>/2022/05/31/%E8%BE%93%E5%85%A5%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/</url>
+    <content><![CDATA[<p>第二个部分，输入安全审计。</p>
+<p>注：暂时没空写博客，先以工作业务需要的部分为主，逐渐向尽量全面这个目标前进。</p>
+<span id="more"></span>
+
+<p>以本清单所列，输入安全审计可以注意以下几个方面：</p>
+<ul>
+<li>跨站脚本（XSS）测试</li>
+<li>模板注入测试</li>
+<li>第三方组件漏洞测试</li>
+<li>HTTP头注入测试</li>
+<li>HTTP参数污染测试</li>
+<li>不安全的HTTP方法测试</li>
+<li>服务端请求伪造（SSRF）测试</li>
+<li>任意文件上传</li>
+<li>SQL 注入测试</li>
+<li>XXE 实体注入测试</li>
+<li>反序列化漏洞测试</li>
+<li>HTTP请求夹带(smuggling)攻击测试</li>
+<li>代码注入测试</li>
+<li>本地文件包含测试</li>
+<li>远程文件包含测试</li>
+<li>命令执行注入测试</li>
+<li>缓冲区溢出测试</li>
+<li>格式化字符串测试</li>
+</ul>
+<h1 id="一、跨站脚本（XSS）测试"><a href="#一、跨站脚本（XSS）测试" class="headerlink" title="一、跨站脚本（XSS）测试"></a>一、跨站脚本（XSS）测试</h1><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>今天遇见一个有点意思的XSS，可能是我见识浅，记录一下。</p>
+<p>是编辑器的XSS问题，当然直接在编辑器里输入恶意代码是不好使的。这时候使用了F12，在这个过程中对前端代码做了更改，也改动了编辑器的内容，插入了一段payload，然后保存为文章或草稿，这段代码就实际运行了。以F12状态编辑编辑器并保存还挺有意思的。</p>
+<p>今天又遇见一个奇葩的…<a href="https://zhidao.baidu.com/question/942624129166548892.html">大概了解了一下</a>，然后又<a href="https://developer.aliyun.com/ask/80334">大概了解了两下</a>，这种php后面还能跟斜杠的，是个什么情况。也没有太明白其实，顶多算见过了。但是实在是不知道这种东西是怎么发现的？靠在php后面加斜杠然后输入看回显？</p>
+<p><img src="https://s2.loli.net/2022/06/28/DSZR8qMXhoHpnNl.png" alt="image-20220628185051133.png"></p>
+<p>之前用扫描器扫一个网站，报告有XSS漏洞，最后使用的payload是<code>a.php?code=xxxxxx</code>我看了一下，其实在显示出来的页面上甚至没有回显，不知道扫描器是怎么扫出来的，也不知道怎么发现这么一个可输入的参数的。f12看了一下，发现这个地方页面有以下这么一段代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;code&quot;</span> <span class="attr">name</span>=<span class="string">&quot;code&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1111&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我想是因为扫描器通过页面上的input才确认了这么一个点的，可以记录一下。<strong>XSS的精要是控制回显，能够发生回显的不只有明面上的输入，也要在前端代码上多注意。就好比input，它也是输入的一种可能性。</strong></p>
+<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><p>总体思路：<strong>对用户的输入(和URL参数)进行过滤，对输出进行html编码</strong>。也就是对用户提交的所有内容进行过滤，对url中的参数进行过滤，过滤掉会导致脚本执行的相关内容；然后对动态输出到页面的内容进行html编码，使脚本无法在浏览器中执行。</p>
+<h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>过滤用户输入输出，过滤可能带来危险的敏感字符，但有可能会对业务产生影响，所以也不是非常常见的办法了。建议在一些特定的不影响业务的情况下使用，比如说此处只允许输入和输出数字或字母。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">常见的敏感字符们  <span class="tag">&lt;&gt;</span> &quot;&quot; &#x27;&#x27; % ; = () &amp; +</span><br></pre></td></tr></table></figure>
+
+<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>要转义的字符基本同上，测试的时候可以通过输入这些敏感字符来测试目标的防护手段。比如说看看回显，有没有字符被ban掉了，看看html源代码，看看有没有字符被实体化输出了之类的。</p>
+<p>编码应该也属于这一类、、、但我不是很明白</p>
+<h3 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a>白名单</h3><p>白名单就是只允许输入输出什么类型，因为黑名单毕竟是不可靠的。此方法按照对应的业务需求对类型做限制即可。</p>
+<h3 id="httponly"><a href="#httponly" class="headerlink" title="httponly"></a>httponly</h3><p>在服务端设置会话cookie的http only属性，客户端的js就无法获得cookie信息了，有一定防护效果。</p>
+<h3 id="实体化输出"><a href="#实体化输出" class="headerlink" title="实体化输出"></a>实体化输出</h3><p>比较终极的防护方式，很难正面突破这种防护，能绕过也是需要一些奇技淫巧。实际上是通过函数对用户输入的参数进行html编码，将其转换为html实体，就不会在前端被当做代码解析执行了。</p>
+<table>
+<thead>
+<tr>
+<th>显示</th>
+<th>描述</th>
+<th>实体编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>空格</td>
+<td><code>&amp;nbsp;</code></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>左尖括号</td>
+<td><code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>右尖括号</td>
+<td><code>&amp;gt</code></td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>和</td>
+<td><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td>“</td>
+<td>双引号</td>
+<td><code>&amp;quot;</code></td>
+</tr>
+</tbody></table>
+<h1 id="二、模板注入测试"><a href="#二、模板注入测试" class="headerlink" title="二、模板注入测试"></a>二、模板注入测试</h1><h1 id="三、第三方组件漏洞测试"><a href="#三、第三方组件漏洞测试" class="headerlink" title="三、第三方组件漏洞测试"></a>三、第三方组件漏洞测试</h1><h1 id="四、HTTP头注入测试"><a href="#四、HTTP头注入测试" class="headerlink" title="四、HTTP头注入测试"></a>四、HTTP头注入测试</h1><h1 id="五、HTTP参数污染测试"><a href="#五、HTTP参数污染测试" class="headerlink" title="五、HTTP参数污染测试"></a>五、HTTP参数污染测试</h1><h1 id="六、不安全的HTTP方法测试"><a href="#六、不安全的HTTP方法测试" class="headerlink" title="六、不安全的HTTP方法测试"></a>六、不安全的HTTP方法测试</h1><h1 id="七、服务端请求伪造（SSRF）测试"><a href="#七、服务端请求伪造（SSRF）测试" class="headerlink" title="七、服务端请求伪造（SSRF）测试"></a>七、服务端请求伪造（SSRF）测试</h1><h1 id="八、任意文件上传"><a href="#八、任意文件上传" class="headerlink" title="八、任意文件上传"></a>八、任意文件上传</h1><h1 id="九、SQL-注入测试"><a href="#九、SQL-注入测试" class="headerlink" title="九、SQL 注入测试"></a>九、SQL 注入测试</h1><p>SQLi的水太深了，自闭。</p>
+<p>一个在线的数据库测试网站，懒得装mysql的话可以用来练习一下语句：<a href="https://www.liaoxuefeng.com/wiki/1177760294764384/1179611432985088">https://www.liaoxuefeng.com/wiki/1177760294764384/1179611432985088</a></p>
+<h2 id="判断数据库信息"><a href="#判断数据库信息" class="headerlink" title="判断数据库信息"></a>判断数据库信息</h2><p>数据库的类型还是有一些的，像什么Oracle，MySQL，SQL Server，Access，Postgresql，MongoDB啥啥啥的，不能都不知道人家那是啥就瞎注入吧。</p>
+<h2 id="注入点的判断"><a href="#注入点的判断" class="headerlink" title="注入点的判断"></a>注入点的判断</h2><p>SQLi的检测主要还是测试是否能使自身输入被当做可执行的命令或字段执行，靠Web的一些反映来推断数据。</p>
+<p>首先要确定参数通过数据库对前端页面产生了影响。这个输入包括但不止于url中、数据包中、前端能够传入的数据等，数据包中还包括比如http头等可以注入的点。<strong>总结一下，注入可能存在于一切用户可控输入且数据会和后端产生交互的点，</strong>不要局限在SQL上，像http头注入什么的，不也是因为这个字段传入的数据有可能和后端产生了交互（比如被参数取参用什么的），才产生的嘛。</p>
+<p>最常见的检测方式：单双引号看是否出错，然后使用一些比如sleep函数，比如and 1&#x3D;1之类的命令看看SQL是否按预期执行了，执行则确实存在SQL注入。但要推断开发人员的代码是怎么写的，不同的语句设定会导致不同的测试方式。</p>
+<p>形如<code>SELECT * FROM news WHERE name=&#39;$name&#39;</code>，输入需要闭合引号；形如<code>SELECT * FROM news WHERE id=$id</code>就没有必要闭合引号了，当然这么简单的规律通过现场测试就可以发现。</p>
+<p>不常见的检测方式：</p>
+<ul>
+<li>sleep(5)看回显呗，不回显内容的时候不就是这种盲注的验证方法。内部测试的时候发现测试目标其实不回显，但sqlmap跑完之后仍然判断出是有漏洞的，虽然我目前还没有找到sqlmap是怎么把信息拖出来的，但是想起来一个判断注入的方法，应该这就叫时间盲注吧我记得。</li>
+</ul>
+<p><em>实际上注入分这么些个方式的，咋就记得个报错注入呢，要好好复习</em></p>
+<ul>
+<li>基于布尔的盲注，即可以根据返回页面判断条件真假的注入；</li>
+<li>基于时间的盲注，即不能根据页面返回内容判断任何信息，用条件语句查看时间延迟语句是否执行（即页面返回时间是否增加）来判断；</li>
+<li>基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中；</li>
+<li>联合查询注入，可以使用union的情况下的注入；、</li>
+<li>堆查询注入，可以同时执行多条语句的执行时的注入。</li>
+</ul>
+<h2 id="关于MongoDB"><a href="#关于MongoDB" class="headerlink" title="关于MongoDB"></a>关于MongoDB</h2><p>php下操作MongoDB大致有以下两种方式：</p>
+<h3 id="用mongo类中相应的方法执行增删改查"><a href="#用mongo类中相应的方法执行增删改查" class="headerlink" title="用mongo类中相应的方法执行增删改查"></a>用mongo类中相应的方法执行增删改查</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    </span><br><span class="line"><span class="variable">$mongo</span> = <span class="keyword">new</span> <span class="title function_ invoke__">mongoclient</span>();</span><br><span class="line"> </span><br><span class="line"><span class="variable">$db</span> = <span class="variable">$mongo</span>-&gt;myinfo; <span class="comment">//选择数据库</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$coll</span> = <span class="variable">$db</span>-&gt;test; <span class="comment">//选择集合</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$coll</span>-&gt;<span class="title function_ invoke__">save</span>();    <span class="comment">//增</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$coll</span>-&gt;<span class="title function_ invoke__">find</span>();    <span class="comment">//查</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$coll</span>-&gt;<span class="title function_ invoke__">remove</span>();    <span class="comment">//删</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$coll</span>-&gt;<span class="title function_ invoke__">update</span>();    <span class="comment">//改</span></span><br></pre></td></tr></table></figure>
+
+<p>此时，传递进的是一个数组。</p>
+<h3 id="用execute方法执行字符串"><a href="#用execute方法执行字符串" class="headerlink" title="用execute方法执行字符串"></a>用execute方法执行字符串</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$mongo</span> = <span class="keyword">new</span> <span class="title function_ invoke__">mongoclient</span>();</span><br><span class="line"> </span><br><span class="line"><span class="variable">$db</span> = <span class="variable">$mongo</span>-&gt;myinfo; <span class="comment">//选择数据库</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$query</span> = <span class="string">&quot;db.table.save(&#123;&#x27;newsid&#x27;:1&#125;)&quot;</span>;    <span class="comment">//增</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$query</span> = <span class="string">&quot;db.table.find(&#123;&#x27;newsid&#x27;:1&#125;)&quot;</span>;    <span class="comment">//查</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$query</span> = <span class="string">&quot;db.table.remove(&#123;&#x27;newsid&#x27;:1&#125;)&quot;</span>;    <span class="comment">//删</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$query</span> = <span class="string">&quot;db.table.update(&#123;&#x27;newsid&#x27;:1&#125;,&#123;&#x27;newsid&#x27;,2&#125;)&quot;</span>;    <span class="comment">//改</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$result</span> = <span class="variable">$db</span>-&gt;<span class="title function_ invoke__">execute</span>(<span class="variable">$query</span>);</span><br></pre></td></tr></table></figure>
+
+<p>此时，传进方法execute的参数就是字符串变量$query</p>
+<p>特别的，此时的字符串书写语法为js的书写语法。</p>
+<p>对于以上两种不同执行方式，有不同的注入攻击方式。</p>
+<h2 id="过滤绕过"><a href="#过滤绕过" class="headerlink" title="过滤绕过"></a>过滤绕过</h2><p>单双引号这种常见的检测方式非常有可能被过滤掉，这时候就要考虑怎么绕过过滤机制来测试注入点是否存在。如果在这一步费尽心血都没有成就的话就拉倒吧，天知道到底能不能注入，反正咱是没办法让它执行咱的命令呢。</p>
+<p>过滤也有不同的情况，最好注意辨别。比如他是给你用转移符转义了？还是直接干掉了？（啊转义是不是不算过滤啊）</p>
+<h3 id="编码绕过"><a href="#编码绕过" class="headerlink" title="编码绕过"></a>编码绕过</h3><ul>
+<li>大小写</li>
+<li>url编码</li>
+<li>html编码</li>
+<li>十六进制编码</li>
+<li>unicode编码</li>
+</ul>
+<p>这都很好理解的，没啥花花样，就是把相应的字符转换成对应编码的形式代替即可。</p>
+<p><a href="http://www.jsons.cn/urlencode/">好用的在线工具箱</a>和<a href="http://tool.huixiang360.com/str/hex.php">也很好用的在线工具箱</a>还有<a href="http://www.bt.cn/tools/encryhtml.html">同样好用的工具箱</a>，可以作编码工具使用，在线的工具箱还是很多哒，干啥的都有，什么在线p图的抠图的，善用在线工具哦~</p>
+<table>
+<thead>
+<tr>
+<th>常见字符</th>
+<th>十六进制</th>
+<th>Unicode</th>
+<th>URL</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‘</td>
+<td>0x27</td>
+<td>\u0027</td>
+<td>%27</td>
+<td><code>&amp;#39;</code></td>
+</tr>
+<tr>
+<td>“</td>
+<td>0x22</td>
+<td>\u0022</td>
+<td>%22</td>
+<td><code>&amp;quot;</code></td>
+</tr>
+</tbody></table>
+<h3 id="只过滤了一次"><a href="#只过滤了一次" class="headerlink" title="只过滤了一次"></a>只过滤了一次</h3><p>就拼接呗，比如<code>union =&gt; ununionion</code>。这得看人家的这个过滤过程走在哪一步了，前端后端，在什么之前做过滤，啥时候都结束了把参数送到数据库里之类的，多重要。</p>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><h4 id="函数替换"><a href="#函数替换" class="headerlink" title="函数替换"></a>函数替换</h4><p>substring &#x2F; mid &#x2F; sub<br>ascii &#x2F; hex &#x2F; bin<br>benchmark &#x2F; sleep</p>
+<h4 id="变量替换"><a href="#变量替换" class="headerlink" title="变量替换"></a>变量替换</h4><p>user() &#x2F; @@user</p>
+<h4 id="符号和关键字"><a href="#符号和关键字" class="headerlink" title="符号和关键字"></a>符号和关键字</h4><p>and &#x2F; &amp;<br>or &#x2F; |</p>
+<h3 id="HTTP参数污染"><a href="#HTTP参数污染" class="headerlink" title="HTTP参数污染"></a>HTTP参数污染</h3><p>这玩意是个万金油啊，虽然到现在没看见有啥用，但确实是哪tm都有可能用上啊</p>
+<p>同时递交几个参数的时候，可能会产生不一样的效果，比如有的后台编码只取第一个参数，有的只取最后一个，有的会把它们拼接在一起作为参数，都是有可能利用的点。</p>
+<p>比如拼接参数，就可以尝试把payload拆开，看看能不能因为分开的原因绕过过滤；如果是只取一个的话，就得看他代码是咋写的了，要是人家把另一个参数扔了你能咋整。当然也有可能对一个参数有限制，另一个没限制这样的情况。</p>
+<p>所以说搞安全会写代码多tm重要啊朋友们，你都tm不知道人家代码咋写的，咋利用参数的，咋做安全措施，咋防护过滤的，你咋搞安全呢，只能是黑盒瞎搞，瞎猜。你知道代码写作习惯，知道这玩意都咋实现，才好做攻击呢。</p>
+<h2 id="关于攻击"><a href="#关于攻击" class="headerlink" title="关于攻击"></a>关于攻击</h2><p>攻击其实暂不考虑了，因为只要能够找到注入点现在就是大胜利。查表之类的payload暂时没琢磨，先以业务为主。</p>
+<h3 id="缓冲区溢出"><a href="#缓冲区溢出" class="headerlink" title="缓冲区溢出"></a>缓冲区溢出</h3><p>关注一下，就像上传文件来tm十几万行，服务器要解析的话八成要寄，看它dos不dos。此处同理，但好像不是很同理……中心思想是有的C语言的WAF处理的字符串长度有限，超出某长度限制之后人家就不处理了，payload有可能会成功。</p>
+<h2 id="SQL注入的防护"><a href="#SQL注入的防护" class="headerlink" title="SQL注入的防护"></a>SQL注入的防护</h2><h3 id="参数化查询"><a href="#参数化查询" class="headerlink" title="参数化查询"></a>参数化查询</h3><p>是指在设计与数据库链接并访问数据时，在需要填入数值或数据的地方，使用参数（Parameter）来给值，这个方法已被视为最有效可预防SQL注入攻击的攻击手法的防御方式。</p>
+<p>在使用参数化查询的情况下，数据库服务器不会将参数的内容视为SQL指令的一部分来处理，而是在数据库完成SQL指令的编译后，才套用参数运行，因此就算参数中含有具破坏性的指令，也不会被数据库所运行。</p>
+<h3 id="限制数据类型"><a href="#限制数据类型" class="headerlink" title="限制数据类型"></a>限制数据类型</h3><p>限制用户输入的数据类型，如果是需要输入数字，那就做好相应的限制。</p>
+<p>参考：</p>
+<p>1、<a href="https://blog.csdn.net/m0_55772907/article/details/124450506">https://blog.csdn.net/m0_55772907/article/details/124450506</a></p>
+<p>2、<a href="https://www.cnblogs.com/ayoung/p/14353314.html">https://www.cnblogs.com/ayoung/p/14353314.html</a></p>
+<p>3、<a href="https://blog.51cto.com/u_15441980/4693292">https://blog.51cto.com/u_15441980/4693292</a></p>
+<p>4、<a href="http://t.zoukankan.com/mrchang-p-6255226.html">http://t.zoukankan.com/mrchang-p-6255226.html</a></p>
+<p>5、<a href="https://blog.csdn.net/weixin_33881753/article/details/87981552">https://blog.csdn.net/weixin_33881753/article/details/87981552</a></p>
+<p>6、<a href="https://www.secpulse.com/archives/3278.html">https://www.secpulse.com/archives/3278.html</a></p>
+<p>7、<a href="https://www.manongdao.com/article-2402214.html">https://www.manongdao.com/article-2402214.html</a></p>
+<h1 id="十、XXE-实体注入测试"><a href="#十、XXE-实体注入测试" class="headerlink" title="十、XXE 实体注入测试"></a>十、XXE 实体注入测试</h1><h1 id="十一、反序列化漏洞测试"><a href="#十一、反序列化漏洞测试" class="headerlink" title="十一、反序列化漏洞测试"></a>十一、反序列化漏洞测试</h1><h1 id="十二、HTTP请求夹带-smuggling-攻击测试"><a href="#十二、HTTP请求夹带-smuggling-攻击测试" class="headerlink" title="十二、HTTP请求夹带(smuggling)攻击测试"></a>十二、HTTP请求夹带(smuggling)攻击测试</h1><h1 id="十三、代码注入测试"><a href="#十三、代码注入测试" class="headerlink" title="十三、代码注入测试"></a>十三、代码注入测试</h1><h1 id="十四、本地文件包含测试"><a href="#十四、本地文件包含测试" class="headerlink" title="十四、本地文件包含测试"></a>十四、本地文件包含测试</h1><h1 id="十五、远程文件包含测试"><a href="#十五、远程文件包含测试" class="headerlink" title="十五、远程文件包含测试"></a>十五、远程文件包含测试</h1><h1 id="十六、命令执行注入测试"><a href="#十六、命令执行注入测试" class="headerlink" title="十六、命令执行注入测试"></a>十六、命令执行注入测试</h1><h1 id="十七、缓冲区溢出测试"><a href="#十七、缓冲区溢出测试" class="headerlink" title="十七、缓冲区溢出测试"></a>十七、缓冲区溢出测试</h1><h1 id="十八、格式化字符串测试"><a href="#十八、格式化字符串测试" class="headerlink" title="十八、格式化字符串测试"></a>十八、格式化字符串测试</h1><p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+        <tag>输入安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逻辑漏洞自解</title>
+    <url>/2022/06/15/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%E8%87%AA%E8%A7%A3/</url>
+    <content><![CDATA[<p>在我看来，逻辑漏洞大致是可以分为下面的几类的，但是难免不全，日后再补。嗷甚至说可能都不是逻辑漏洞……将就看。</p>
+<span id="more"></span>
+
+<p>一、看回显看前端</p>
+<p>首先是看回显，看前端，看看有没有泄露的信息，比如把什么加密的密钥写进前端代码，js里啦之类的。响应也很重要，可能不会显示在浏览器上，但是响应里可能会有一些意外的信息，这样的信息泄露还是很多的。</p>
+<p>二、逻辑顺序的跳跃或越过</p>
+<p>盘清楚业务逻辑很重要，按照原本网站的设计，应该先完成A才能走到B，走到分支C之后不能走到步骤D之类。理清逻辑顺序之后就可以考虑跳过步骤了</p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+        <tag>逻辑漏洞</tag>
+      </tags>
+  </entry>
+</search>
