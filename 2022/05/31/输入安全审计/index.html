@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/06/28/DSZR8qMXhoHpnNl.png">
 <meta property="og:image" content="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg">
 <meta property="article:published_time" content="2022-05-31T09:16:32.000Z">
-<meta property="article:modified_time" content="2022-07-08T04:27:33.156Z">
+<meta property="article:modified_time" content="2022-07-12T03:03:20.860Z">
 <meta property="article:author" content="DemonJi">
 <meta property="article:tag" content="网络安全">
 <meta property="article:tag" content="渗透测试">
@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-08 12:27:33" itemprop="dateModified" datetime="2022-07-08T12:27:33+08:00">2022-07-08</time>
+                <time title="修改时间：2022-07-12 11:03:20" itemprop="dateModified" datetime="2022-07-12T11:03:20+08:00">2022-07-12</time>
               </span>
 
           
@@ -236,7 +236,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
+              <span>5.4k</span>
             </span>
 
         </div>
@@ -283,13 +283,15 @@
 <p>我想是因为扫描器通过页面上的input才确认了这么一个点的，可以记录一下。<strong>XSS的精要是控制回显，能够发生回显的不只有明面上的输入，也要在前端代码上多注意。就好比input，它也是输入的一种可能性。</strong></p>
 <h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><p>总体思路：<strong>对用户的输入(和URL参数)进行过滤，对输出进行html编码</strong>。也就是对用户提交的所有内容进行过滤，对url中的参数进行过滤，过滤掉会导致脚本执行的相关内容；然后对动态输出到页面的内容进行html编码，使脚本无法在浏览器中执行。</p>
 <h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>过滤用户输入输出，过滤可能带来危险的敏感字符，但有可能会对业务产生影响，所以也不是非常常见的办法了。建议在一些特定的不影响业务的情况下使用，比如说此处只允许输入和输出数字或字母。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">常见的敏感字符们  <span class="tag">&lt;&gt;</span> &quot;&quot; &#x27;&#x27; % ; = () &amp; +</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">常见的敏感字符们  <span class="tag">&lt;&gt;</span> &quot; &#x27; % ; = () &amp; + \ / ` # -</span><br></pre></td></tr></table></figure>
 
 <h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>要转义的字符基本同上，测试的时候可以通过输入这些敏感字符来测试目标的防护手段。比如说看看回显，有没有字符被ban掉了，看看html源代码，看看有没有字符被实体化输出了之类的。</p>
-<p>编码应该也属于这一类、、、但我不是很明白</p>
+<p>可以进行前端字符转义或者结合白名单对富文本框中的html标签进行过滤。</p>
 <h3 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a>白名单</h3><p>白名单就是只允许输入输出什么类型，因为黑名单毕竟是不可靠的。此方法按照对应的业务需求对类型做限制即可。</p>
+<p>比如说年龄这一栏就限制只能输入数字，而且还得是自然数不能是负数，诸如此类。</p>
 <h3 id="httponly"><a href="#httponly" class="headerlink" title="httponly"></a>httponly</h3><p>在服务端设置会话cookie的http only属性，客户端的js就无法获得cookie信息了，有一定防护效果。</p>
-<h3 id="实体化输出"><a href="#实体化输出" class="headerlink" title="实体化输出"></a>实体化输出</h3><p>比较终极的防护方式，很难正面突破这种防护，能绕过也是需要一些奇技淫巧。实际上是通过函数对用户输入的参数进行html编码，将其转换为html实体，就不会在前端被当做代码解析执行了。</p>
+<h3 id="实体化输出"><a href="#实体化输出" class="headerlink" title="实体化输出"></a>实体化输出</h3><p>比较终极的防护方式，很难正面突破这种防护，能绕过也是需要一些奇技淫巧。实际上是通过函数对用户输入的数据进行html编码，将其转换为html实体，确保数据是展示给用户，而不是在用户的浏览器中被执行。</p>
+<p>应用程序应该对：直接源自用户输入的值、可能受用户影响的值、受用户影响的数据存储库值（数据库、日志、文件等）或可能具有的任何其他信息的任何输出<strong>进行编码</strong>。</p>
 <table>
 <thead>
 <tr>
@@ -399,8 +401,8 @@
 <h2 id="关于攻击"><a href="#关于攻击" class="headerlink" title="关于攻击"></a>关于攻击</h2><p>攻击其实暂不考虑了，因为只要能够找到注入点现在就是大胜利。查表之类的payload暂时没琢磨，先以业务为主。</p>
 <h3 id="缓冲区溢出"><a href="#缓冲区溢出" class="headerlink" title="缓冲区溢出"></a>缓冲区溢出</h3><p>关注一下，就像上传文件来tm十几万行，服务器要解析的话八成要寄，看它dos不dos。此处同理，但好像不是很同理……中心思想是有的C语言的WAF处理的字符串长度有限，超出某长度限制之后人家就不处理了，payload有可能会成功。</p>
 <h2 id="SQL注入的防护"><a href="#SQL注入的防护" class="headerlink" title="SQL注入的防护"></a>SQL注入的防护</h2><h3 id="参数化查询"><a href="#参数化查询" class="headerlink" title="参数化查询"></a>参数化查询</h3><p>是指在设计与数据库链接并访问数据时，在需要填入数值或数据的地方，使用参数（Parameter）来给值，这个方法已被视为最有效可预防SQL注入攻击的攻击手法的防御方式。</p>
-<p>在使用参数化查询的情况下，数据库服务器不会将参数的内容视为SQL指令的一部分来处理，而是在数据库完成SQL指令的编译后，才套用参数运行，因此就算参数中含有具破坏性的指令，也不会被数据库所运行。</p>
-<h3 id="限制数据类型"><a href="#限制数据类型" class="headerlink" title="限制数据类型"></a>限制数据类型</h3><p>限制用户输入的数据类型，如果是需要输入数字，那就做好相应的限制。</p>
+<p>在使用参数化查询的情况下，数据库服务器不会将参数的内容视为SQL指令的一部分来处理。而是在数据库完成SQL指令的编译后，才套用参数运行，因此就算参数中含有具破坏性的指令，也不会被数据库所运行。</p>
+<h3 id="限制数据类型"><a href="#限制数据类型" class="headerlink" title="限制数据类型"></a>限制数据类型</h3><p>根据实际业务需求，做一个白名单限制用户输入的数据类型。</p>
 <p>参考：</p>
 <p>1、<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_55772907/article/details/124450506">https://blog.csdn.net/m0_55772907/article/details/124450506</a></p>
 <p>2、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ayoung/p/14353314.html">https://www.cnblogs.com/ayoung/p/14353314.html</a></p>
@@ -567,7 +569,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">33k</span>
+    <span title="站点总字数">34k</span>
 </div>
 
 

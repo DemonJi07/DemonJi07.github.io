@@ -27,16 +27,17 @@
 <meta property="og:site_name" content="纪大聪明的博客">
 <meta property="og:description" content="关于工作中需要的一些知识，随手记录，以后要用的时候也好找。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/07/12/5HUDxlK8AE1POQJ.webp">
 <meta property="og:image" content="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg">
 <meta property="article:published_time" content="2022-06-09T06:21:36.000Z">
-<meta property="article:modified_time" content="2022-07-08T04:08:41.525Z">
+<meta property="article:modified_time" content="2022-07-12T03:02:14.180Z">
 <meta property="article:author" content="DemonJi">
 <meta property="article:tag" content="linux系统">
 <meta property="article:tag" content="系统安全">
 <meta property="article:tag" content="密码学">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg">
+<meta name="twitter:image" content="https://s2.loli.net/2022/07/12/5HUDxlK8AE1POQJ.webp">
 
 <link rel="canonical" href="https://demonji07.github.io/2022/06/09/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AF%86%E8%A1%A5%E8%B6%B3%E6%9D%82%E9%A1%B9/">
 
@@ -220,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-08 12:08:41" itemprop="dateModified" datetime="2022-07-08T12:08:41+08:00">2022-07-08</time>
+                <time title="修改时间：2022-07-12 11:02:14" itemprop="dateModified" datetime="2022-07-12T11:02:14+08:00">2022-07-12</time>
               </span>
 
           
@@ -236,7 +237,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>324</span>
+              <span>1.8k</span>
             </span>
 
         </div>
@@ -255,8 +256,29 @@
 <p>路由器的核心功能就是路由和转发。路由确定分组从源到目的传输路径，转发把分组从路由器的输入端口交换到正确的输出端口。</p>
 <h1 id="linux使用"><a href="#linux使用" class="headerlink" title="linux使用"></a>linux使用</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">find [目录] -<span class="built_in">type</span> [指定类型] -name [要找的]</span><br><span class="line">目录：比如要全目录下找，就用<span class="string">&quot;/&quot;</span>，其他的就用路径就可以了</span><br><span class="line">指定类型：d dictionary代表文件夹；f file代表要找文件</span><br><span class="line">模糊查询：要模啥用*代替就行</span><br><span class="line">举例：find / -<span class="built_in">type</span> d -name etc</span><br></pre></td></tr></table></figure>
 
-<h1 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h1><h2 id="AES加密算法"><a href="#AES加密算法" class="headerlink" title="AES加密算法"></a>AES加密算法</h2><p>对称加密，分组加密，</p>
-<h2 id="DES加密算法"><a href="#DES加密算法" class="headerlink" title="DES加密算法"></a>DES加密算法</h2><h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
+<h1 id="编码安全"><a href="#编码安全" class="headerlink" title="编码安全"></a>编码安全</h1><h2 id="关于编码"><a href="#关于编码" class="headerlink" title="关于编码"></a>关于编码</h2><p><strong>Unicode</strong></p>
+<p>Unicode最初规定用16位的编码空间，这16位编码空间称为统一码。这样理论上一共最多有2^16（65536）个字符。基本满足各种语言的使用。实际上当前版本的统一码并未完全使用这16位编码，而是保留了大量空间以作为特殊使用或将来扩展。</p>
+<p>目前的Unicode字符分为17组编排，每组称为一个平面（Plane），而每平面拥有65536（即2^16）个码点。上述16位统一码字符称为<strong>基本多文种平面（BMP）</strong>，写成16进制就是从U+0000到U+FFFF。 剩下还有16个<strong>辅助平面（SMP）</strong>，码点范围从U+010000一直到U+10FFFF。这17个平面结合起来至少需要占据21位的空间（2^16 x 2^5），也就是差不多3个字节（24位），而辅助平面实际上是用4个字节表示，方便以后向后扩展。</p>
+<p>上面讲到的几种编码都是编码方式，规定了从码点到字符的映射关系，例如 Unicode中U+0061 对应的就是小写字母 “a”, 我们可以在浏览器控制台中输入码点查找对应的字符。</p>
+<p><strong>UTF</strong></p>
+<p>Unicode的实现方式不同于编码方式。一个字符的Unicode编码是确定的。但是在实际传输过程中，由于不同系统平台的设计不一定一致，以及出于节省空间的目的，对Unicode编码的实现方式有所不同。Unicode的实现方式称为Unicode转换格式（Unicode Transformation Format，简称为UTF）。</p>
+<p>网页开发中比较熟悉和常用的编码实现是UTF-8。那么这种实现方式有什么优势呢？UTF-8是一种变长的编码方法。字符长度从1字节到4字节不等。最前面的128个字符，只使用1个字节表示，延续了ASCII的用法。其他分段的字节数如下：</p>
+<p><img src="https://s2.loli.net/2022/07/12/5HUDxlK8AE1POQJ.webp" alt="27652543-58e86a459dd59.webp"></p>
+<p>计算机在读取数据的时候都是从高位到地位或从地位到高位。当计算机读到一个3字节字符时，怎么判断是输出1位字符，还是继续读取接下来的2位并合并为一个字符呢？这就要涉及到UTF-8的具体实现了。</p>
+<p>UTF-8是这样做的：</p>
+<ol>
+<li>单字节的字符，字节的第一位设为0，对于英语文本，UTF-8码只占用一个字节，和ASCII码完全相同；</li>
+<li>n个字节的字符(n&gt;1)，第一个字节的前n位设为1，第n+1位设为0，后面字节的前两位都设为10，这n个字节的其余空位填充该字符unicode码，高位用0补足。</li>
+</ol>
+<p>这样就形成了如下的UTF-8标记位：</p>
+<p>0xxxxxxx<br>110xxxxx 10xxxxxx<br>1110xxxx 10xxxxxx 10xxxxxx<br>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</p>
+<p>当读到第一位时，发现是0开头，就读一个字节。发现是110，就读两个字节，发现是1110就读三个字节，以此类推，再根据Unicode规则找到对应的符号输出。这种变长的编码方式，能根据字符采用不同位数的码点，能够有效减少文件的体积。</p>
+<p>如果采用Unicode的编码方式直接作为实现方法。那么每个字符都是定长的码点，对于只需要一个字节的字符，需要在前面补0. 这样就照成了空间的浪费，文件就会变大。</p>
+<p>UTF编码除了UTF-8，还有UTF-16：最小的码点为2个字节；UTF-32：每个码点固定用4个字节表示。由于UTF-32传输场进下会照成文件空间浪费，HTML5标准规定，网页不得编码成UTF-32。</p>
+<p><strong>参考资料</strong></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000007992346">https://segmentfault.com/a/1190000007992346</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/c465869935/article/details/54407084?spm=1001.2014.3001.5501">https://blog.csdn.net/c465869935/article/details/54407084?spm=1001.2014.3001.5501</a></p>
+<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
 <p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
 
     </div>
@@ -355,7 +377,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">计算机网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">linux使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.1.</span> <span class="nav-text">查找文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="nav-number">3.</span> <span class="nav-text">密码学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AES%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">AES加密算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DES%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">DES加密算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="nav-number">4.</span> <span class="nav-text">联系我</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">计算机网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">linux使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.1.</span> <span class="nav-text">查找文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E5%AE%89%E5%85%A8"><span class="nav-number">3.</span> <span class="nav-text">编码安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">关于编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="nav-number">4.</span> <span class="nav-text">联系我</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -415,7 +437,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">33k</span>
+    <span title="站点总字数">34k</span>
 </div>
 
 
