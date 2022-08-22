@@ -302,6 +302,91 @@
       </tags>
   </entry>
   <entry>
+    <title>应急响应加量版2.0</title>
+    <url>/2022/07/08/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E5%8A%A0%E9%87%8F%E7%89%882-0/</url>
+    <content><![CDATA[<p>撰写一篇关于应急响应的文档，是一次新的学习呢，记录一下。</p>
+<p>客户不满意，爆肝写了一份加量不加价的2.0版本，包括一些详细的处理方法。</p>
+<span id="more"></span>
+
+<h2 id="有害程序事件"><a href="#有害程序事件" class="headerlink" title="有害程序事件"></a>有害程序事件</h2><h3 id="病毒、蠕虫、挖矿程序"><a href="#病毒、蠕虫、挖矿程序" class="headerlink" title="病毒、蠕虫、挖矿程序"></a>病毒、蠕虫、挖矿程序</h3><h4 id="启动条件"><a href="#启动条件" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员发现机器内存异常高占用、运行缓慢、安全软件被意外关闭、异常向外发送或接收大量数据包、反病毒软件告警、有程序恶意复制传播的情况时，应当立即报与安全人员请求协助。</p>
+<h4 id="如何定位"><a href="#如何定位" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于感染了病毒、蠕虫或挖矿程序的危险情况。可以通过定位异常进程、观察程序非法行为、跟踪进程、反病毒软件扫描检测、查看带宽占用及流量去向、查看注册表项、查看异常端口、查看任务管理器、查看防火墙等安全设备等方法判断。</p>
+<h4 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h4><p>确定主机感染了病毒、蠕虫或挖矿程序后，安全人员应当迅速将当前主机隔离，通过包括但不限于拔除网线、禁用网卡、拔除存储介质等方式断绝主机或系统的网络连接和可能有害的物理连接。以此减小影响范围，尽量消灭潜在的危险。</p>
+<p>确定影响范围，通过查看系统日志、查看文件状态、能否正常运行某些程序、能够正常读写硬盘、查看流量去向、查看防火墙等安全设备、查看其他主机情况、搜索网络资料等方式确定病毒发作特征，影响范围。</p>
+<p>运维人员与安全人员应确定事件起因、查明受感染渠道、调查溯源并收集适当证据，采取措施防止再次发生。采取如更新反病毒软件和病毒库、更新系统、打上安全补丁、清除持续后门、安全模式启动处理、关闭和删除病毒程序等方式处理病毒、蠕虫或挖矿程序的威胁。日常应该对重要的系统或数据库创建至少两份备份并定期更新，一份放在云上，一份放在本地，如果有恶意程序对系统或主机造成不可逆的影响，可以使用备份恢复正常功能。</p>
+<h4 id="运行恢复"><a href="#运行恢复" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认受害主机不再受到恶意程序影响，恢复数据和系统配置之后可以重新将机器接入网络。可以通过定位跟踪进程、观察程序行为、反病毒软件扫描检测、查看带宽占用及流量去向、查看注册表项、查看端口、查看任务管理器、查看防火墙等安全设备等方法确定。</p>
+<h3 id="远控木马、僵尸网络程序"><a href="#远控木马、僵尸网络程序" class="headerlink" title="远控木马、僵尸网络程序"></a>远控木马、僵尸网络程序</h3><h4 id="启动条件-1"><a href="#启动条件-1" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员发现有主机在非我方操作状态下异常运作、防火墙或其他网络管理设备告警、有端口异常开放、有可疑流量流入流出、发起大量异常请求的状况时，应及时向安全与运维人员报告。</p>
+<h4 id="如何定位-1"><a href="#如何定位-1" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员可以通过查看网络管理或安全设备、查看异常的端口开放、抓取分析数据包、逆向异常程序等方式锁定异常流量与请求的来源与目的地。通过分析系统日志、内存占用、带宽占用的方式确定异常程序所在与其来源、影响的范围等。</p>
+<h4 id="处理过程-1"><a href="#处理过程-1" class="headerlink" title="处理过程"></a>处理过程</h4><p>确定主机感染远控木马和僵尸网络程序后，安全人员应当迅速将当前主机隔离，通过包括但不限于拔除网线、禁用网卡、拔除存储介质等方式断绝主机或系统的网络连接和可能有害的物理连接。以此减小影响范围，尽量消灭潜在的危险。</p>
+<p>确定影响范围，通过查看系统日志、查看文件状态、能否正常运行某些程序、能够正常读写硬盘、查看流量去向、查看防火墙等安全设备、查看其他主机情况等方式确定病毒发作特征，影响范围。</p>
+<p>运维人员与安全人员应通过分析系统日志、内存占用、带宽占用的方式进一步确定异常程序与其来源、影响的范围等。并且要收集适当证据，采取措施防止再次发生。使用如更新反病毒软件和病毒库、更新系统、打上安全补丁、安全模式启动处理、清除后门、关闭和删除病毒程序等方式处理远控木马和僵尸网络程序。</p>
+<p>在此期间应当做好适当留证，包括日志、程序样本等信息，以供后续有需要时提供。</p>
+<h4 id="运行恢复-1"><a href="#运行恢复-1" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认受害主机不再受到恶意程序影响，恢复系统之后可以重新将机器接入网络。可以通过定位跟踪进程、观察程序行为、反病毒软件扫描检测、查看带宽占用及流量去向、查看注册表项、查看端口、查看任务管理器、查看防火墙等安全设备等方法确定。机器重新接入网络后也应该对其进行一段时间的监视，观察是否仍有恶意程序遗漏。</p>
+<h2 id="网络攻击事件"><a href="#网络攻击事件" class="headerlink" title="网络攻击事件"></a>网络攻击事件</h2><h3 id="安全扫描攻击、暴力破解攻击、拒绝服务攻击"><a href="#安全扫描攻击、暴力破解攻击、拒绝服务攻击" class="headerlink" title="安全扫描攻击、暴力破解攻击、拒绝服务攻击"></a>安全扫描攻击、暴力破解攻击、拒绝服务攻击</h3><h4 id="启动条件-2"><a href="#启动条件-2" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员收到云主机平台安全告警、发现系统无法运转或运行卡顿严重、发现网站无法访问或加载过慢、服务器收到大量具有恶意特征的请求时，应当立即报与安全人员请求协助。</p>
+<h4 id="如何定位-2"><a href="#如何定位-2" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于被攻击的危险情况。可以通过监听端口、观察收到的请求特征、观察请求频率与内容、观察请求数量、查看有无账号的数据被更改、查看登录或其他相关日志、查看连接延迟等方式确定。</p>
+<p>然后应当关注流量走向、查看防火墙等安全设备提示、查看系统日志、分析设备流量来确定流量、攻击类型和请求来源。</p>
+<p>在此期间应当做好适当留证，包括日志等信息，以供后续有需要时提供。</p>
+<h4 id="处理过程-2"><a href="#处理过程-2" class="headerlink" title="处理过程"></a>处理过程</h4><p>确定主机遭受到安全扫描攻击，暴力破解攻击或拒绝服务攻击后，安全人员应当迅速将当前主机或系统隔离，通过包括但不限于拔除网线、禁用网卡、封禁IP、限制频率、添加策略、使用设备安全功能、关闭部分服务与端口等方式断绝主机或系统的危险网络连接，减小影响，尽量消灭潜在的危险。</p>
+<p>确定影响范围，通过查看系统日志、观察能否正常提供服务、查看流量去向、查看防火墙等安全设备、查看其他主机情况等方式确定攻击影响范围。</p>
+<p>运维人员与安全人员应确定事件起因，调查溯源，采取措施防止再次发生。采取封禁IP、限制频率、添加策略、启用设备安全功能、添加CDN等方式处理事件。</p>
+<h4 id="运行恢复-2"><a href="#运行恢复-2" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认受害主机不再受到恶意攻击之后可以重新将机器接入网络。可以通过查看系统日志、观察能否正常提供服务、查看流量去向、查看防火墙等安全设备、查看带宽占用及流量去向、查看端口等安全设备等方法确定。</p>
+<h3 id="WEB漏洞攻击、系统漏洞攻击"><a href="#WEB漏洞攻击、系统漏洞攻击" class="headerlink" title="WEB漏洞攻击、系统漏洞攻击"></a>WEB漏洞攻击、系统漏洞攻击</h3><h4 id="启动条件-3"><a href="#启动条件-3" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员收到云主机平台安全告警、发现网页出现异常数据、用户账户有异常操作、发现后端接收了异常请求、发现数据库出现异常数据或文件、发现网站出现异常弹窗或图片等情况时，应当立即报与安全人员请求协助。</p>
+<h4 id="如何定位-3"><a href="#如何定位-3" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于被利用WEB或系统漏洞攻击的危险情况。可以通过查看请求、查看数据库日志、查看系统日志、查看网页情况、查看系统是否有不合逻辑的异常变动的方式来判断是否遭受了攻击，并找到漏洞产生点，确定影响范围。</p>
+<h4 id="处理过程-3"><a href="#处理过程-3" class="headerlink" title="处理过程"></a>处理过程</h4><p>确定被黑客利用漏洞攻击后，安全人员应当视情况考虑暂停提供服务、暂时下线设备或功能、修改重要信息、设置IP或账户的黑名单等方式紧急处理，随后通过更新安全配置和策略、删除上传或写入的恶意文件与程序、及时修补漏洞、更新使用的插件，服务等的版本、打上安全补丁等方式根除影响。在不影响正常业务与安全的前提下尽快恢复服务。</p>
+<p>此时运维人员与安全人员应调查溯源并收集适当证据，以供后续有需要时提供。</p>
+<h4 id="运行恢复-3"><a href="#运行恢复-3" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认受害系统或主机暂时或长期不会再受到漏洞攻击影响，恢复数据和系统配置之后可以重新将机器接入网络。</p>
+<h2 id="信息破坏事件"><a href="#信息破坏事件" class="headerlink" title="信息破坏事件"></a>信息破坏事件</h2><h3 id="网站内容篡改、数据库内容篡改、系统配置篡改、信息数据泄露"><a href="#网站内容篡改、数据库内容篡改、系统配置篡改、信息数据泄露" class="headerlink" title="网站内容篡改、数据库内容篡改、系统配置篡改、信息数据泄露"></a>网站内容篡改、数据库内容篡改、系统配置篡改、信息数据泄露</h3><h4 id="启动条件-4"><a href="#启动条件-4" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员收到云主机平台安全告警、发现网站内容被篡改、发现数据库内容异常、发现系统配置异常、有用户报告账号登录异常，信息异常、发现敏感信息外流等状况时，应当立即报与安全人员请求协助。</p>
+<h4 id="如何定位-4"><a href="#如何定位-4" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于被攻击的危险情况。可以通过询问相关测试人员、查看数据库数据、查看数据库操作日志、查看系统操作日志等方式确定情况，并定位问题所在。</p>
+<p>在此期间应当做好适当留证，包括日志等信息，以供后续有需要时提供。</p>
+<h4 id="处理过程-4"><a href="#处理过程-4" class="headerlink" title="处理过程"></a>处理过程</h4><p>在确认影响范围和具体情况后，应该考虑采取暂停服务等措施防止事态恶化，泄露或被修改更多信息，然后通知相关人员修改关键信息，包括账号密码等；随后按照日常的数据备份恢复网站、数据库、系统配置等信息。最后要采用前面提到的方式寻找问题关键点并做好处理和修补工作，保障不会再遭受同样或类似的攻击。</p>
+<p>平常应该准备至少两个备份，一个放在云上，一个放在本地，在系统或数据库被攻击，造成了不可逆的影响时，可以依照备份恢复正常状态。</p>
+<h4 id="运行恢复-4"><a href="#运行恢复-4" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认系统不再因同样或类似事件出现问题之后，可以重新提供系统服务。</p>
+<h2 id="其他安全事件"><a href="#其他安全事件" class="headerlink" title="其他安全事件"></a>其他安全事件</h2><h3 id="域名劫持"><a href="#域名劫持" class="headerlink" title="域名劫持"></a>域名劫持</h3><h4 id="启动条件-5"><a href="#启动条件-5" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员收到安全告警、发现主机访问网络时有异常广告，弹窗或其他异常、访问解析域名异常等情况时，应当立即报与安全人员请求协助。</p>
+<h4 id="如何定位-5"><a href="#如何定位-5" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于被攻击的危险情况。然后通过查看DNS服务器日志、查看DNS解析记录、查看流量去向、检查主机设置等方式判断攻击影响与其他详细情况。</p>
+<p>在此期间应当做好适当留证，包括日志等信息，以供后续有需要时提供。</p>
+<h4 id="处理过程-5"><a href="#处理过程-5" class="headerlink" title="处理过程"></a>处理过程</h4><p>应该通过修改DNS地址、修改主机hosts文件、加固或更换DNS服务器、求助服务提供商、更新路由器账密、更新网络配置等方式暂时或长期控制该问题。</p>
+<h4 id="运行恢复-5"><a href="#运行恢复-5" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认DNS劫持问题解决且不会被同样的方式攻击后，可以正常使用DNS服务。</p>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>应急响应</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>业务逻辑测试</title>
+    <url>/2022/08/22/%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>第三个部分，业务逻辑测试。</p>
+<span id="more"></span>
+
+<p>以本清单所列，业务逻辑测试可以注意以下几个方面：</p>
+<ul>
+<li>接口安全测试</li>
+<li>请求伪造测试</li>
+<li>越权操作测试</li>
+<li>数值精度测试</li>
+<li>接口频率限制测试</li>
+<li>工作流程绕过测试</li>
+<li>KYC认证缺陷测试</li>
+<li>OTC逻辑缺陷测试</li>
+<li>盘口价格设置缺陷测试</li>
+<li>敏感信息泄露</li>
+<li>短地址攻击测试</li>
+<li>假充值测试</li>
+<li>非预期文件类型上传测试</li>
+<li>批量刷单测试</li>
+<li>非预期参数设置测试</li>
+</ul>
+<h1 id="三、越权操作测试"><a href="#三、越权操作测试" class="headerlink" title="三、越权操作测试"></a>三、越权操作测试</h1><p>越权简单说就是用户获取到了其本不应该获取到的权限，有能力使用该权限访问到某些页面、获取到某些信息、操作某些与其应用权限不匹配的数据等。</p>
+<p>越权可以分为水平越权和垂直越权两种。水平越权是指用户拥有了同等角色下其他用户的权限，比如可以查看其他账号下仅自己可见的内容、操作账户等等。垂直越权是指低权限用户通过某些途径拥有了高权限的情况，比如普通用户拥有了访问网站管理后台的权限、普通用户能够执行一些高权限用户才可以做的操作之类。</p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+        <tag>输入安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>应急响应青春版1.0</title>
     <url>/2022/06/30/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E9%9D%92%E6%98%A5%E7%89%881-0/</url>
     <content><![CDATA[<p>撰写一篇关于应急响应的文档，是一次新的学习呢，记录一下。</p>
@@ -432,6 +517,79 @@
       </tags>
   </entry>
   <entry>
+    <title>渗透测试之四——服务端安全配置审计</title>
+    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E5%AE%A1%E8%AE%A1/</url>
+    <content><![CDATA[<p>第四个部分，关于安全配置的部分。</p>
+<span id="more"></span>
+
+<p>以本清单所列，服务端安全配置审计可以注意以下几个方面：</p>
+<ul>
+<li>CDN 服务探测</li>
+<li>后端服务组件配置测试</li>
+<li>服务器登录安全测试</li>
+<li>文件扩展名解析测试</li>
+<li>备份文件测试</li>
+<li>测试文件测试</li>
+<li>测试接口暴露</li>
+<li>HTTP 方法测试</li>
+<li>Web 前端跨域策略测试</li>
+<li>Web 安全响应头部测试</li>
+<li>弱 SSL&#x2F;TLS 加密，不安全数据传输测试</li>
+<li>非加密信道传输敏感数据测试</li>
+<li>弱口令及默认口令探测</li>
+<li>管理后台发现</li>
+<li>DOS压力测试</li>
+</ul>
+<h1 id="十五、DOS压力测试"><a href="#十五、DOS压力测试" class="headerlink" title="十五、DOS压力测试"></a>十五、DOS压力测试</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>HTTP慢速攻击是利用HTTP合法机制，以极低的速度往服务器发送HTTP请求，尽量长时间保持连接，不释放，若是达到了Web Server对于<a href="https://so.csdn.net/so/search?q=%E5%B9%B6%E5%8F%91&spm=1001.2101.3001.7020">并发</a>连接数的上限，同时恶意占用的连接没有被释放，那么服务器端将无法接受新的请求，导致拒绝服务。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>比较常用的工具之一是slowhttp，kali上<code>apt-get install slowhttptest</code>就可以安装使用了。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测试模式：</span><br><span class="line">-H slow headers 攻击，缓慢发送\r\n，让服务器一直等待</span><br><span class="line">-B slow Body 攻击</span><br><span class="line">-R 范围攻击Apache killer</span><br><span class="line">-X slow read 攻击，读的慢，让服务器发送缓存堵塞</span><br><span class="line"></span><br><span class="line">报告生成选项：</span><br><span class="line">-g 生成socket状态变化统计</span><br><span class="line">-o file_prefix将输出保存到file.html和file.csv中</span><br><span class="line">-v level日志等级，0-4：Fatal，Info，Error，Warning，Debug</span><br><span class="line"></span><br><span class="line">普通选项：</span><br><span class="line">-c connections目标连接数（50）</span><br><span class="line">-i seconds数据发送间隔（10）</span><br><span class="line">-l seconds测试一个目标的时间长度（240）</span><br><span class="line">-r rate每秒多少个连接（50）</span><br><span class="line">-s bytesContent-Length的值（4096）</span><br><span class="line">-t verb请求中使用的动词，如果是slow header攻击，默认是GET；如果是slow body攻击，默认是POST</span><br><span class="line">-u URL目标URL（http://localhost/）</span><br><span class="line">-x bytes每一个tick随机生成的键值对最大长度，例如，-x 2 生成x-xx：xx是头字段，或是类似&amp;xx=xx的消息体，x是随机字符（32）</span><br><span class="line"></span><br><span class="line">探针/代理选项：</span><br><span class="line">-d host:port所有数据走指定代理host:port</span><br><span class="line">-e host:port 探针流量走指定代理host:port</span><br><span class="line">-p seconds探针超时时长，服务器被认为是网络不可达（5）</span><br><span class="line"></span><br><span class="line">范围攻击具体选项：</span><br><span class="line">-a start左边界值（5）</span><br><span class="line">-b bytes右边界值（2000）</span><br><span class="line"></span><br><span class="line">slow read攻击具体选项：</span><br><span class="line">-k num同一请求重复次数，当服务器支持持久化连接时用于放大响应长度（1）</span><br><span class="line">-n seconds每次从接收缓冲区中读取消息的时间间隔（1）</span><br><span class="line">-w bytes从通知窗中获取数据的起始位置（1）</span><br><span class="line">-y bytes 从通知窗中获取数据的结束位置（512）</span><br><span class="line">-z bytes每次从接收缓冲区中读取的长度（5）</span><br></pre></td></tr></table></figure>
+<p>案例说明<br><code>slowhttptest -c 1000 -B -g -o my_body_stats -i 110 -r 200 -s 8192 -t FAKEVERB -u http://mysite -x 10 -p 3</code><br>测试结论：<br>1、如果在用该攻击攻击服务器，服务器正常使用并且cpu、内存、网络实用率正常，则无slowhttp漏洞<br>如：pgrep http | wc -l 进程数量<br>netstat -antp | grep 443 |wc -l 网络连接数量<br>2、若攻击的时间段，服务无法正常访问则存在次漏洞。</p>
+<h2 id="修复和防范"><a href="#修复和防范" class="headerlink" title="修复和防范"></a>修复和防范</h2><p>a.设定URL白名单和黑名单，识别坏的IP；<br>b.设置一个绝对连接超时，<br>c.定义最小的输入数据速率；对web服务器的http头部传输的最大许可时间进行限制，修改成最大许可时间为20秒。<br>统计每个TCP连接的时长并计算单位时间内通过的报文数量即可做精确识别。一个TCP连接中，HTTP报文太少和报文太多都是不正常的，过少可能是慢速连接攻击，过多可能是使用HTTP 1.1协议进行deHTTP Flood攻击，在一个TCP连接中发送多个HTTP请求。<br>限制HTTP头部传输的最大许可时间。超过指定时间HTTP Header还没有传输完成，直接判定源IP地址为慢速连接攻击，中断连接并加入黑名单。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/u013908944/article/details/76576089">https://blog.csdn.net/u013908944/article/details/76576089</a></li>
+<li><a href="https://blog.csdn.net/weixin_57567655/article/details/122847049">https://blog.csdn.net/weixin_57567655/article/details/122847049</a></li>
+<li><a href="https://www.pianshen.com/article/1267387706/">https://www.pianshen.com/article/1267387706/</a></li>
+</ul>
+<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>渗透测试</tag>
+        <tag>安全配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日记，或者说说心里话</title>
+    <url>/2022/02/24/%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<p>一个小日记，偶尔说说心里话。</p>
+<span id="more"></span>
+
+<h1 id="2022年"><a href="#2022年" class="headerlink" title="2022年"></a>2022年</h1><h2 id="6月"><a href="#6月" class="headerlink" title="6月"></a>6月</h2><h3 id="1日-周三"><a href="#1日-周三" class="headerlink" title="1日 周三"></a>1日 周三</h3><p>今天说己亥天克地冲，注意身体安全，早上上班特意算了一卦，也没发现有什么。</p>
+<p>火地晋，互水山蹇(jian 三声)，变卦山地剥。</p>
+<p>总的来说生我的火的力量很微弱，被消耗被克制，但我是没啥事。可能是我解卦能力不行，明明是看事（或者说损伤）的，不应该这么看？希望今日无事。</p>
+<h3 id="28日-周二"><a href="#28日-周二" class="headerlink" title="28日 周二"></a>28日 周二</h3><p>以工号起卦，上为离，下为巽，动四。</p>
+<p>火风鼎，互泽天夬，变山风蛊。下巽为体，上离艮是用。</p>
+<p>总而言之我觉得自己能留下来。</p>
+<p>错了吧，应该动一，火天大有。</p>
+<h3 id="30日-周四"><a href="#30日-周四" class="headerlink" title="30日 周四"></a>30日 周四</h3><p>今天的风很清凉，任务不那么繁重，恍惚之间回想起了我的大学，教室里学习时有风吹过的日子。</p>
+<h2 id="7月"><a href="#7月" class="headerlink" title="7月"></a>7月</h2><h3 id="13日-周三"><a href="#13日-周三" class="headerlink" title="13日 周三"></a>13日 周三</h3><p>救命，接下了类似安全培训的任务，本来以为要在工作中慢慢磨出来的各种漏洞的详解，要集中搞定了，加油</p>
+<h3 id="19日-周二"><a href="#19日-周二" class="headerlink" title="19日 周二"></a>19日 周二</h3><p>今天摸鱼，意外看到帝吧大神 开开550 的三部曲之二，一个是小张和小丽，另一个是张箐和马可，后面好像还有好几部，我还没来得及看。贴吧这种移动端只能用app的东西，实在是不适合用手机看。</p>
+<p>下午纯粹是心神荡漾，没心思工作了。倒也没啥，谁规定工作的时候就必须要全神贯注的，我又不是机器人，我还活着呢。</p>
+<p>很青春只能说，但是不写个好结局真讨厌，虽然不好的结局才回味无穷让人记得。</p>
+<p>我也曾经写过很多矫情的文字的，也就着诗词歌赋写过几个寄托我情绪的小句子，如今只能在这打打技术文档。</p>
+<p>因为情绪太丰富了控制不住，就总是下意识地把它们锁住。直到现在，已经很久没有写过让自己心动的文字了，6月30号算一个，是真的有感而发。</p>
+<p>因为习惯职业化和理性的输出方式了，所以有点不知道怎么按心想的说话，希望能学着更加自由，更勇敢更自在地表达自己，爱自己的生活。</p>
+<p>还是很怀念小时候，用手机追贴吧更文的日子，有时间矫情，有时间放纵自己情绪的日子，还有很多，因为要赶公交，没时间写了。</p>
+<p>真的不知所言，也没讲什么行文规矩了，想到哪说到哪，就这样吧。</p>
+<p>明天把链接贴上来，做纪念。</p>
+]]></content>
+      <tags>
+        <tag>Mind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>渗透测试之一——开源情报采集</title>
     <url>/2022/01/10/%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E9%87%87%E9%9B%86/</url>
     <content><![CDATA[<p>渗透测试最初的阶段就是信息收集，信息收集做的好的话事半功倍是肯定的。</p>
@@ -503,131 +661,6 @@
       </tags>
   </entry>
   <entry>
-    <title>应急响应加量版2.0</title>
-    <url>/2022/07/08/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E5%8A%A0%E9%87%8F%E7%89%882-0/</url>
-    <content><![CDATA[<p>撰写一篇关于应急响应的文档，是一次新的学习呢，记录一下。</p>
-<p>客户不满意，爆肝写了一份加量不加价的2.0版本，包括一些详细的处理方法。</p>
-<span id="more"></span>
-
-<h2 id="有害程序事件"><a href="#有害程序事件" class="headerlink" title="有害程序事件"></a>有害程序事件</h2><h3 id="病毒、蠕虫、挖矿程序"><a href="#病毒、蠕虫、挖矿程序" class="headerlink" title="病毒、蠕虫、挖矿程序"></a>病毒、蠕虫、挖矿程序</h3><h4 id="启动条件"><a href="#启动条件" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员发现机器内存异常高占用、运行缓慢、安全软件被意外关闭、异常向外发送或接收大量数据包、反病毒软件告警、有程序恶意复制传播的情况时，应当立即报与安全人员请求协助。</p>
-<h4 id="如何定位"><a href="#如何定位" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于感染了病毒、蠕虫或挖矿程序的危险情况。可以通过定位异常进程、观察程序非法行为、跟踪进程、反病毒软件扫描检测、查看带宽占用及流量去向、查看注册表项、查看异常端口、查看任务管理器、查看防火墙等安全设备等方法判断。</p>
-<h4 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h4><p>确定主机感染了病毒、蠕虫或挖矿程序后，安全人员应当迅速将当前主机隔离，通过包括但不限于拔除网线、禁用网卡、拔除存储介质等方式断绝主机或系统的网络连接和可能有害的物理连接。以此减小影响范围，尽量消灭潜在的危险。</p>
-<p>确定影响范围，通过查看系统日志、查看文件状态、能否正常运行某些程序、能够正常读写硬盘、查看流量去向、查看防火墙等安全设备、查看其他主机情况、搜索网络资料等方式确定病毒发作特征，影响范围。</p>
-<p>运维人员与安全人员应确定事件起因、查明受感染渠道、调查溯源并收集适当证据，采取措施防止再次发生。采取如更新反病毒软件和病毒库、更新系统、打上安全补丁、清除持续后门、安全模式启动处理、关闭和删除病毒程序等方式处理病毒、蠕虫或挖矿程序的威胁。日常应该对重要的系统或数据库创建至少两份备份并定期更新，一份放在云上，一份放在本地，如果有恶意程序对系统或主机造成不可逆的影响，可以使用备份恢复正常功能。</p>
-<h4 id="运行恢复"><a href="#运行恢复" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认受害主机不再受到恶意程序影响，恢复数据和系统配置之后可以重新将机器接入网络。可以通过定位跟踪进程、观察程序行为、反病毒软件扫描检测、查看带宽占用及流量去向、查看注册表项、查看端口、查看任务管理器、查看防火墙等安全设备等方法确定。</p>
-<h3 id="远控木马、僵尸网络程序"><a href="#远控木马、僵尸网络程序" class="headerlink" title="远控木马、僵尸网络程序"></a>远控木马、僵尸网络程序</h3><h4 id="启动条件-1"><a href="#启动条件-1" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员发现有主机在非我方操作状态下异常运作、防火墙或其他网络管理设备告警、有端口异常开放、有可疑流量流入流出、发起大量异常请求的状况时，应及时向安全与运维人员报告。</p>
-<h4 id="如何定位-1"><a href="#如何定位-1" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员可以通过查看网络管理或安全设备、查看异常的端口开放、抓取分析数据包、逆向异常程序等方式锁定异常流量与请求的来源与目的地。通过分析系统日志、内存占用、带宽占用的方式确定异常程序所在与其来源、影响的范围等。</p>
-<h4 id="处理过程-1"><a href="#处理过程-1" class="headerlink" title="处理过程"></a>处理过程</h4><p>确定主机感染远控木马和僵尸网络程序后，安全人员应当迅速将当前主机隔离，通过包括但不限于拔除网线、禁用网卡、拔除存储介质等方式断绝主机或系统的网络连接和可能有害的物理连接。以此减小影响范围，尽量消灭潜在的危险。</p>
-<p>确定影响范围，通过查看系统日志、查看文件状态、能否正常运行某些程序、能够正常读写硬盘、查看流量去向、查看防火墙等安全设备、查看其他主机情况等方式确定病毒发作特征，影响范围。</p>
-<p>运维人员与安全人员应通过分析系统日志、内存占用、带宽占用的方式进一步确定异常程序与其来源、影响的范围等。并且要收集适当证据，采取措施防止再次发生。使用如更新反病毒软件和病毒库、更新系统、打上安全补丁、安全模式启动处理、清除后门、关闭和删除病毒程序等方式处理远控木马和僵尸网络程序。</p>
-<p>在此期间应当做好适当留证，包括日志、程序样本等信息，以供后续有需要时提供。</p>
-<h4 id="运行恢复-1"><a href="#运行恢复-1" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认受害主机不再受到恶意程序影响，恢复系统之后可以重新将机器接入网络。可以通过定位跟踪进程、观察程序行为、反病毒软件扫描检测、查看带宽占用及流量去向、查看注册表项、查看端口、查看任务管理器、查看防火墙等安全设备等方法确定。机器重新接入网络后也应该对其进行一段时间的监视，观察是否仍有恶意程序遗漏。</p>
-<h2 id="网络攻击事件"><a href="#网络攻击事件" class="headerlink" title="网络攻击事件"></a>网络攻击事件</h2><h3 id="安全扫描攻击、暴力破解攻击、拒绝服务攻击"><a href="#安全扫描攻击、暴力破解攻击、拒绝服务攻击" class="headerlink" title="安全扫描攻击、暴力破解攻击、拒绝服务攻击"></a>安全扫描攻击、暴力破解攻击、拒绝服务攻击</h3><h4 id="启动条件-2"><a href="#启动条件-2" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员收到云主机平台安全告警、发现系统无法运转或运行卡顿严重、发现网站无法访问或加载过慢、服务器收到大量具有恶意特征的请求时，应当立即报与安全人员请求协助。</p>
-<h4 id="如何定位-2"><a href="#如何定位-2" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于被攻击的危险情况。可以通过监听端口、观察收到的请求特征、观察请求频率与内容、观察请求数量、查看有无账号的数据被更改、查看登录或其他相关日志、查看连接延迟等方式确定。</p>
-<p>然后应当关注流量走向、查看防火墙等安全设备提示、查看系统日志、分析设备流量来确定流量、攻击类型和请求来源。</p>
-<p>在此期间应当做好适当留证，包括日志等信息，以供后续有需要时提供。</p>
-<h4 id="处理过程-2"><a href="#处理过程-2" class="headerlink" title="处理过程"></a>处理过程</h4><p>确定主机遭受到安全扫描攻击，暴力破解攻击或拒绝服务攻击后，安全人员应当迅速将当前主机或系统隔离，通过包括但不限于拔除网线、禁用网卡、封禁IP、限制频率、添加策略、使用设备安全功能、关闭部分服务与端口等方式断绝主机或系统的危险网络连接，减小影响，尽量消灭潜在的危险。</p>
-<p>确定影响范围，通过查看系统日志、观察能否正常提供服务、查看流量去向、查看防火墙等安全设备、查看其他主机情况等方式确定攻击影响范围。</p>
-<p>运维人员与安全人员应确定事件起因，调查溯源，采取措施防止再次发生。采取封禁IP、限制频率、添加策略、启用设备安全功能、添加CDN等方式处理事件。</p>
-<h4 id="运行恢复-2"><a href="#运行恢复-2" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认受害主机不再受到恶意攻击之后可以重新将机器接入网络。可以通过查看系统日志、观察能否正常提供服务、查看流量去向、查看防火墙等安全设备、查看带宽占用及流量去向、查看端口等安全设备等方法确定。</p>
-<h3 id="WEB漏洞攻击、系统漏洞攻击"><a href="#WEB漏洞攻击、系统漏洞攻击" class="headerlink" title="WEB漏洞攻击、系统漏洞攻击"></a>WEB漏洞攻击、系统漏洞攻击</h3><h4 id="启动条件-3"><a href="#启动条件-3" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员收到云主机平台安全告警、发现网页出现异常数据、用户账户有异常操作、发现后端接收了异常请求、发现数据库出现异常数据或文件、发现网站出现异常弹窗或图片等情况时，应当立即报与安全人员请求协助。</p>
-<h4 id="如何定位-3"><a href="#如何定位-3" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于被利用WEB或系统漏洞攻击的危险情况。可以通过查看请求、查看数据库日志、查看系统日志、查看网页情况、查看系统是否有不合逻辑的异常变动的方式来判断是否遭受了攻击，并找到漏洞产生点，确定影响范围。</p>
-<h4 id="处理过程-3"><a href="#处理过程-3" class="headerlink" title="处理过程"></a>处理过程</h4><p>确定被黑客利用漏洞攻击后，安全人员应当视情况考虑暂停提供服务、暂时下线设备或功能、修改重要信息、设置IP或账户的黑名单等方式紧急处理，随后通过更新安全配置和策略、删除上传或写入的恶意文件与程序、及时修补漏洞、更新使用的插件，服务等的版本、打上安全补丁等方式根除影响。在不影响正常业务与安全的前提下尽快恢复服务。</p>
-<p>此时运维人员与安全人员应调查溯源并收集适当证据，以供后续有需要时提供。</p>
-<h4 id="运行恢复-3"><a href="#运行恢复-3" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认受害系统或主机暂时或长期不会再受到漏洞攻击影响，恢复数据和系统配置之后可以重新将机器接入网络。</p>
-<h2 id="信息破坏事件"><a href="#信息破坏事件" class="headerlink" title="信息破坏事件"></a>信息破坏事件</h2><h3 id="网站内容篡改、数据库内容篡改、系统配置篡改、信息数据泄露"><a href="#网站内容篡改、数据库内容篡改、系统配置篡改、信息数据泄露" class="headerlink" title="网站内容篡改、数据库内容篡改、系统配置篡改、信息数据泄露"></a>网站内容篡改、数据库内容篡改、系统配置篡改、信息数据泄露</h3><h4 id="启动条件-4"><a href="#启动条件-4" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员收到云主机平台安全告警、发现网站内容被篡改、发现数据库内容异常、发现系统配置异常、有用户报告账号登录异常，信息异常、发现敏感信息外流等状况时，应当立即报与安全人员请求协助。</p>
-<h4 id="如何定位-4"><a href="#如何定位-4" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于被攻击的危险情况。可以通过询问相关测试人员、查看数据库数据、查看数据库操作日志、查看系统操作日志等方式确定情况，并定位问题所在。</p>
-<p>在此期间应当做好适当留证，包括日志等信息，以供后续有需要时提供。</p>
-<h4 id="处理过程-4"><a href="#处理过程-4" class="headerlink" title="处理过程"></a>处理过程</h4><p>在确认影响范围和具体情况后，应该考虑采取暂停服务等措施防止事态恶化，泄露或被修改更多信息，然后通知相关人员修改关键信息，包括账号密码等；随后按照日常的数据备份恢复网站、数据库、系统配置等信息。最后要采用前面提到的方式寻找问题关键点并做好处理和修补工作，保障不会再遭受同样或类似的攻击。</p>
-<p>平常应该准备至少两个备份，一个放在云上，一个放在本地，在系统或数据库被攻击，造成了不可逆的影响时，可以依照备份恢复正常状态。</p>
-<h4 id="运行恢复-4"><a href="#运行恢复-4" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认系统不再因同样或类似事件出现问题之后，可以重新提供系统服务。</p>
-<h2 id="其他安全事件"><a href="#其他安全事件" class="headerlink" title="其他安全事件"></a>其他安全事件</h2><h3 id="域名劫持"><a href="#域名劫持" class="headerlink" title="域名劫持"></a>域名劫持</h3><h4 id="启动条件-5"><a href="#启动条件-5" class="headerlink" title="启动条件"></a>启动条件</h4><p>当相关人员收到安全告警、发现主机访问网络时有异常广告，弹窗或其他异常、访问解析域名异常等情况时，应当立即报与安全人员请求协助。</p>
-<h4 id="如何定位-5"><a href="#如何定位-5" class="headerlink" title="如何定位"></a>如何定位</h4><p>安全人员首先应当详细调查当前情况是否真正属于被攻击的危险情况。然后通过查看DNS服务器日志、查看DNS解析记录、查看流量去向、检查主机设置等方式判断攻击影响与其他详细情况。</p>
-<p>在此期间应当做好适当留证，包括日志等信息，以供后续有需要时提供。</p>
-<h4 id="处理过程-5"><a href="#处理过程-5" class="headerlink" title="处理过程"></a>处理过程</h4><p>应该通过修改DNS地址、修改主机hosts文件、加固或更换DNS服务器、求助服务提供商、更新路由器账密、更新网络配置等方式暂时或长期控制该问题。</p>
-<h4 id="运行恢复-5"><a href="#运行恢复-5" class="headerlink" title="运行恢复"></a>运行恢复</h4><p>确认DNS劫持问题解决且不会被同样的方式攻击后，可以正常使用DNS服务。</p>
-<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
-<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
-]]></content>
-      <tags>
-        <tag>网络安全</tag>
-        <tag>应急响应</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日记，或者说说心里话</title>
-    <url>/2022/02/24/%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[<p>一个小日记，偶尔说说心里话。</p>
-<span id="more"></span>
-
-<h1 id="2022年"><a href="#2022年" class="headerlink" title="2022年"></a>2022年</h1><h2 id="6月"><a href="#6月" class="headerlink" title="6月"></a>6月</h2><h3 id="1日-周三"><a href="#1日-周三" class="headerlink" title="1日 周三"></a>1日 周三</h3><p>今天说己亥天克地冲，注意身体安全，早上上班特意算了一卦，也没发现有什么。</p>
-<p>火地晋，互水山蹇(jian 三声)，变卦山地剥。</p>
-<p>总的来说生我的火的力量很微弱，被消耗被克制，但我是没啥事。可能是我解卦能力不行，明明是看事（或者说损伤）的，不应该这么看？希望今日无事。</p>
-<h3 id="28日-周二"><a href="#28日-周二" class="headerlink" title="28日 周二"></a>28日 周二</h3><p>以工号起卦，上为离，下为巽，动四。</p>
-<p>火风鼎，互泽天夬，变山风蛊。下巽为体，上离艮是用。</p>
-<p>总而言之我觉得自己能留下来。</p>
-<p>错了吧，应该动一，火天大有。</p>
-<h3 id="30日-周四"><a href="#30日-周四" class="headerlink" title="30日 周四"></a>30日 周四</h3><p>今天的风很清凉，任务不那么繁重，恍惚之间回想起了我的大学，教室里学习时有风吹过的日子。</p>
-<h2 id="7月"><a href="#7月" class="headerlink" title="7月"></a>7月</h2><h3 id="13日-周三"><a href="#13日-周三" class="headerlink" title="13日 周三"></a>13日 周三</h3><p>救命，接下了类似安全培训的任务，本来以为要在工作中慢慢磨出来的各种漏洞的详解，要集中搞定了，加油</p>
-<h3 id="19日-周二"><a href="#19日-周二" class="headerlink" title="19日 周二"></a>19日 周二</h3><p>今天摸鱼，意外看到帝吧大神 开开550 的三部曲之二，一个是小张和小丽，另一个是张箐和马可，后面好像还有好几部，我还没来得及看。贴吧这种移动端只能用app的东西，实在是不适合用手机看。</p>
-<p>下午纯粹是心神荡漾，没心思工作了。倒也没啥，谁规定工作的时候就必须要全神贯注的，我又不是机器人，我还活着呢。</p>
-<p>很青春只能说，但是不写个好结局真讨厌，虽然不好的结局才回味无穷让人记得。</p>
-<p>我也曾经写过很多矫情的文字的，也就着诗词歌赋写过几个寄托我情绪的小句子，如今只能在这打打技术文档。</p>
-<p>因为情绪太丰富了控制不住，就总是下意识地把它们锁住。直到现在，已经很久没有写过让自己心动的文字了，6月30号算一个，是真的有感而发。</p>
-<p>因为习惯职业化和理性的输出方式了，所以有点不知道怎么按心想的说话，希望能学着更加自由，更勇敢更自在地表达自己，爱自己的生活。</p>
-<p>还是很怀念小时候，用手机追贴吧更文的日子，有时间矫情，有时间放纵自己情绪的日子，还有很多，因为要赶公交，没时间写了。</p>
-<p>真的不知所言，也没讲什么行文规矩了，想到哪说到哪，就这样吧。</p>
-<p>明天把链接贴上来，做纪念。</p>
-]]></content>
-      <tags>
-        <tag>Mind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>渗透测试之四——服务端安全配置审计</title>
-    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E5%AE%A1%E8%AE%A1/</url>
-    <content><![CDATA[<p>第四个部分，关于安全配置的部分。</p>
-<span id="more"></span>
-
-<p>以本清单所列，服务端安全配置审计可以注意以下几个方面：</p>
-<ul>
-<li>CDN 服务探测</li>
-<li>后端服务组件配置测试</li>
-<li>服务器登录安全测试</li>
-<li>文件扩展名解析测试</li>
-<li>备份文件测试</li>
-<li>测试文件测试</li>
-<li>测试接口暴露</li>
-<li>HTTP 方法测试</li>
-<li>Web 前端跨域策略测试</li>
-<li>Web 安全响应头部测试</li>
-<li>弱 SSL&#x2F;TLS 加密，不安全数据传输测试</li>
-<li>非加密信道传输敏感数据测试</li>
-<li>弱口令及默认口令探测</li>
-<li>管理后台发现</li>
-<li>DOS压力测试</li>
-</ul>
-<h1 id="十五、DOS压力测试"><a href="#十五、DOS压力测试" class="headerlink" title="十五、DOS压力测试"></a>十五、DOS压力测试</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>HTTP慢速攻击是利用HTTP合法机制，以极低的速度往服务器发送HTTP请求，尽量长时间保持连接，不释放，若是达到了Web Server对于<a href="https://so.csdn.net/so/search?q=%E5%B9%B6%E5%8F%91&spm=1001.2101.3001.7020">并发</a>连接数的上限，同时恶意占用的连接没有被释放，那么服务器端将无法接受新的请求，导致拒绝服务。</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>比较常用的工具之一是slowhttp，kali上<code>apt-get install slowhttptest</code>就可以安装使用了。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测试模式：</span><br><span class="line">-H slow headers 攻击，缓慢发送\r\n，让服务器一直等待</span><br><span class="line">-B slow Body 攻击</span><br><span class="line">-R 范围攻击Apache killer</span><br><span class="line">-X slow read 攻击，读的慢，让服务器发送缓存堵塞</span><br><span class="line"></span><br><span class="line">报告生成选项：</span><br><span class="line">-g 生成socket状态变化统计</span><br><span class="line">-o file_prefix将输出保存到file.html和file.csv中</span><br><span class="line">-v level日志等级，0-4：Fatal，Info，Error，Warning，Debug</span><br><span class="line"></span><br><span class="line">普通选项：</span><br><span class="line">-c connections目标连接数（50）</span><br><span class="line">-i seconds数据发送间隔（10）</span><br><span class="line">-l seconds测试一个目标的时间长度（240）</span><br><span class="line">-r rate每秒多少个连接（50）</span><br><span class="line">-s bytesContent-Length的值（4096）</span><br><span class="line">-t verb请求中使用的动词，如果是slow header攻击，默认是GET；如果是slow body攻击，默认是POST</span><br><span class="line">-u URL目标URL（http://localhost/）</span><br><span class="line">-x bytes每一个tick随机生成的键值对最大长度，例如，-x 2 生成x-xx：xx是头字段，或是类似&amp;xx=xx的消息体，x是随机字符（32）</span><br><span class="line"></span><br><span class="line">探针/代理选项：</span><br><span class="line">-d host:port所有数据走指定代理host:port</span><br><span class="line">-e host:port 探针流量走指定代理host:port</span><br><span class="line">-p seconds探针超时时长，服务器被认为是网络不可达（5）</span><br><span class="line"></span><br><span class="line">范围攻击具体选项：</span><br><span class="line">-a start左边界值（5）</span><br><span class="line">-b bytes右边界值（2000）</span><br><span class="line"></span><br><span class="line">slow read攻击具体选项：</span><br><span class="line">-k num同一请求重复次数，当服务器支持持久化连接时用于放大响应长度（1）</span><br><span class="line">-n seconds每次从接收缓冲区中读取消息的时间间隔（1）</span><br><span class="line">-w bytes从通知窗中获取数据的起始位置（1）</span><br><span class="line">-y bytes 从通知窗中获取数据的结束位置（512）</span><br><span class="line">-z bytes每次从接收缓冲区中读取的长度（5）</span><br></pre></td></tr></table></figure>
-<p>案例说明<br><code>slowhttptest -c 1000 -B -g -o my_body_stats -i 110 -r 200 -s 8192 -t FAKEVERB -u http://mysite -x 10 -p 3</code><br>测试结论：<br>1、如果在用该攻击攻击服务器，服务器正常使用并且cpu、内存、网络实用率正常，则无slowhttp漏洞<br>如：pgrep http | wc -l 进程数量<br>netstat -antp | grep 443 |wc -l 网络连接数量<br>2、若攻击的时间段，服务无法正常访问则存在次漏洞。</p>
-<h2 id="修复和防范"><a href="#修复和防范" class="headerlink" title="修复和防范"></a>修复和防范</h2><p>a.设定URL白名单和黑名单，识别坏的IP；<br>b.设置一个绝对连接超时，<br>c.定义最小的输入数据速率；对web服务器的http头部传输的最大许可时间进行限制，修改成最大许可时间为20秒。<br>统计每个TCP连接的时长并计算单位时间内通过的报文数量即可做精确识别。一个TCP连接中，HTTP报文太少和报文太多都是不正常的，过少可能是慢速连接攻击，过多可能是使用HTTP 1.1协议进行deHTTP Flood攻击，在一个TCP连接中发送多个HTTP请求。<br>限制HTTP头部传输的最大许可时间。超过指定时间HTTP Header还没有传输完成，直接判定源IP地址为慢速连接攻击，中断连接并加入黑名单。</p>
-<p>参考：</p>
-<ul>
-<li><a href="https://blog.csdn.net/u013908944/article/details/76576089">https://blog.csdn.net/u013908944/article/details/76576089</a></li>
-<li><a href="https://blog.csdn.net/weixin_57567655/article/details/122847049">https://blog.csdn.net/weixin_57567655/article/details/122847049</a></li>
-<li><a href="https://www.pianshen.com/article/1267387706/">https://www.pianshen.com/article/1267387706/</a></li>
-</ul>
-<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
-<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
-]]></content>
-      <tags>
-        <tag>网络安全</tag>
-        <tag>渗透测试</tag>
-        <tag>安全配置</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>认证协议之LDAP</title>
     <url>/2022/06/27/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8BLDAP/</url>
     <content><![CDATA[<p>LDAP，我理解的话感觉不像是一个认证协议（虽然boss让我研究的list里面有这么个东西），人家名字叫轻量目录访问协议，就是一个浏览用的一个东西吧。</p>
@@ -661,85 +694,6 @@
 ]]></content>
       <tags>
         <tag>网络安全</tag>
-        <tag>认证协议</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>认证协议之Kerberos</title>
-    <url>/2022/06/23/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8Bkerberos/</url>
-    <content><![CDATA[<p>Kerberos，希腊神话中一只守卫冥界之门的狗，据说这只狗有着三个头颅，面目峥嵘，负责替冥王哈迪斯守卫地狱底下暗无天日的深渊，这就是<em><strong>地狱三头犬</strong></em>。</p>
-<span id="more"></span>
-
-<h2 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h2><p>基于密码学，使用对称加密。</p>
-<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><h4 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h4><ul>
-<li>TGS：票据授权服务器</li>
-<li>TGT：票据授权票据</li>
-<li>session_key_1：客户端与TGS通信使用的密钥</li>
-<li>session_key_2：客户端与将要访问的服务器通信的密钥</li>
-<li>keytab：相当于“密码本”，包含了多个 principal 与密码的文件，用户可以利用该文件进行身份认证。</li>
-<li>Ticket Cache：客户端与 KDC 交互完成后，包含身份认证信息的文件，短期有效，需要不断renew。</li>
-<li>Realm：Kerberos 中的一个 namespace，不同 Kerberos 环境，可以通过 realm 进行区分。</li>
-<li>Kerberos Database：包含了一个 Realm 中所有的 principal、密码与其他信息；默认是 Berkeley DB。</li>
-</ul>
-<h4 id="工作准备"><a href="#工作准备" class="headerlink" title="工作准备"></a>工作准备</h4><p>kerberos在工作之前先准备好一个数据库，由运维人员先行创建。数据库保存能够使用kerberos认证的用户和网络服务（通信时需要互相认证的每一个“双方”）的基本信息（比如用户名，IP，Server name等），还有其对应的密钥。密钥分发机构KDC要先保证认识所有用户和网络服务，才能为任意两者之间提供认证服务。</p>
-<h4 id="总览-x2F-过程简述"><a href="#总览-x2F-过程简述" class="headerlink" title="总览&#x2F;过程简述"></a>总览&#x2F;过程简述</h4><p>客户端A要访问服务器B，服务器B如果要接收请求，允许A访问，需要A提供一个凭证。</p>
-<ul>
-<li>第一部分：客户端A需要先向认证服务器AS请求验证，AS验证通过后返回两个内容：一个TGT，使用TGS密钥加密；一个用客户端密钥加密的内容，客户端解密后获取与TGS通信所需的Session_key_1。</li>
-<li>第二部分：客户端判断时间戳无误，发给TGS三个东西：Session_key_1加密的客户端信息；想访问的服务器信息，用明文方式；AS响应里用TGS密钥加密的TGT。TGS接收请求后判断服务器信息是否合理；然后用密钥解密TGT，判断通信是否可信；最后用TGT里解密出的Session_key_1 解密客户端发来的第一个东西，判断客户端信息合法。返回客户端一个用将访问服务器密钥加密的ticket；一段用Session_key_1加密而成的内容。</li>
-<li>第三部分：客户端收到TGS响应，用Session_key_1解密了TGS响应中的第二部分，确认无误后向服务器发起请求。请求包括用Session_key_2加密的客户端信息，和ticket。服务端用自己密钥解密ticket，取出客户端信息；又用刚获得的Session_key_2解密客户端请求中的第一部分，取得两个客户端信息后相互比对，确认客户端身份。最后使用数字证书，和用Session_key_1加密的表示接收请求的响应，向客户端证明自己的身份。</li>
-</ul>
-<h4 id="第一部分，客户端与AS之间"><a href="#第一部分，客户端与AS之间" class="headerlink" title="第一部分，客户端与AS之间"></a>第一部分，客户端与AS之间</h4><p>此时KDC需要验证客户端身份，确认客户端是一个可靠且拥有访问KDC权限的客户端：</p>
-<ul>
-<li>客户端A向认证服务器AS以明文形式发送请求验证，请求中携带自己用户名，主机IP和时间戳验证。</li>
-<li>AS服务器接收请求后使用用户名向数据库查询是否存在该用户。如果存在该用户名，AS认为用户存在，返回一个响应给客户端，其中包括两个内容：<ul>
-<li>第一部分是“票据授予票据”TGT。客户端要使用TGT去“票据授予中心”TGS获取访问服务器需要的“服务授予票据”Ticket。TGT包含有kerberos数据库中存在的该客户端的name、IP、时间戳、该客户端将要访问的TGS的name、TGT有效时间、一个用于客户端与TGS之间通信的Session_key_1。TGT使用TGS的密钥加密，客户端无法解密。</li>
-<li>第二部分是使用客户端密钥加密的内容，其中包括客户端和TGS间通信使用的Session_key_1，客户端即将访问的TGS的Name、TGT的有效时间、一个当前时间戳。该部分内容使用客户端密钥加密，客户端可以使用自己的密钥解密。如果是一个假的客户端，那么他是不会拥有真正客户端的密钥的，该密钥也从没在网络中进行传输过。这也同时认证了客户端的身份，如果是假客户端会由于解密失败从而终端认证流程。</li>
-</ul>
-</li>
-</ul>
-<h4 id="第二部分，客户端与TGS之间"><a href="#第二部分，客户端与TGS之间" class="headerlink" title="第二部分，客户端与TGS之间"></a>第二部分，客户端与TGS之间</h4><p>此时客户端收到AS响应，用自己的密钥解密第二部分内容，获取了时间戳、将访问的TGS信息和将用于与TGS通信的密钥。此次与TGS连接的目的是获得能够访问目标网络服务的Ticket：</p>
-<ul>
-<li><p>首先客户端根据时间戳判断，与自己发送请求时的时间差是否大于5分钟，如果是，则判断AS是伪造的；如果不是，客户端向TGS发送请求。</p>
-</li>
-<li><p>客户端的请求包括三个部分：</p>
-<ul>
-<li>使用与TGS通信使用的密钥Session_key_1，加密自己的客户端信息（客户端名，IP，时间戳）发给TGS</li>
-<li>客户端自己将要访问的网络服务，以明文方式发给TGS</li>
-<li>AS响应中的第一部分内容，使用TGS密钥加密的TGT发给TGS</li>
-</ul>
-</li>
-<li><p>TGS收到客户端请求后，先看明文传输来的，客户端想要访问的网络服务信息，判断kerberos系统中是否存在可以被用户访问的该服务，确定存在再继续往下进行。</p>
-</li>
-<li><p>TGS使用自己的密钥解密TGT，收到了经AS认证后并记录的用户信息、TGS与客户端通信要使用的密钥Session_key_1、时间戳，再以时间戳判断此次通信是否可靠可信。</p>
-</li>
-<li><p>TGS使用刚刚解密获得的Session_key_1，解密上述客户端请求中的第一部分，解密出客户端信息后与TGT中AS发来的客户端信息相比对，确认客户端身份。</p>
-</li>
-<li><p>如果上述过程顺利，此时TGS返回响应给客户端，其中包括：</p>
-<ul>
-<li>使用客户端将要访问的Server的密钥加密出来的Server Ticket。客户端有了ticket即可以和目标网络服务通信。Ticket包括客户端IP、name、要访问的网络服务的地址IP、ticket有效时间、时间戳、一个用于客户端与服务端通信使用的session_key_2。</li>
-<li>一段使用session_key_1加密而成的内容，其中包括session_key_2、时间戳、Ticket有效时间。在AS返回给客户端的响应中，第二部分已经被客户端自己的密钥解密，其中包含了Session_key_1，所以客户端接收到该部分内容后可以用Session_key_1解密。</li>
-</ul>
-</li>
-</ul>
-<h4 id="第三部分，客户端与服务端之间"><a href="#第三部分，客户端与服务端之间" class="headerlink" title="第三部分，客户端与服务端之间"></a>第三部分，客户端与服务端之间</h4><p>此时客户端已经收到了来自TGS的响应，也用Session_key_1解密了TGS响应中的第二部分内容。检查时间戳无误之后向服务端发送最后的请求，申请访问。</p>
-<ul>
-<li>客户端使用Session_key_2加密自己的主机信息和时间戳，作为提交给服务端的第一部分内容，然后将Ticket作为第二部分，一起发送给服务端。</li>
-<li>服务端收到客户端请求后使用自己的密钥解密Ticket，核对时间戳之后取出Session_key_2，再使用Session_key_1对客户端发来的第一部分解密，获取经过TGS认证后的客户端信息。将此信息与ticket解密出的信息比对，确定身份。</li>
-<li>服务端返回一段使用Session_key_1加密的，表示接受客户端请求的响应给客户端。客户端收到响应后，解密确认服务端身份。服务端在通信过程中也会使用数字证书证明自己身份。（最后服务器向客户端证明自己身份的部分暂不非常明晰）</li>
-</ul>
-<h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><p>中心化，KDC服务器需要持续响应，如果该服务器宕机，大部分验证过程就不能进行。而且因为kerberos服务器存储了所有用户与网络服务的密钥，如果该服务器失陷，所有它能提供服务的客户端与服务端都很危险。</p>
-<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p>1、<a href="https://blog.csdn.net/zzg19950824/article/details/119337269?spm=1001.2014.3001.5502">https://blog.csdn.net/zzg19950824/article/details/119337269?spm=1001.2014.3001.5502</a></p>
-<p>2、<a href="https://blog.csdn.net/weixin_38233104/article/details/122963237">https://blog.csdn.net/weixin_38233104/article/details/122963237</a></p>
-<p>3、<a href="https://baike.baidu.com/item/Kerberos/5561682?fr=aladdin">https://baike.baidu.com/item/Kerberos/5561682?fr=aladdin</a></p>
-<p>4、<a href="https://www.zhihu.com/question/22177404">https://www.zhihu.com/question/22177404</a></p>
-<p>5、<a href="https://www.bilibili.com/read/cv15702405">https://www.bilibili.com/read/cv15702405</a></p>
-<p>6、<a href="https://www.cnblogs.com/wuyongyin/p/15624452.html">https://www.cnblogs.com/wuyongyin/p/15624452.html</a></p>
-<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
-<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
-]]></content>
-      <tags>
-        <tag>网络安全</tag>
-        <tag>密码学</tag>
         <tag>认证协议</tag>
       </tags>
   </entry>
@@ -914,7 +868,29 @@
 <p>5、<a href="https://blog.csdn.net/weixin_33881753/article/details/87981552">https://blog.csdn.net/weixin_33881753/article/details/87981552</a></p>
 <p>6、<a href="https://www.secpulse.com/archives/3278.html">https://www.secpulse.com/archives/3278.html</a></p>
 <p>7、<a href="https://www.manongdao.com/article-2402214.html">https://www.manongdao.com/article-2402214.html</a></p>
-<h1 id="十、XXE-实体注入测试"><a href="#十、XXE-实体注入测试" class="headerlink" title="十、XXE 实体注入测试"></a>十、XXE 实体注入测试</h1><h1 id="十一、反序列化漏洞测试"><a href="#十一、反序列化漏洞测试" class="headerlink" title="十一、反序列化漏洞测试"></a>十一、反序列化漏洞测试</h1><h1 id="十二、HTTP请求夹带-smuggling-攻击测试"><a href="#十二、HTTP请求夹带-smuggling-攻击测试" class="headerlink" title="十二、HTTP请求夹带(smuggling)攻击测试"></a>十二、HTTP请求夹带(smuggling)攻击测试</h1><h1 id="十三、代码注入测试"><a href="#十三、代码注入测试" class="headerlink" title="十三、代码注入测试"></a>十三、代码注入测试</h1><h1 id="十四、本地文件包含测试"><a href="#十四、本地文件包含测试" class="headerlink" title="十四、本地文件包含测试"></a>十四、本地文件包含测试</h1><h1 id="十五、远程文件包含测试"><a href="#十五、远程文件包含测试" class="headerlink" title="十五、远程文件包含测试"></a>十五、远程文件包含测试</h1><h1 id="十六、命令执行注入测试"><a href="#十六、命令执行注入测试" class="headerlink" title="十六、命令执行注入测试"></a>十六、命令执行注入测试</h1><h1 id="十七、缓冲区溢出测试"><a href="#十七、缓冲区溢出测试" class="headerlink" title="十七、缓冲区溢出测试"></a>十七、缓冲区溢出测试</h1><h1 id="十八、格式化字符串测试"><a href="#十八、格式化字符串测试" class="headerlink" title="十八、格式化字符串测试"></a>十八、格式化字符串测试</h1><h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
+<h1 id="十、XXE-实体注入测试"><a href="#十、XXE-实体注入测试" class="headerlink" title="十、XXE 实体注入测试"></a>十、XXE 实体注入测试</h1><h2 id="XXE是啥？"><a href="#XXE是啥？" class="headerlink" title="XXE是啥？"></a>XXE是啥？</h2><p>XXE漏洞全称XML External Entity Injection，即xml外部实体注入漏洞，XXE漏洞发生在应用程序解析XML输入时，没有禁止外部实体的加载，导致可加载恶意外部文件，造成文件读取、命令执行、内网端口扫描、攻击内网网站、发起dos攻击等危害。xxe漏洞触发的点往往是可以上传xml文件的位置，<strong>（存疑！一定是上传吗？能够修改已有的xml的话，是不是也可以？）</strong>没有对上传的xml文件进行过滤，导致可上传恶意xml文件。</p>
+<p>XML外部实体注入，即XXE漏洞，主要是因为某些应用程序允许XML格式的数据输入和解析，在这种情况下就可以通过引入外部实体的方式进行攻击。绝大部分的注入问题都是因为用户恶意的可控输入，加上被攻击方对用户输入的不安全处理引起的。</p>
+<h2 id="浅尝一下XML"><a href="#浅尝一下XML" class="headerlink" title="浅尝一下XML"></a>浅尝一下XML</h2><p>HTML：超文本标记语言<br>XML：可扩展标记语言</p>
+<p>两者着重点不同。</p>
+<p>XML里会用到DTD，有内外部申明之说，内部申明<!DOCTYPE root[]> ，外部申明<!DOCTYPE 文档根节点 SYSTEM(PUBLIC) “DTD文件名">。</p>
+<p>外部申明示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE root-element SYSTEM &quot;test.dtd&quot;&gt;</span><br><span class="line">&lt;note&gt;</span><br><span class="line">&lt;to&gt;Y0u&lt;/to&gt;</span><br><span class="line">&lt;from&gt;@re&lt;/from&gt;</span><br><span class="line">&lt;head&gt;v3ry&lt;/head&gt;</span><br><span class="line">&lt;body&gt;g00d!&lt;/body&gt;</span><br><span class="line">&lt;/note&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- test.dtd --&gt;</span><br><span class="line">&lt;!ELEMENT to (#PCDATA)&gt;&lt;!--定义to元素为”#PCDATA”类型--&gt;</span><br><span class="line">&lt;!ELEMENT from (#PCDATA)&gt;&lt;!--定义from元素为”#PCDATA”类型--&gt;</span><br><span class="line">&lt;!ELEMENT head (#PCDATA)&gt;&lt;!--定义head元素为”#PCDATA”类型--&gt;</span><br><span class="line">&lt;!ELEMENT body (#PCDATA)&gt;&lt;!--定义body元素为”#PCDATA”类型--&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://image.3001.net/images/20180622/15295974717775.png" alt="img"><br>关于DTD实体：</p>
+<p>实体是用于定义引用普通文本或特殊字符的快捷方式的变量。</p>
+<p>实体引用是对实体的引用。</p>
+<p>实体可以在内部或外部进行声明</p>
+<p><img src="https://image.3001.net/images/20180622/15295975464414.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">内部实体</span><br><span class="line">&lt;!ENTITY 实体名称 &quot;实体的值&quot;&gt;</span><br><span class="line"></span><br><span class="line">外部实体</span><br><span class="line">&lt;!ENTITY 实体名称 SYSTEM &quot;URL&quot;&gt;</span><br><span class="line"></span><br><span class="line">参数实体</span><br><span class="line">&lt;!ENTITY %实体名称 &quot;值&quot;&gt;</span><br><span class="line">or</span><br><span class="line">&lt;!ENTITY %实体名称 SYSTEM &quot;URL&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>XML 文档有自己的一个格式规范，这个格式规范是由一个叫做 DTD（document type definition） 的东西控制的。DTD文档类型定义定义XML文档的结构，它作为xml文件的一部分位于XML声明和文档元素之间。比如下面DTD ：</p>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaGJ7axQOXxj/img/80cf7755-1290-4b19-be70-d499a0415201.jpg" alt="img"></p>
+<p>它就定义了 XML 的根元素必须是message，根元素下面有一些子元素，所以 XML必须像下面这么写：</p>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaGJ7axQOXxj/img/9a59b220-a0ac-429a-b23d-0a0c9ad467a5.jpg" alt="img"></p>
+<p>其中，DTD需要在！DOCTYPE注释中定义根元素，而后在中括号的[]内使用！ELEMENT注释定义各元素特征。</p>
+<h1 id="十一、反序列化漏洞测试"><a href="#十一、反序列化漏洞测试" class="headerlink" title="十一、反序列化漏洞测试"></a>十一、反序列化漏洞测试</h1><h1 id="十二、HTTP请求夹带-smuggling-攻击测试"><a href="#十二、HTTP请求夹带-smuggling-攻击测试" class="headerlink" title="十二、HTTP请求夹带(smuggling)攻击测试"></a>十二、HTTP请求夹带(smuggling)攻击测试</h1><h1 id="十三、代码注入测试"><a href="#十三、代码注入测试" class="headerlink" title="十三、代码注入测试"></a>十三、代码注入测试</h1><h1 id="十四、本地文件包含测试"><a href="#十四、本地文件包含测试" class="headerlink" title="十四、本地文件包含测试"></a>十四、本地文件包含测试</h1><h1 id="十五、远程文件包含测试"><a href="#十五、远程文件包含测试" class="headerlink" title="十五、远程文件包含测试"></a>十五、远程文件包含测试</h1><h1 id="十六、命令执行注入测试"><a href="#十六、命令执行注入测试" class="headerlink" title="十六、命令执行注入测试"></a>十六、命令执行注入测试</h1><h1 id="十七、缓冲区溢出测试"><a href="#十七、缓冲区溢出测试" class="headerlink" title="十七、缓冲区溢出测试"></a>十七、缓冲区溢出测试</h1><h1 id="十八、格式化字符串测试"><a href="#十八、格式化字符串测试" class="headerlink" title="十八、格式化字符串测试"></a>十八、格式化字符串测试</h1><h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
 <p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
 ]]></content>
       <tags>
@@ -938,6 +914,15 @@
 <p>水平垂直</p>
 <h1 id="五、凭证的复用"><a href="#五、凭证的复用" class="headerlink" title="五、凭证的复用"></a>五、凭证的复用</h1><p>验证码，token等身份凭证</p>
 <h1 id="六、预期之外的参数"><a href="#六、预期之外的参数" class="headerlink" title="六、预期之外的参数"></a>六、预期之外的参数</h1><p>同名参数多了，有需要的参数少了，年龄之类的参数填负数了，加上本来不打算加的参数了</p>
+<h1 id="还没来得及看的一些逻辑漏洞文章"><a href="#还没来得及看的一些逻辑漏洞文章" class="headerlink" title="还没来得及看的一些逻辑漏洞文章"></a>还没来得及看的一些逻辑漏洞文章</h1><p><a href="https://websec.readthedocs.io/zh/latest/vuln/logic.html">https://websec.readthedocs.io/zh/latest/vuln/logic.html</a></p>
+<p><a href="https://www.cnblogs.com/bmjoker/category/1224511.html">https://www.cnblogs.com/bmjoker/category/1224511.html</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1377622?from=15425">https://cloud.tencent.com/developer/article/1377622?from=15425</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1369469?from=15425">https://cloud.tencent.com/developer/article/1369469?from=15425</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1481816?from=15425">https://cloud.tencent.com/developer/article/1481816?from=15425</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1419456?from=15425">https://cloud.tencent.com/developer/article/1419456?from=15425</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1756403?from=15425">https://cloud.tencent.com/developer/article/1756403?from=15425</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/2032517?from=15425">https://cloud.tencent.com/developer/article/2032517?from=15425</a></p>
+<p><a href="https://cloud.tencent.com/developer/information/%E5%B8%B8%E8%A7%81%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E">https://cloud.tencent.com/developer/information/%E5%B8%B8%E8%A7%81%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E</a></p>
 <h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
 <p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
 ]]></content>
@@ -945,6 +930,85 @@
         <tag>网络安全</tag>
         <tag>渗透测试</tag>
         <tag>逻辑漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>认证协议之Kerberos</title>
+    <url>/2022/06/23/%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%E4%B9%8Bkerberos/</url>
+    <content><![CDATA[<p>Kerberos，希腊神话中一只守卫冥界之门的狗，据说这只狗有着三个头颅，面目峥嵘，负责替冥王哈迪斯守卫地狱底下暗无天日的深渊，这就是<em><strong>地狱三头犬</strong></em>。</p>
+<span id="more"></span>
+
+<h2 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h2><p>基于密码学，使用对称加密。</p>
+<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><h4 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h4><ul>
+<li>TGS：票据授权服务器</li>
+<li>TGT：票据授权票据</li>
+<li>session_key_1：客户端与TGS通信使用的密钥</li>
+<li>session_key_2：客户端与将要访问的服务器通信的密钥</li>
+<li>keytab：相当于“密码本”，包含了多个 principal 与密码的文件，用户可以利用该文件进行身份认证。</li>
+<li>Ticket Cache：客户端与 KDC 交互完成后，包含身份认证信息的文件，短期有效，需要不断renew。</li>
+<li>Realm：Kerberos 中的一个 namespace，不同 Kerberos 环境，可以通过 realm 进行区分。</li>
+<li>Kerberos Database：包含了一个 Realm 中所有的 principal、密码与其他信息；默认是 Berkeley DB。</li>
+</ul>
+<h4 id="工作准备"><a href="#工作准备" class="headerlink" title="工作准备"></a>工作准备</h4><p>kerberos在工作之前先准备好一个数据库，由运维人员先行创建。数据库保存能够使用kerberos认证的用户和网络服务（通信时需要互相认证的每一个“双方”）的基本信息（比如用户名，IP，Server name等），还有其对应的密钥。密钥分发机构KDC要先保证认识所有用户和网络服务，才能为任意两者之间提供认证服务。</p>
+<h4 id="总览-x2F-过程简述"><a href="#总览-x2F-过程简述" class="headerlink" title="总览&#x2F;过程简述"></a>总览&#x2F;过程简述</h4><p>客户端A要访问服务器B，服务器B如果要接收请求，允许A访问，需要A提供一个凭证。</p>
+<ul>
+<li>第一部分：客户端A需要先向认证服务器AS请求验证，AS验证通过后返回两个内容：一个TGT，使用TGS密钥加密；一个用客户端密钥加密的内容，客户端解密后获取与TGS通信所需的Session_key_1。</li>
+<li>第二部分：客户端判断时间戳无误，发给TGS三个东西：Session_key_1加密的客户端信息；想访问的服务器信息，用明文方式；AS响应里用TGS密钥加密的TGT。TGS接收请求后判断服务器信息是否合理；然后用密钥解密TGT，判断通信是否可信；最后用TGT里解密出的Session_key_1 解密客户端发来的第一个东西，判断客户端信息合法。返回客户端一个用将访问服务器密钥加密的ticket；一段用Session_key_1加密而成的内容。</li>
+<li>第三部分：客户端收到TGS响应，用Session_key_1解密了TGS响应中的第二部分，确认无误后向服务器发起请求。请求包括用Session_key_2加密的客户端信息，和ticket。服务端用自己密钥解密ticket，取出客户端信息；又用刚获得的Session_key_2解密客户端请求中的第一部分，取得两个客户端信息后相互比对，确认客户端身份。最后使用数字证书，和用Session_key_1加密的表示接收请求的响应，向客户端证明自己的身份。</li>
+</ul>
+<h4 id="第一部分，客户端与AS之间"><a href="#第一部分，客户端与AS之间" class="headerlink" title="第一部分，客户端与AS之间"></a>第一部分，客户端与AS之间</h4><p>此时KDC需要验证客户端身份，确认客户端是一个可靠且拥有访问KDC权限的客户端：</p>
+<ul>
+<li>客户端A向认证服务器AS以明文形式发送请求验证，请求中携带自己用户名，主机IP和时间戳验证。</li>
+<li>AS服务器接收请求后使用用户名向数据库查询是否存在该用户。如果存在该用户名，AS认为用户存在，返回一个响应给客户端，其中包括两个内容：<ul>
+<li>第一部分是“票据授予票据”TGT。客户端要使用TGT去“票据授予中心”TGS获取访问服务器需要的“服务授予票据”Ticket。TGT包含有kerberos数据库中存在的该客户端的name、IP、时间戳、该客户端将要访问的TGS的name、TGT有效时间、一个用于客户端与TGS之间通信的Session_key_1。TGT使用TGS的密钥加密，客户端无法解密。</li>
+<li>第二部分是使用客户端密钥加密的内容，其中包括客户端和TGS间通信使用的Session_key_1，客户端即将访问的TGS的Name、TGT的有效时间、一个当前时间戳。该部分内容使用客户端密钥加密，客户端可以使用自己的密钥解密。如果是一个假的客户端，那么他是不会拥有真正客户端的密钥的，该密钥也从没在网络中进行传输过。这也同时认证了客户端的身份，如果是假客户端会由于解密失败从而终端认证流程。</li>
+</ul>
+</li>
+</ul>
+<h4 id="第二部分，客户端与TGS之间"><a href="#第二部分，客户端与TGS之间" class="headerlink" title="第二部分，客户端与TGS之间"></a>第二部分，客户端与TGS之间</h4><p>此时客户端收到AS响应，用自己的密钥解密第二部分内容，获取了时间戳、将访问的TGS信息和将用于与TGS通信的密钥。此次与TGS连接的目的是获得能够访问目标网络服务的Ticket：</p>
+<ul>
+<li><p>首先客户端根据时间戳判断，与自己发送请求时的时间差是否大于5分钟，如果是，则判断AS是伪造的；如果不是，客户端向TGS发送请求。</p>
+</li>
+<li><p>客户端的请求包括三个部分：</p>
+<ul>
+<li>使用与TGS通信使用的密钥Session_key_1，加密自己的客户端信息（客户端名，IP，时间戳）发给TGS</li>
+<li>客户端自己将要访问的网络服务，以明文方式发给TGS</li>
+<li>AS响应中的第一部分内容，使用TGS密钥加密的TGT发给TGS</li>
+</ul>
+</li>
+<li><p>TGS收到客户端请求后，先看明文传输来的，客户端想要访问的网络服务信息，判断kerberos系统中是否存在可以被用户访问的该服务，确定存在再继续往下进行。</p>
+</li>
+<li><p>TGS使用自己的密钥解密TGT，收到了经AS认证后并记录的用户信息、TGS与客户端通信要使用的密钥Session_key_1、时间戳，再以时间戳判断此次通信是否可靠可信。</p>
+</li>
+<li><p>TGS使用刚刚解密获得的Session_key_1，解密上述客户端请求中的第一部分，解密出客户端信息后与TGT中AS发来的客户端信息相比对，确认客户端身份。</p>
+</li>
+<li><p>如果上述过程顺利，此时TGS返回响应给客户端，其中包括：</p>
+<ul>
+<li>使用客户端将要访问的Server的密钥加密出来的Server Ticket。客户端有了ticket即可以和目标网络服务通信。Ticket包括客户端IP、name、要访问的网络服务的地址IP、ticket有效时间、时间戳、一个用于客户端与服务端通信使用的session_key_2。</li>
+<li>一段使用session_key_1加密而成的内容，其中包括session_key_2、时间戳、Ticket有效时间。在AS返回给客户端的响应中，第二部分已经被客户端自己的密钥解密，其中包含了Session_key_1，所以客户端接收到该部分内容后可以用Session_key_1解密。</li>
+</ul>
+</li>
+</ul>
+<h4 id="第三部分，客户端与服务端之间"><a href="#第三部分，客户端与服务端之间" class="headerlink" title="第三部分，客户端与服务端之间"></a>第三部分，客户端与服务端之间</h4><p>此时客户端已经收到了来自TGS的响应，也用Session_key_1解密了TGS响应中的第二部分内容。检查时间戳无误之后向服务端发送最后的请求，申请访问。</p>
+<ul>
+<li>客户端使用Session_key_2加密自己的主机信息和时间戳，作为提交给服务端的第一部分内容，然后将Ticket作为第二部分，一起发送给服务端。</li>
+<li>服务端收到客户端请求后使用自己的密钥解密Ticket，核对时间戳之后取出Session_key_2，再使用Session_key_1对客户端发来的第一部分解密，获取经过TGS认证后的客户端信息。将此信息与ticket解密出的信息比对，确定身份。</li>
+<li>服务端返回一段使用Session_key_1加密的，表示接受客户端请求的响应给客户端。客户端收到响应后，解密确认服务端身份。服务端在通信过程中也会使用数字证书证明自己身份。（最后服务器向客户端证明自己身份的部分暂不非常明晰）</li>
+</ul>
+<h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><p>中心化，KDC服务器需要持续响应，如果该服务器宕机，大部分验证过程就不能进行。而且因为kerberos服务器存储了所有用户与网络服务的密钥，如果该服务器失陷，所有它能提供服务的客户端与服务端都很危险。</p>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p>1、<a href="https://blog.csdn.net/zzg19950824/article/details/119337269?spm=1001.2014.3001.5502">https://blog.csdn.net/zzg19950824/article/details/119337269?spm=1001.2014.3001.5502</a></p>
+<p>2、<a href="https://blog.csdn.net/weixin_38233104/article/details/122963237">https://blog.csdn.net/weixin_38233104/article/details/122963237</a></p>
+<p>3、<a href="https://baike.baidu.com/item/Kerberos/5561682?fr=aladdin">https://baike.baidu.com/item/Kerberos/5561682?fr=aladdin</a></p>
+<p>4、<a href="https://www.zhihu.com/question/22177404">https://www.zhihu.com/question/22177404</a></p>
+<p>5、<a href="https://www.bilibili.com/read/cv15702405">https://www.bilibili.com/read/cv15702405</a></p>
+<p>6、<a href="https://www.cnblogs.com/wuyongyin/p/15624452.html">https://www.cnblogs.com/wuyongyin/p/15624452.html</a></p>
+<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p>文章博客难免有纰漏之处，欢迎沟通交流！</p>
+<p><img src="https://s2.loli.net/2022/06/27/Uf5juC9ZAesJ4lF.jpg" alt="微信图片_20220624142811.jpg"></p>
+]]></content>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>密码学</tag>
+        <tag>认证协议</tag>
       </tags>
   </entry>
 </search>
